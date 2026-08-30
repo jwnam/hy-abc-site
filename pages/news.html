@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소식 - 첨단바이오융합연구소 (HY-ABC)</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* News Page Specific Styles */
+
+        .page-body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f0f4f8 100%);
+            position: relative;
+        }
+
+        .page-body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(0, 188, 212, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Page Header Section */
+        .page-header {
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 0 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            background-attachment: fixed;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 40, 80, 0.88) 0%, rgba(80, 20, 168, 0.75) 50%, rgba(0, 188, 212, 0.6) 100%);
+            z-index: 1;
+        }
+
+        .page-header-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.15;
+            background-image: radial-gradient(circle, white 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #00bcd4;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .page-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 300;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 4rem;
+            scroll-behavior: smooth;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0a2850;
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, #5014a8 0%, #00bcd4 100%);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Notice Section */
+        #notice {
+            margin-top: 3rem;
+        }
+
+        .notice-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .notice-item {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-left: 4px solid #00bcd4;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .notice-item:nth-child(1) { animation-delay: 0.1s; }
+        .notice-item:nth-child(2) { animation-delay: 0.2s; }
+        .notice-item:nth-child(3) { animation-delay: 0.3s; }
+        .notice-item:nth-child(4) { animation-delay: 0.4s; }
+        .notice-item:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .notice-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 188, 212, 0.2);
+            border-left-color: #5014a8;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .notice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .notice-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #0a2850;
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .notice-date {
+            background: linear-gradient(135deg, #5014a8 0%, #7c3aed 100%);
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .notice-description {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            margin-top: 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease-out forwards;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+        .gallery-item:nth-child(4) { animation-delay: 0.4s; }
+        .gallery-item:nth-child(5) { animation-delay: 0.5s; }
+        .gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(80, 20, 168, 0.7) 0%, rgba(0, 188, 212, 0.6) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-icon {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        /* MOU Timeline Section */
+        #mou {
+            margin-top: 3rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, #5014a8 0%, #00bcd4 100%);
+            top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+        }
+
+        .timeline-items {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(7) { animation-delay: 0.7s; }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: white;
+            border: 3px solid #5014a8;
+            border-radius: 50%;
+            top: 1rem;
+            z-index: 3;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-marker {
+            width: 28px;
+            height: 28px;
+            top: 0.8rem;
+            box-shadow: 0 0 20px rgba(80, 20, 168, 0.5);
+            background: linear-gradient(135deg, #5014a8 0%, #00bcd4 100%);
+            border-color: #00bcd4;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-marker {
+                left: 20px;
+            }
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-top: 0.5rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: auto;
+            padding-right: 50%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+            padding-left: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                padding-left: 60px;
+                padding-right: 0;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        .timeline-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+        }
+
+        .timeline-item:hover .timeline-card {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 188, 212, 0.2);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 188, 212, 0.5);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #5014a8;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0a2850;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-org {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Publication Cards */
+        .publication-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .publication-card {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+        }
+
+        .publication-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .publication-image-wrapper img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+            display: block;
+        }
+
+        .publication-card:hover .publication-image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .publication-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .publication-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .publication-date {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(80,20,168,0.15) 0%, rgba(0,188,212,0.15) 100%);
+            color: #5014a8;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-top: auto;
+        }
+
+        .large-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+            transition: transform 0.4s ease;
+            margin-top: 2rem;
+        }
+
+        .large-image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .large-image-wrapper:hover img {
+            transform: scale(1.02);
+        }
+
+        .subsection-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: #0a2850;
+        }
+
+        .subsection-description {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            max-width: 900px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .page-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .notice-header {
+                flex-direction: column;
+            }
+
+            .notice-date {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="page-body">
+    <!-- Navigation -->
+    <nav class="navbar navbar-main">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="../" class="logo">
+                    <img src="../images/logo-hyabc.svg" alt="HY-ABC 한양 첨단바이오융합연구소" class="logo-img" style="height: 44px; width: auto;">
+                    <span class="logo-text-group">
+                        <span class="logo-subtitle">HY-IBB</span>
+                        <span class="logo-text">한양 첨단바이오융합연구소</span>
+                    </span>
+                </a>
+            </div>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="메뉴 열기">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="nav-item dropdown">
+                    <a href="about.html" class="nav-link">연구소소개</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#intro">인사말</a></li>
+                        <li><a href="about.html#vision">설립목적</a></li>
+                        <li><a href="about.html#history">연혁</a></li>
+                        <li><a href="about.html#organization">조직도</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="members.html" class="nav-link">구성원</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="members.html#directors">연구소장</a></li>
+                        <li><a href="members.html#researchers">참여연구자</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="research.html" class="nav-link">연구성과</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="research.html#publications">주요논문</a></li>
+                        <li><a href="research.html#projects">연구과제</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="facilities.html" class="nav-link">시설·장비</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="facilities.html#infrastructure">인프라현황</a></li>
+                        <li><a href="facilities.html#core">코어시설</a></li>
+                        <li><a href="facilities.html#openlab">오픈랩</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="activities.html" class="nav-link">학술활동</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="activities.html#symposium">국제심포지움</a></li>
+                        <li><a href="activities.html#minisymposium">미니심포지움</a></li>
+                        <li><a href="activities.html#seminar">세미나</a></li>
+                        <li><a href="activities.html#workshop">워크숍</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="news.html" class="nav-link">소식</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="news.html#notice">공지사항</a></li>
+                        <li><a href="news.html#gallery">갤러리</a></li>
+                        <li><a href="news.html#mou">MOU</a></li>
+                        <li><a href="news.html#publications">발간물</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="page-header-particles"></div>
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../">홈</a> / 소식
+                </div>
+                <h1 class="page-title">소식</h1>
+                <p class="page-subtitle">첨단바이오융합연구소의 최신 소식과 공지사항을 전합니다</p>
+            </div>
+        </section>
+
+        <!-- Notices Section -->
+        <section id="notice" class="container">
+            <h2 class="section-title">공지사항</h2>
+            <p class="section-subtitle">한양대학교 첨단바이오융합연구소의 주요 소식과 공지사항입니다</p>
+
+            <div class="notice-container">
+                <div class="notice-item">
+                    <div class="notice-header">
+                        <h3 class="notice-title">5대 연구소장 남진우 교수 취임</h3>
+                        <span class="notice-date">2026.03</span>
+                    </div>
+                    <p class="notice-description">한양대학교 첨단바이오융합연구소의 새로운 연구소장으로 남진우 교수가 취임했습니다. 바이오빅데이터와 AI 융합 연구의 새로운 시대를 열어나갈 것입니다.</p>
+                </div>
+
+                <div class="notice-item">
+                    <div class="notice-header">
+                        <h3 class="notice-title">BI/컴퓨팅 코어 사용자 교육 및 바이오데이터 분석 워크숍 개최</h3>
+                        <span class="notice-date">2026.02</span>
+                    </div>
+                    <p class="notice-description">바이오인포매틱스와 컴퓨팅 기술을 활용한 데이터 분석 역량 강화를 위한 교육 및 워크숍을 개최합니다.</p>
+                </div>
+
+                <div class="notice-item">
+                    <div class="notice-header">
+                        <h3 class="notice-title">바이오플러스 MOU 체결</h3>
+                        <span class="notice-date">2026.01</span>
+                    </div>
+                    <p class="notice-description">바이오플러스와 업무협력 양해각서를 체결하여 바이오 산업 발전을 위한 협력을 시작했습니다.</p>
+                </div>
+
+                <div class="notice-item">
+                    <div class="notice-header">
+                        <h3 class="notice-title">한양생명과학기술원 애뉴얼 심포지엄 개최</h3>
+                        <span class="notice-date">2025.08</span>
+                    </div>
+                    <p class="notice-description">바이오 산업의 최신 동향과 연구 성과를 공유하는 국제 수준의 심포지엄을 개최했습니다.</p>
+                </div>
+
+                <div class="notice-item">
+                    <div class="notice-header">
+                        <h3 class="notice-title">KBSI 광주센터 공동 Workshop 개최</h3>
+                        <span class="notice-date">2025.05</span>
+                    </div>
+                    <p class="notice-description">한국기초과학지원연구원 광주센터와 공동으로 첨단 분석 기법 워크숍을 개최했습니다.</p>
+                </div>
+
+                <div class="notice-item">
+                    <div class="notice-header">
+                        <h3 class="notice-title">AIxBIO Global Forum 개최</h3>
+                        <span class="notice-date">2025.04</span>
+                    </div>
+                    <p class="notice-description">AI와 바이오의 융합을 주제로 국내외 전문가가 참석한 글로벌 포럼을 개최했습니다.</p>
+                </div>
+
+                <div class="notice-item">
+                    <div class="notice-header">
+                        <h3 class="notice-title">제8회 한양바이오 국제미니심포지움 시리즈 개최</h3>
+                        <span class="notice-date">2025.03</span>
+                    </div>
+                    <p class="notice-description">바이오 분야의 우수한 연구성과를 발표하고 정보를 교류하는 미니심포지움을 개최했습니다.</p>
+                </div>
+
+                <div class="notice-item">
+                    <div class="notice-header">
+                        <h3 class="notice-title">한양대학교병원 의학연구원 MOU 체결</h3>
+                        <span class="notice-date">2024.09</span>
+                    </div>
+                    <p class="notice-description">의학 분야와의 협력을 통해 임상 중심의 바이오 연구를 추진하기 위한 협약을 체결했습니다.</p>
+                </div>
+
+                <div class="notice-item">
+                    <div class="notice-header">
+                        <h3 class="notice-title">2024 한양생명과학기술원 애뉴얼 심포지엄 개최</h3>
+                        <span class="notice-date">2024.08</span>
+                    </div>
+                    <p class="notice-description">생명과학기술의 발전 방향과 미래 전망을 논의하는 심포지엄을 개최했습니다.</p>
+                </div>
+
+                <div class="notice-item">
+                    <div class="notice-header">
+                        <h3 class="notice-title">AI바이오 국제 심포지움 개최</h3>
+                        <span class="notice-date">2024.05</span>
+                    </div>
+                    <p class="notice-description">인공지능 기술을 바이오에 적용하는 최신 연구 동향을 공유하는 국제 심포지움을 개최했습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="container">
+            <h2 class="section-title">갤러리</h2>
+            <p class="section-subtitle">첨단바이오융합연구소의 주요 활동 사진 및 이미지</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&q=80" alt="바이오 연구 실험실" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🔬</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80" alt="바이오테크 기술" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🧬</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?w=600&q=80" alt="과학 연구" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">⚗️</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&q=80" alt="연구소 환경" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🏛️</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=600&q=80" alt="의료 과학" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💊</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&q=80" alt="바이오 융합" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">🔗</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOU Timeline Section -->
+        <section id="mou" class="container">
+            <h2 class="section-title">MOU 타임라인</h2>
+            <p class="section-subtitle">첨단바이오융합연구소의 주요 협력 기관과의 업무협력 현황</p>
+
+            <div class="timeline">
+                <div class="timeline-items">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2026.03.13</div>
+                                <div class="timeline-title">바이오넥서스</div>
+                                <div class="timeline-org">첨단바이오융합연구소</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2026.01.14</div>
+                                <div class="timeline-title">바이오플러스</div>
+                                <div class="timeline-org">한양생명과학기술원</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2024.09.04</div>
+                                <div class="timeline-title">한양대학교병원 의학연구원</div>
+                                <div class="timeline-org">한양생명과학기술원</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2024.06.01</div>
+                                <div class="timeline-title">Boston Children's Hospital</div>
+                                <div class="timeline-org">한양생명과학기술원</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2024.05.24</div>
+                                <div class="timeline-title">㈜디엔에이링크</div>
+                                <div class="timeline-org">한양생명과학기술원</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2023.08.28</div>
+                                <div class="timeline-title">한양대학교 류마티즘 연구원</div>
+                                <div class="timeline-org">한양생명과학기술원</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-card">
+                                <div class="timeline-date">2023.02.26</div>
+                                <div class="timeline-title">㈜가지랩</div>
+                                <div class="timeline-org">한양생명과학기술원</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="container">
+            <h2 class="section-title">발간물</h2>
+            <p class="section-subtitle">첨단바이오융합연구소의 주요 발간물</p>
+
+            <!-- 월간 바이오정책동향 -->
+            <h3 class="subsection-title">월간 바이오정책동향</h3>
+            <p class="subsection-description">
+                2023년부터 생명과학, 의학 관련 정책 동향을 파악하고 전략적 연구 방향 수립
+            </p>
+
+            <div class="large-image-wrapper">
+                <img src="../images/activities/policy-brief.jpg" alt="월간 바이오정책동향">
+            </div>
+
+            <!-- 애뉴얼 리포트 -->
+            <h3 class="subsection-title">애뉴얼 리포트</h3>
+            <p class="subsection-description">
+                한 해 연구 활동 및 성과 정리, 우수 연구 소개
+            </p>
+
+            <div class="publication-grid">
+                <div class="publication-card">
+                    <div class="publication-image-wrapper">
+                        <img src="../images/activities/annual-report-2023.jpg" alt="2023년 발간">
+                    </div>
+                    <div class="publication-card-content">
+                        <h4 class="publication-title">애뉴얼 리포트</h4>
+                        <span class="publication-date">2023년 발간</span>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-image-wrapper">
+                        <img src="../images/activities/annual-report-2024.jpg" alt="2024년 발간">
+                    </div>
+                    <div class="publication-card-content">
+                        <h4 class="publication-title">애뉴얼 리포트</h4>
+                        <span class="publication-date">2024년 발간</span>
+                    </div>
+                </div>
+
+                <div class="publication-card">
+                    <div class="publication-image-wrapper">
+                        <img src="../images/activities/annual-report-2025.jpg" alt="2025년 발간">
+                    </div>
+                    <div class="publication-card-content">
+                        <h4 class="publication-title">애뉴얼 리포트</h4>
+                        <span class="publication-date">2025년 발간</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-subtitle">HY-IBB</span>
+                        <span class="logo-text">한양 첨단바이오융합연구소</span>
+                    </div>
+                    <p class="footer-description">바이오빅데이터와 AI 기술을 융합하여 데이터 기반 바이오 융합 연구를 선도하는 한양대학교 부설 연구소입니다.</p>
+                </div>
+                <div class="footer-column footer-contact">
+                    <h4>연락처</h4>
+                    <p>한양대학교 학생회관 2층 93호<br>서울특별시 성동구 왕십리로 222</p>
+                    <p>Tel. 02-2220-XXXX</p>
+                    <p>Email. hi-abc@hanyang.ac.kr</p>
+                </div>
+                <div class="footer-column footer-links">
+                    <h4>빠른 링크</h4>
+                    <ul>
+                        <li><a href="about.html">연구소 소개</a></li>
+                        <li><a href="research.html">연구성과</a></li>
+                        <li><a href="facilities.html">시설 안내</a></li>
+                        <li><a href="activities.html">학술활동</a></li>
+                        <li><a href="news.html">소식</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HanYang Institute of Advanced BioConvergence (HY-ABC). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

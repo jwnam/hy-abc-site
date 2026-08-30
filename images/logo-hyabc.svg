@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 180" width="480" height="180">
+  <defs>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a6a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a2040;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dnaGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c4935a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d4a36a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8834a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="dnaTeal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1a5a7a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2a7a9a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a6a8a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="circuitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c4935a;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#b8834a;stop-opacity:0.6" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main HY-ABC Text -->
+  <text x="240" y="85" text-anchor="middle" font-family="'Arial Black', 'Impact', sans-serif" font-size="82" font-weight="900" fill="url(#navyGrad)" letter-spacing="4">HY-ABC</text>
+
+  <!-- DNA Helix Strand 1 (Gold) - weaving through letters -->
+  <path d="M 52,40 C 70,25 90,65 108,45 C 126,25 146,65 164,45 C 182,25 202,65 220,45 C 238,25 258,65 276,48 C 294,30 314,68 332,48 C 350,28 370,68 388,48" 
+        fill="none" stroke="url(#dnaGold)" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+  
+  <!-- DNA Helix Strand 2 (Teal) - complementary strand -->
+  <path d="M 52,65 C 70,80 90,42 108,60 C 126,78 146,40 164,58 C 182,76 202,38 220,56 C 238,74 258,38 276,55 C 294,72 314,35 332,55 C 350,73 370,35 388,55" 
+        fill="none" stroke="url(#dnaTeal)" stroke-width="5" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- DNA rungs (connecting bars) -->
+  <g stroke="#c4935a" stroke-width="1.5" opacity="0.5">
+    <line x1="80" y1="38" x2="80" y2="68"/>
+    <line x1="108" y1="48" x2="108" y2="58"/>
+    <line x1="136" y1="38" x2="136" y2="68"/>
+    <line x1="164" y1="48" x2="164" y2="58"/>
+    <line x1="192" y1="38" x2="192" y2="68"/>
+    <line x1="220" y1="48" x2="220" y2="56"/>
+    <line x1="248" y1="38" x2="248" y2="68"/>
+    <line x1="276" y1="48" x2="276" y2="58"/>
+    <line x1="304" y1="38" x2="304" y2="68"/>
+    <line x1="332" y1="48" x2="332" y2="58"/>
+    <line x1="360" y1="38" x2="360" y2="68"/>
+  </g>
+
+  <!-- DNA dots (nucleotide markers) -->
+  <g fill="#c4935a" opacity="0.7">
+    <circle cx="52" cy="40" r="3"/>
+    <circle cx="164" cy="45" r="3"/>
+    <circle cx="276" cy="48" r="3"/>
+    <circle cx="388" cy="48" r="3"/>
+  </g>
+  <g fill="#2a7a9a" opacity="0.7">
+    <circle cx="108" cy="60" r="3"/>
+    <circle cx="220" cy="56" r="3"/>
+    <circle cx="332" cy="55" r="3"/>
+  </g>
+
+  <!-- Circuit board patterns (right side) -->
+  <g stroke="url(#circuitGrad)" stroke-width="1.8" fill="none" opacity="0.7">
+    <!-- Top circuit lines -->
+    <path d="M 400,35 L 420,35 L 420,25 L 440,25"/>
+    <path d="M 400,45 L 430,45 L 430,35 L 450,35"/>
+    <path d="M 400,55 L 425,55 L 425,50 L 455,50"/>
+    <!-- Bottom circuit lines -->
+    <path d="M 400,65 L 435,65"/>
+    <path d="M 400,75 L 420,75 L 420,80 L 445,80"/>
+  </g>
+  <!-- Circuit dots -->
+  <g fill="#c4935a" opacity="0.7">
+    <circle cx="440" cy="25" r="2.5"/>
+    <circle cx="450" cy="35" r="2.5"/>
+    <circle cx="455" cy="50" r="2.5"/>
+    <circle cx="435" cy="65" r="2.5"/>
+    <circle cx="445" cy="80" r="2.5"/>
+    <circle cx="420" cy="25" r="2"/>
+    <circle cx="430" cy="35" r="2"/>
+    <circle cx="425" cy="50" r="2"/>
+    <circle cx="420" cy="80" r="2"/>
+  </g>
+
+  <!-- Left side circuit/DNA indicators -->
+  <g stroke="url(#circuitGrad)" stroke-width="1.8" fill="none" opacity="0.6">
+    <path d="M 40,35 L 25,35 L 25,28 L 12,28"/>
+    <path d="M 40,50 L 20,50 L 20,55 L 8,55"/>
+    <path d="M 40,65 L 30,65 L 30,72 L 15,72"/>
+  </g>
+  <g fill="#c4935a" opacity="0.6">
+    <circle cx="12" cy="28" r="2.5"/>
+    <circle cx="8" cy="55" r="2.5"/>
+    <circle cx="15" cy="72" r="2.5"/>
+  </g>
+
+  <!-- Korean subtitle -->
+  <text x="240" y="130" text-anchor="middle" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif" font-size="28" font-weight="800" fill="#0a2850" letter-spacing="6">한양 첨단바이오융합연구소</text>
+
+  <!-- English subtitle (smaller) -->
+  <text x="240" y="158" text-anchor="middle" font-family="'Noto Sans KR', 'Arial', sans-serif" font-size="11" font-weight="400" fill="#6a7a8a" letter-spacing="3">Hanyang Institute – Advanced Bio-Convergence</text>
+</svg>

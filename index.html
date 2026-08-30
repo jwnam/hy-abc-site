@@ -1,181 +1,584 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>첨단바이오융합연구소 (HY-ABC) · 한양대학교</title>
-<meta name="description" content="한양대학교 첨단바이오융합연구소(HY-ABC) — 바이오빅데이터와 AI 기술을 융합하여 4차 의료 산업을 선도합니다.">
-<style>
-  :root{--navy:#0b2a4a;--blue:#1560bd;--accent:#00a8a8;--bg:#f6f8fb;--ink:#1c2733;--muted:#5b6b7b;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);background:var(--bg);line-height:1.7}
-  a{color:var(--blue);text-decoration:none}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-  header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff}
-  nav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;max-width:1080px;margin:0 auto;flex-wrap:wrap;gap:8px}
-  nav .brand{font-weight:800;font-size:18px;letter-spacing:.5px}
-  nav ul{display:flex;gap:18px;list-style:none;flex-wrap:wrap}
-  nav ul a{color:#dbe8f7;font-size:14px}
-  nav ul a:hover{color:#fff}
-  .hero{padding:70px 0 60px;text-align:center}
-  .hero h1{font-size:34px;font-weight:800;margin-bottom:10px}
-  .hero .en{color:#bcd6f2;font-size:15px;letter-spacing:1px;margin-bottom:22px}
-  .hero .mission{font-size:20px;font-weight:600;max-width:760px;margin:0 auto;color:#eaf3ff}
-  .hero .est{margin-top:18px;display:inline-block;background:rgba(255,255,255,.15);padding:6px 16px;border-radius:20px;font-size:13px}
-  section{padding:56px 0;border-bottom:1px solid #e6ecf3}
-  section h2{font-size:24px;color:var(--navy);margin-bottom:6px;font-weight:800}
-  section .sub{color:var(--muted);font-size:14px;margin-bottom:28px}
-  .grid{display:grid;gap:20px}
-  .g3{grid-template-columns:repeat(3,1fr)}
-  .g2{grid-template-columns:repeat(2,1fr)}
-  @media(max-width:760px){.g3,.g2{grid-template-columns:1fr}}
-  .card{background:#fff;border:1px solid #e6ecf3;border-radius:14px;padding:24px;box-shadow:0 2px 10px rgba(11,42,74,.04)}
-  .card h3{color:var(--blue);font-size:17px;margin-bottom:8px}
-  .card .num{font-size:13px;color:var(--accent);font-weight:800;letter-spacing:1px}
-  .tl{list-style:none;border-left:2px solid var(--accent);margin-left:8px}
-  .tl li{position:relative;padding:6px 0 6px 22px}
-  .tl li::before{content:"";position:absolute;left:-7px;top:14px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{background:#eef4fb;color:var(--navy);border:1px solid #dbe7f5;border-radius:8px;padding:8px 12px;font-size:14px}
-  .hl{background:linear-gradient(135deg,#eaf7f7,#eef4fb);border:1px solid #cfe8e8}
-  .contact p{color:var(--muted)}
-  footer{background:var(--navy);color:#bcd0e6;text-align:center;padding:28px;font-size:13px}
-  .badge{display:inline-block;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:6px;margin-left:8px;vertical-align:middle}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="첨단바이오융합연구소(HY-ABC)는 바이오빅데이터와 AI 기술을 융합하여 데이터 기반 바이오 융합 연구를 선도하는 한양대학교 부설 연구소입니다.">
+    <meta name="keywords" content="첨단바이오융합연구소, HY-ABC, 한양대학교, 바이오융합, AI, 생명과학">
+    <meta name="author" content="HanYang Institute of Advanced BioConvergence">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://hi-abc.hanyang.ac.kr/">
+    <meta property="og:title" content="첨단바이오융합연구소 - 한양대학교">
+    <meta property="og:description" content="바이오빅데이터와 AI 기술을 융합하여 데이터 기반 바이오 융합 연구를 선도합니다.">
+    <meta property="og:site_name" content="HY-ABC">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="첨단바이오융합연구소 - 한양대학교">
+    <meta name="twitter:description" content="바이오빅데이터와 AI 기술을 융합하여 데이터 기반 바이오 융합 연구를 선도합니다.">
+
+    <title>첨단바이오융합연구소 - HY-ABC, 한양대학교</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header>
-  <nav>
-    <div class="brand">HY-ABC · 첨단바이오융합연구소</div>
-    <ul>
-      <li><a href="#about">연구소소개</a></li>
-      <li><a href="#research">연구분야</a></li>
-      <li><a href="#org">조직·연혁</a></li>
-      <li><a href="#glocal">글로컬랩</a></li>
-      <li><a href="#facility">시설·장비</a></li>
-      <li><a href="#activity">학술활동</a></li>
-      <li><a href="#contact">연락처</a></li>
-    </ul>
-  </nav>
-  <div class="hero wrap">
-    <h1>한양대학교 첨단바이오융합연구소</h1>
-    <div class="en">HanYang Institute of Advanced BioConvergence (HY-ABC)</div>
-    <p class="mission">"바이오빅데이터와 AI 기술을 융합하여 4차 의료 산업을 선도합니다"</p>
-    <span class="est">Established 2023.06</span>
-  </div>
-</header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-main">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/" class="logo">
+                    <img src="images/logo-hyabc.svg" alt="HY-ABC 한양 첨단바이오융합연구소" class="logo-img" style="height: 44px; width: auto;">
+                    <span class="logo-text-group">
+                        <span class="logo-subtitle">HY-IBB</span>
+                        <span class="logo-text">한양 첨단바이오융합연구소</span>
+                    </span>
+                </a>
+            </div>
 
-<section id="about">
-  <div class="wrap">
-    <h2>연구소 소개</h2>
-    <p class="sub">설립목적 · 비전</p>
-    <div class="card hl">
-      <p>첨단바이오융합연구소(HY-ABC)는 <b>바이오빅데이터와 AI 기술의 융합</b>을 통해 발견–설계–활용의 선순환
-      연구 생태계를 구축하고, 4차 의료 산업을 선도하는 것을 목표로 합니다. AI 가상실험실에서 자율실험실로
-      이어지는 차세대 연구 인프라와 지산학병 협력을 기반으로 <b>EAST-ARC Valley</b> 바이오 혁신 거점을 지향합니다.</p>
-    </div>
-  </div>
-</section>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-<section id="research">
-  <div class="wrap">
-    <h2>3대 연구분야</h2>
-    <p class="sub">Research Areas</p>
-    <div class="grid g3">
-      <div class="card"><div class="num">01</div><h3>바이오빅데이터 &amp; AI</h3><p>Multi-omics 및 공공데이터 기반 융합연구로 생명현상을 예측·설계합니다.</p></div>
-      <div class="card"><div class="num">02</div><h3>디지털 바이오 파운드리</h3><p>차세대 바이오데이터 기반 신약개발 — AI 설계와 자동화 검증을 결합합니다.</p></div>
-      <div class="card"><div class="num">03</div><h3>정밀의료 &amp; 헬스케어</h3><p>바이오마커 발굴을 통한 정밀의료·헬스케어 혁신을 추구합니다.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="org">
-  <div class="wrap">
-    <h2>조직 · 연혁</h2>
-    <p class="sub">Organization &amp; History</p>
-    <div class="grid g2">
-      <div class="card">
-        <h3>연구소장</h3>
-        <p><b>현 소장(5대): 남진우 교수</b></p>
-        <ul class="tl" style="margin-top:12px">
-          <li>2023.06 연구소 설립</li>
-          <li>역대 소장: 심지원 · 이경민 · 김영필</li>
-          <li>현 소장(5대): 남진우</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>연구 규모</h3>
-        <div class="chips" style="margin-top:6px">
-          <span class="chip">참여연구원 45명</span>
-          <span class="chip">3대 핵심연구그룹</span>
-          <span class="chip">전용 연구공간 165평+57평</span>
-          <span class="chip">바이오공동기기 6코어·82대+</span>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="nav-item dropdown">
+                    <a href="pages/about.html" class="nav-link">연구소소개</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/about.html#intro">인사말</a></li>
+                        <li><a href="pages/about.html#vision">설립목적</a></li>
+                        <li><a href="pages/about.html#history">연혁</a></li>
+                        <li><a href="pages/about.html#organization">조직도</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="pages/members.html" class="nav-link">구성원</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/members.html#directors">연구소장</a></li>
+                        <li><a href="pages/members.html#researchers">참여연구자</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="pages/research.html" class="nav-link">연구성과</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/research.html#publications">주요논문</a></li>
+                        <li><a href="pages/research.html#projects">연구과제</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="pages/facilities.html" class="nav-link">시설·장비</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/facilities.html#infrastructure">인프라현황</a></li>
+                        <li><a href="pages/facilities.html#core">코어시설</a></li>
+                        <li><a href="pages/facilities.html#openlab">오픈랩</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="pages/activities.html" class="nav-link">학술활동</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/activities.html#symposium">국제심포지움</a></li>
+                        <li><a href="pages/activities.html#minisymposium">미니심포지움</a></li>
+                        <li><a href="pages/activities.html#seminar">세미나</a></li>
+                        <li><a href="pages/activities.html#workshop">워크숍</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="pages/news.html" class="nav-link">소식</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/news.html#notice">공지사항</a></li>
+                        <li><a href="pages/news.html#gallery">갤러리</a></li>
+                        <li><a href="pages/news.html#mou">MOU</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </nav>
 
-<section id="glocal">
-  <div class="wrap">
-    <h2>2026 글로컬랩 (거점형) <span class="badge">선정</span></h2>
-    <p class="sub">교육부 이공분야 학술연구지원사업 · AI바이오 특화 융합연구소 육성</p>
-    <div class="grid g3">
-      <div class="card"><h3>전략 1</h3><p>AI바이오 특화 융합연구소 육성 — 3대 핵심연구그룹 · AI가상실험실→자율실험실</p></div>
-      <div class="card"><h3>전략 2</h3><p>EAST-ARC Valley 거점 구축 — 왕십리~판교~안산 지산학 회랑, 첨단바이오융합컴플렉스</p></div>
-      <div class="card"><h3>전략 3</h3><p>Post-AI 인재양성 + 창업인큐베이션 — 양손잡이(Dual-Skill) 융합인재</p></div>
-    </div>
-    <div class="grid g3" style="margin-top:20px">
-      <div class="card hl"><h3>RG1 · 바이오소재 AI 설계</h3><p>해양 생물다양성 빅데이터, AI 구조예측 신규소재, 세포공장 바이오제조</p></div>
-      <div class="card hl"><h3>RG2 · 오믹스 정밀의료</h3><p>다중오믹스 통합분석, AI 바이오마커, 자연어 기반 가상실험실</p></div>
-      <div class="card hl"><h3>RG3 · RNA·펩타이드 치료제</h3><p>siRNA/ASO 설계, 인공항체(나노바디) 최적화, 고리형 펩타이드 표적설계</p></div>
-    </div>
-    <p style="margin-top:18px;color:var(--muted);font-size:14px">9년(3+3+3) 성과목표 — SCI(E) 논문 150편 · 특허 55건+ · 바이오소재 설계 50건+ · 창업 인큐베이팅</p>
-  </div>
-</section>
+    <!-- Hero Slider Section -->
+    <section class="hero-slider" id="heroSlider">
+        <!-- Slide 1: DNA/Genomics -->
+        <div class="hero-slide active">
+            <div class="hero-bg-image" style="background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1920&q=80');"></div>
+            <div class="hero-overlay hero-overlay-blue"></div>
+            <div class="hero-content">
+                <p class="hero-tag">HanYang Institute of Advanced BioConvergence</p>
+                <h1 class="hero-title">데이터 기반<br>첨단 바이오 융합 연구의 허브</h1>
+                <p class="hero-subtitle">바이오빅데이터와 AI 기술을 융합하여 4차 의료 산업을 선도합니다</p>
+                <a href="pages/about.html" class="btn btn-hero btn-primary">연구소 소개 →</a>
+            </div>
+        </div>
 
-<section id="facility">
-  <div class="wrap">
-    <h2>시설 · 장비</h2>
-    <p class="sub">Facilities · Core &amp; Open Lab</p>
-    <div class="grid g3">
-      <div class="card"><h3>바이오 공동기기센터</h3><p>유전체·이미징·세포분석·생체시료분석 등 <b>6개 코어 82대+</b> 첨단바이오장비 집적 + 오픈랩 (지역기업 공동활용)</p></div>
-      <div class="card"><h3>AI 컴퓨팅 인프라</h3><p>A100 80GB SXM 8장 + H100 · RTX3090 — AI 가상실험실 구동</p></div>
-      <div class="card"><h3>연구 공간</h3><p>기존 165평(행정실·연구원실·공동기기·회의실) + 신규 57평(소장실·전용연구실)</p></div>
-    </div>
-  </div>
-</section>
+        <!-- Slide 2: AI & Data -->
+        <div class="hero-slide">
+            <div class="hero-bg-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920&q=80');"></div>
+            <div class="hero-overlay hero-overlay-purple"></div>
+            <div class="hero-content">
+                <p class="hero-tag">AIxBIO International Symposium</p>
+                <h1 class="hero-title">AIxBIO:<br>AI와 생명과학의 만남</h1>
+                <p class="hero-subtitle">국제 심포지움 및 미니심포지움 시리즈 운영</p>
+                <a href="pages/activities.html" class="btn btn-hero btn-primary">학술활동 보기 →</a>
+            </div>
+        </div>
 
-<section id="activity">
-  <div class="wrap">
-    <h2>학술활동</h2>
-    <p class="sub">Symposium · Seminar · Workshop</p>
-    <div class="grid g2">
-      <div class="card"><h3>국제 심포지움</h3><p>AIxBIO International Symposium (2025.4.23) 등 국제 학술교류</p></div>
-      <div class="card"><h3>정례 세미나</h3><p>분기별 미니 심포지움 시리즈 · 매주 수요일 생명과학 세미나 · 워크숍</p></div>
-    </div>
-    <div class="card" style="margin-top:20px">
-      <h3>주요 연구성과</h3>
-      <p>최근 <i>Nature</i>, <i>British Medical Journal</i>, <i>Gastroenterology</i>, <i>Nature Biotechnology</i>(IF 25+) 등 고impact 논문 게재</p>
-    </div>
-  </div>
-</section>
+        <!-- Slide 3: Lab Infrastructure -->
+        <div class="hero-slide">
+            <div class="hero-bg-image" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=1920&q=80');"></div>
+            <div class="hero-overlay hero-overlay-teal"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Core Research Facilities</p>
+                <h1 class="hero-title">세계적 수준의<br>연구 인프라</h1>
+                <p class="hero-subtitle">유전체 · 이미징 · 컴퓨팅 · 바이오뱅킹 코어 시설 운영</p>
+                <a href="pages/facilities.html" class="btn btn-hero btn-primary">시설 안내 →</a>
+            </div>
+        </div>
 
-<section id="contact" class="contact">
-  <div class="wrap">
-    <h2>연락처</h2>
-    <p class="sub">Contact</p>
-    <div class="card">
-      <p>서울특별시 성동구 왕십리로 222, 한양대학교 학생회관 2층 93호</p>
-      <p>Tel. 02-2220-XXXX</p>
-      <p>공식 홈페이지: <a href="https://hi-abc.hanyang.ac.kr/" target="_blank" rel="noopener">https://hi-abc.hanyang.ac.kr/</a></p>
-    </div>
-  </div>
-</section>
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+            <button class="slider-dot active" data-slide="0" aria-label="슬라이드 1"></button>
+            <button class="slider-dot" data-slide="1" aria-label="슬라이드 2"></button>
+            <button class="slider-dot" data-slide="2" aria-label="슬라이드 3"></button>
+        </div>
 
-<footer>
-  © 2026 한양대학교 첨단바이오융합연구소 (HY-ABC) · HanYang Institute of Advanced BioConvergence<br>
-  본 페이지는 공식 홈페이지 콘텐츠를 기반으로 재구성한 GitHub Pages 사이트입니다.
-</footer>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Brief Section -->
+    <section class="section section-about animate-on-scroll" id="aboutSection">
+        <div class="container">
+            <div class="about-content-grid">
+                <div class="about-image-col">
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=800&q=80" alt="바이오 연구" class="about-main-image" loading="lazy">
+                        <div class="about-image-accent"></div>
+                    </div>
+                </div>
+                <div class="about-text-col">
+                    <h2 class="section-title section-title-left">연구소 소개</h2>
+                    <p class="intro-text intro-text-left">
+                        <strong>한양 첨단바이오융합연구소(HY-ABC)</strong>는 바이오빅데이터와 AI 기술을 융합하여 데이터 기반 바이오 융합 연구 및 4차 의료 산업을 선도하는 <strong>한양대학교 한양생명과학기술원(HY-IBB)</strong> 산하 부설 연구소입니다.
+                    </p>
+                    <p class="intro-text intro-text-left" style="margin-top: 1rem;">
+                        2023년 설립 이후, '고비용·저효율' 바이오에서 '저비용·고효율' 바이오로의 패러다임 전환을 이끌며, 국가 바이오 핵심 분야의 첨단 연구를 수행하고 있습니다.
+                    </p>
+                    <a href="pages/about.html" class="btn btn-outline" style="margin-top: 1.5rem;">자세히 보기 →</a>
+                </div>
+            </div>
+
+            <div class="stats-grid animate-on-scroll" id="statsGrid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1450b6" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="stat-number" data-target="41">0</div>
+                    <span class="stat-unit">명+</span>
+                    <p class="stat-label">참여연구자</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1450b6" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                    </div>
+                    <div class="stat-number" data-target="9">0</div>
+                    <span class="stat-unit">편</span>
+                    <p class="stat-label">주요 논문 (IF 25+)</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1450b6" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <div class="stat-number" data-target="5">0</div>
+                    <span class="stat-unit">개</span>
+                    <p class="stat-label">코어시설</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1450b6" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </div>
+                    <div class="stat-number" data-target="7">0</div>
+                    <span class="stat-unit">건</span>
+                    <p class="stat-label">MOU 체결</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Areas Section -->
+    <section class="section section-research-areas animate-on-scroll">
+        <div class="container">
+            <h2 class="section-title">연구 분야</h2>
+            <p class="section-desc">첨단 바이오 기술과 데이터 사이언스의 융합을 통해 미래 의료와 생명과학의 혁신을 이끕니다</p>
+
+            <div class="research-grid">
+                <div class="research-card animate-card">
+                    <div class="research-card-image">
+                        <img src="https://images.unsplash.com/photo-1614935151651-0bea6508db6b?w=600&q=80" alt="바이오빅데이터 & AI" loading="lazy">
+                        <div class="research-card-image-overlay"></div>
+                    </div>
+                    <div class="research-card-body">
+                        <div class="research-card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#00bcd4" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3>바이오빅데이터 & AI</h3>
+                        <p>다중오믹스, 공공데이터를 기반으로 한 혁신적인 생명정보-AI-바이오-헬스 융합 연구를 수행합니다.</p>
+                        <span class="research-card-link">자세히 보기 →</span>
+                    </div>
+                </div>
+
+                <div class="research-card animate-card">
+                    <div class="research-card-image">
+                        <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80" alt="디지털 바이오 파운드리" loading="lazy">
+                        <div class="research-card-image-overlay"></div>
+                    </div>
+                    <div class="research-card-body">
+                        <div class="research-card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1a73e8" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <h3>디지털 바이오 파운드리</h3>
+                        <p>차세대 바이오 데이터 기반 신약개발, 디지털 바이오 연구 및 혁신연구센터를 운영합니다.</p>
+                        <span class="research-card-link">자세히 보기 →</span>
+                    </div>
+                </div>
+
+                <div class="research-card animate-card">
+                    <div class="research-card-image">
+                        <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&q=80" alt="정밀의료 & 헬스케어" loading="lazy">
+                        <div class="research-card-image-overlay"></div>
+                    </div>
+                    <div class="research-card-body">
+                        <div class="research-card-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5014a8" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h3>정밀의료 & 헬스케어</h3>
+                        <p>바이오마커 발굴 및 임상 데이터 기반 정밀의료 연구로 맞춤형 의료의 미래를 열어갑니다.</p>
+                        <span class="research-card-link">자세히 보기 →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Publications Section -->
+    <section class="section section-publications animate-on-scroll" id="publicationsSection">
+        <div class="container">
+            <h2 class="section-title">주요 연구성과</h2>
+            <p class="section-desc">Nature, BMJ 등 세계 최고 수준의 저널에 게재된 연구소 소속 연구자들의 대표 논문</p>
+
+            <div class="publications-table-wrapper">
+                <table class="publications-table">
+                    <thead>
+                        <tr>
+                            <th>연도</th>
+                            <th>저널</th>
+                            <th>논문제목</th>
+                            <th>저자</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="year-badge">2025</span></td>
+                            <td><strong>British Medical Journal</strong><br><span class="impact-factor">IF 93.7</span></td>
+                            <td>Trajectories of breast density change over time and subsequent breast cancer risk: longitudinal study</td>
+                            <td>박보영 교수<br><small class="text-muted">연구그룹장</small></td>
+                        </tr>
+                        <tr>
+                            <td><span class="year-badge">2025</span></td>
+                            <td><strong>Gastroenterology</strong><br><span class="impact-factor">IF 25.1</span></td>
+                            <td>Preventive Effect of Helicobacter pylori Treatment on Gastric Cancer Incidence and Mortality</td>
+                            <td>박보영 교수<br><small class="text-muted">연구그룹장</small></td>
+                        </tr>
+                        <tr>
+                            <td><span class="year-badge">2024</span></td>
+                            <td><strong>Nature</strong><br><span class="impact-factor">IF 50.5</span></td>
+                            <td>Drosophila immune cells transport oxygen through PPO2 protein phase transition</td>
+                            <td>심지원 교수<br><small class="text-muted">연구소장</small></td>
+                        </tr>
+                        <tr>
+                            <td><span class="year-badge">2024</span></td>
+                            <td><strong>Nature Biotechnology</strong><br><span class="impact-factor">IF 33.1</span></td>
+                            <td>Direct measurement of engineered cancer mutations and their transcriptional phenotypes in single cells</td>
+                            <td>김헌석 교수<br><small class="text-muted">간사</small></td>
+                        </tr>
+                        <tr>
+                            <td><span class="year-badge">2023</span></td>
+                            <td><strong>Nat. Biomed. Eng.</strong><br><span class="impact-factor">IF 26.3</span></td>
+                            <td>Ultrafast prediction of somatic structural variations by filtering out reads matched to pan-genome k-mer sets</td>
+                            <td>남진우 교수<br><small class="text-muted">연구소장</small></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-cta">
+                <a href="pages/research.html" class="btn btn-secondary">전체 연구성과 보기 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Directors Section -->
+    <section class="section section-directors animate-on-scroll" id="directorsSection">
+        <div class="directors-bg-image" style="background-image: url('https://images.unsplash.com/photo-1557821552-17105176677c?w=1920&q=80');"></div>
+        <div class="directors-bg-overlay"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h2 class="section-title section-title-white">역대 연구소장</h2>
+
+            <!-- Current Director - Large Card -->
+            <div class="current-director-card animate-card">
+                <div class="director-card-image">
+                    <img src="images/members/namjinwoo.jpg" alt="남진우 교수" loading="lazy">
+                </div>
+                <div class="director-card-content">
+                    <div class="director-badge">5대 (현)</div>
+                    <h3 class="director-name">남진우</h3>
+                    <p class="director-title">한양대학교 자연과학대학 생명과학과 교수</p>
+                    <p class="director-period">2026.03~</p>
+                    <div class="director-divider"></div>
+                    <h4 class="director-section-title">연구분야</h4>
+                    <p class="director-research">바이오인포매틱스, 유전체학</p>
+                </div>
+            </div>
+
+            <!-- Previous Directors - Grid -->
+            <div class="previous-directors-grid">
+                <!-- 4대 김영필 -->
+                <div class="director-card-small animate-card">
+                    <div class="director-card-small-image">
+                        <img src="images/members/kimyoungpil.jpg" alt="김영필 교수" loading="lazy">
+                    </div>
+                    <div class="director-card-small-content">
+                        <div class="director-badge-small">4대</div>
+                        <h4 class="director-name-small">김영필</h4>
+                        <p class="director-info-small">생명과학과</p>
+                        <p class="director-period-small">2025.04~2026.02</p>
+                        <p class="director-research-small">나노바이올로지</p>
+                    </div>
+                </div>
+
+                <!-- 3대 이경민 -->
+                <div class="director-card-small animate-card">
+                    <div class="director-card-small-image">
+                        <img src="images/members/leekyungmin.jpg" alt="이경민 교수" loading="lazy">
+                    </div>
+                    <div class="director-card-small-content">
+                        <div class="director-badge-small">3대</div>
+                        <h4 class="director-name-small">이경민</h4>
+                        <p class="director-info-small">생명과학과</p>
+                        <p class="director-period-small">2025.03~2025.04</p>
+                        <p class="director-research-small">암생물학</p>
+                    </div>
+                </div>
+
+                <!-- 2대 심지원 -->
+                <div class="director-card-small animate-card">
+                    <div class="director-card-small-image">
+                        <img src="images/members/shimjiwon.jpg" alt="심지원 교수" loading="lazy">
+                    </div>
+                    <div class="director-card-small-content">
+                        <div class="director-badge-small">2대</div>
+                        <h4 class="director-name-small">심지원</h4>
+                        <p class="director-info-small">생명과학과</p>
+                        <p class="director-period-small">2023.12~2025.02</p>
+                        <p class="director-research-small">발생유전학</p>
+                    </div>
+                </div>
+
+                <!-- 1대 남진우 -->
+                <div class="director-card-small animate-card">
+                    <div class="director-card-small-image">
+                        <img src="images/members/namjinwoo.jpg" alt="남진우 교수" loading="lazy">
+                    </div>
+                    <div class="director-card-small-content">
+                        <div class="director-badge-small">1대</div>
+                        <h4 class="director-name-small">남진우</h4>
+                        <p class="director-info-small">생명과학과</p>
+                        <p class="director-period-small">2023.06~2023.11</p>
+                        <p class="director-research-small">바이오인포매틱스</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Activities Section -->
+    <section class="section section-activities animate-on-scroll" id="activitiesSection">
+        <div class="container">
+            <h2 class="section-title">학술활동</h2>
+
+            <div class="activities-grid">
+                <div class="activity-card animate-card">
+                    <div class="activity-card-image">
+                        <img src="images/activities/symposium-2025-forum.jpg" alt="AIxBIO 국제 심포지움" loading="lazy">
+                        <div class="activity-card-badge">국제행사</div>
+                    </div>
+                    <div class="activity-card-body">
+                        <div class="activity-date-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            2025.4.23
+                        </div>
+                        <h3>AIxBIO 국제 심포지움</h3>
+                        <p>AIxBIO Global Forum — 전 세계 연구자들과 AI-생명과학 융합 연구 동향을 공유합니다.</p>
+                        <a href="pages/activities.html#symposium" class="activity-link">자세히 보기 →</a>
+                    </div>
+                </div>
+
+                <div class="activity-card animate-card">
+                    <div class="activity-card-image">
+                        <img src="images/activities/mini-sym-10.jpg" alt="한양바이오 국제미니심포지움" loading="lazy">
+                        <div class="activity-card-badge">시리즈</div>
+                    </div>
+                    <div class="activity-card-body">
+                        <div class="activity-date-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            2026.3 ~ 7
+                        </div>
+                        <h3>제10회 한양바이오 국제미니심포지움</h3>
+                        <p>매년 상반기·하반기 1회씩 시리즈로 운영하는 국제 심포지움으로 글로벌 네트워크를 구축합니다.</p>
+                        <a href="pages/activities.html#minisymposium" class="activity-link">자세히 보기 →</a>
+                    </div>
+                </div>
+
+                <div class="activity-card animate-card">
+                    <div class="activity-card-image">
+                        <img src="images/activities/seminar-2026-1.jpeg" alt="생명과학수요세미나" loading="lazy">
+                        <div class="activity-card-badge">정기</div>
+                    </div>
+                    <div class="activity-card-body">
+                        <div class="activity-date-tag">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            매주 수요일
+                        </div>
+                        <h3>생명과학수요세미나</h3>
+                        <p>매 학기 매주 수요일 진행하는 세미나로, 국내 저명 연구자를 초청하여 최신 연구 동향을 소개합니다.</p>
+                        <a href="pages/activities.html#seminar" class="activity-link">자세히 보기 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section with Background -->
+    <section class="section section-timeline animate-on-scroll" id="timelineSection">
+        <div class="timeline-bg-image" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80');"></div>
+        <div class="timeline-bg-overlay"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h2 class="section-title section-title-white">연혁 하이라이트</h2>
+
+            <div class="timeline">
+                <div class="timeline-item animate-card">
+                    <div class="timeline-date">2023.06</div>
+                    <div class="timeline-content">
+                        <h4>연구소 설립인가</h4>
+                        <p>첨단바이오융합연구소 설립 · 1대 연구소장 남진우 교수 취임 · 국제미니심포지움 시리즈 시작</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-card">
+                    <div class="timeline-date">2024</div>
+                    <div class="timeline-content">
+                        <h4>학술활동 확대</h4>
+                        <p>AI바이오 국제 심포지움 개최 · 국제미니심포지움 시리즈 확대 · Boston Children's Hospital MOU</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-card">
+                    <div class="timeline-date">2025</div>
+                    <div class="timeline-content">
+                        <h4>협력 네트워크 강화</h4>
+                        <p>3대 이경민 · 4대 김영필 교수 소장 취임 · KBSI 공동연구 · AIxBIO Distinguished Lecture</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-card">
+                    <div class="timeline-date">2026</div>
+                    <div class="timeline-content">
+                        <h4>현재 운영 중</h4>
+                        <p>5대 소장 남진우 교수 취임 · 바이오넥서스 MOU 체결 · 제10회 국제미니심포지움 시리즈 진행</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section section-cta-banner">
+        <div class="cta-bg-image" style="background-image: url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1920&q=80');"></div>
+        <div class="cta-bg-overlay"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="cta-banner-content">
+                <h2>함께 만들어가는 첨단 바이오의 미래</h2>
+                <p>첨단바이오융합연구소는 국내외 연구자 및 산업체와의 협력을 환영합니다</p>
+                <div class="cta-buttons">
+                    <a href="pages/members.html" class="btn btn-hero btn-primary">구성원 보기</a>
+                    <a href="pages/news.html#mou" class="btn btn-hero btn-outline-white">MOU 현황 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-subtitle">HY-IBB</span>
+                        <span class="logo-text">한양 첨단바이오융합연구소</span>
+                    </div>
+                    <p class="footer-description">바이오빅데이터와 AI 기술을 융합하여 데이터 기반 바이오 융합 연구를 선도하는 한양대학교 부설 연구소입니다.</p>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h4>연락처</h4>
+                    <p class="address">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        한양대학교 학생회관 2층 93호<br>
+                        <span style="margin-left: 24px;">서울특별시 성동구 왕십리로 222</span>
+                    </p>
+                    <p class="phone">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Tel. 02-2220-XXXX
+                    </p>
+                </div>
+
+                <div class="footer-column footer-links">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="pages/about.html">연구소소개</a></li>
+                        <li><a href="pages/members.html">구성원</a></li>
+                        <li><a href="pages/research.html">연구성과</a></li>
+                        <li><a href="pages/facilities.html">시설·장비</a></li>
+                        <li><a href="pages/activities.html">학술활동</a></li>
+                        <li><a href="pages/news.html">소식</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-affiliation">
+                    <h4>소속기관</h4>
+                    <p>한양대학교 한양생명과학기술원(HY-ABC)</p>
+                    <div class="footer-ext-links">
+                        <a href="https://www.hanyang.ac.kr" target="_blank" rel="noopener noreferrer">한양대학교 →</a>
+                        <a href="http://hy-ibb.hanyang.ac.kr" target="_blank" rel="noopener noreferrer">한양생명과학기술원 →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2026 첨단바이오융합연구소 HY-ABC, 한양대학교. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>

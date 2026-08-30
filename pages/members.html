@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="첨단바이오융합연구소 구성원 소개 페이지 - 연구소장, 연구그룹장, 운영위원, 소속 연구원">
+    <meta name="keywords" content="구성원, 연구팀, 교수, 연구원">
+    <meta name="author" content="Hanyang Institute - Advanced Bio-Convergence">
+
+    <title>구성원 - 첨단바이오융합연구소, HY-ABC</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS - dual path for compatibility -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* ============================================
+           Members Page Specific Styles
+           ============================================ */
+
+        /* Page Header with Breadcrumb */
+        .page-header {
+            background: linear-gradient(135deg, rgba(10, 40, 80, 0.9) 0%, rgba(84, 20, 168, 0.8) 100%);
+            padding: var(--spacing-3xl) 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: color var(--transition-normal);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--color-accent);
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .page-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Hero Banner */
+        .members-hero {
+            background: linear-gradient(135deg, rgba(0, 188, 212, 0.1) 0%, rgba(20, 80, 182, 0.1) 100%);
+            padding: var(--spacing-2xl) 0;
+            border-bottom: 2px solid var(--color-accent);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .members-hero .container {
+            text-align: center;
+        }
+
+        .members-hero p {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        .members-section {
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .members-section-title {
+            font-size: 1.8rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 3px solid var(--color-accent);
+            display: inline-block;
+        }
+
+        /* Current Director - Featured Card */
+        .featured-director-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-2xl);
+            align-items: center;
+            background: linear-gradient(135deg, rgba(20, 80, 182, 0.05) 0%, rgba(84, 20, 168, 0.05) 100%);
+            padding: var(--spacing-2xl);
+            border-radius: var(--border-radius-xl);
+            border: 2px solid var(--color-accent);
+            margin-bottom: var(--spacing-3xl);
+            transition: all var(--transition-normal);
+        }
+
+        .featured-director-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .featured-director-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius-lg);
+            aspect-ratio: 1;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .featured-director-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-normal);
+        }
+
+        .featured-director-card:hover .featured-director-image img {
+            transform: scale(1.05);
+        }
+
+        .featured-director-info h3 {
+            font-size: 2rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .featured-director-info .title {
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .featured-director-info .department {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.85rem;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .featured-director-info .bio-title {
+            font-size: 0.9rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .featured-director-info .bio-text {
+            color: var(--color-text-light);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .featured-director-info .research-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+
+        .featured-director-info .research-topics span {
+            background: var(--color-bg-light);
+            color: var(--color-primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.85rem;
+            border: 1px solid var(--color-accent);
+        }
+
+        /* Group Leaders Grid */
+        .leaders-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .leader-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+        }
+
+        .leader-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .leader-card-image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, rgba(20, 80, 182, 0.1) 0%, rgba(84, 20, 168, 0.1) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .leader-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-card-image.placeholder {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary) 100%);
+            color: white;
+            font-size: 3rem;
+            font-weight: var(--font-weight-bold);
+        }
+
+        .leader-card-content {
+            padding: var(--spacing-lg);
+        }
+
+        .leader-card-content h4 {
+            font-size: 1.2rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .leader-card-content .position {
+            font-size: 0.9rem;
+            color: var(--color-accent);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .leader-card-content .department {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            line-height: 1.6;
+        }
+
+        /* Officers & Secretary */
+        .officers-section {
+            background: var(--color-bg-light);
+            padding: var(--spacing-2xl);
+            border-radius: var(--border-radius-lg);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .officers-subsection {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .officers-subsection:last-child {
+            margin-bottom: 0;
+        }
+
+        .officers-subsection h4 {
+            font-size: 1rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-primary);
+            margin-bottom: var(--spacing-sm);
+            display: inline-block;
+            background: white;
+            padding: 0.25rem 0.75rem;
+            border-left: 4px solid var(--color-accent);
+        }
+
+        .officers-list {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .officers-list .officer-name {
+            color: var(--color-primary);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        /* All Members by Department */
+        .members-list-section {
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .members-department-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: var(--spacing-xl);
+            align-items: flex-start;
+            padding: var(--spacing-lg) var(--spacing-xl);
+            border-bottom: 1px solid var(--color-border);
+            transition: all var(--transition-normal);
+        }
+
+        .members-department-row:hover {
+            background: var(--color-bg-light);
+        }
+
+        .members-department-row:last-child {
+            border-bottom: none;
+        }
+
+        .department-name {
+            font-weight: var(--font-weight-semibold);
+            color: var(--color-primary);
+            font-size: 0.95rem;
+        }
+
+        .department-count {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            padding: 0.15rem 0.5rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.75rem;
+            font-weight: var(--font-weight-bold);
+            margin-left: var(--spacing-xs);
+        }
+
+        .members-names {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .members-names span {
+            display: inline;
+        }
+
+        .members-names span:not(:last-child)::after {
+            content: ', ';
+            margin-right: 0.25rem;
+        }
+
+        /* ============================================
+           Past Directors Grid
+           ============================================ */
+        .previous-directors-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--spacing-lg);
+        }
+
+        .director-card-small {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+            text-align: center;
+        }
+
+        .director-card-small:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .director-card-small-image {
+            width: 100%;
+            aspect-ratio: 1;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(20, 80, 182, 0.1) 0%, rgba(84, 20, 168, 0.1) 100%);
+        }
+
+        .director-card-small-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .director-card-small-content {
+            padding: var(--spacing-md);
+        }
+
+        .director-badge-small {
+            display: inline-block;
+            background: var(--color-bg-light);
+            color: var(--color-primary);
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--border-radius-sm);
+            font-size: 0.75rem;
+            font-weight: var(--font-weight-bold);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .director-badge-small.current {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        .director-name-small {
+            font-size: 1rem;
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .director-info-small {
+            font-size: 0.8rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.25rem;
+        }
+
+        .director-period-small {
+            font-size: 0.75rem;
+            color: var(--color-text-lighter);
+            margin-bottom: 0.25rem;
+        }
+
+        .director-research-small {
+            font-size: 0.75rem;
+            color: var(--color-accent);
+            font-weight: var(--font-weight-medium);
+        }
+
+        /* ============================================
+           Responsive Styles
+           ============================================ */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .featured-director-card {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+
+            .previous-directors-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--spacing-md);
+            }
+
+            .leaders-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-lg);
+            }
+
+            .members-department-row {
+                grid-template-columns: 150px 1fr;
+                gap: var(--spacing-lg);
+                padding: var(--spacing-md) var(--spacing-lg);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.6rem;
+            }
+
+            .page-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .featured-director-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .previous-directors-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .leaders-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .members-section-title {
+                font-size: 1.3rem;
+            }
+
+            .members-department-row {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-sm);
+                padding: var(--spacing-md);
+            }
+
+            .department-name {
+                margin-bottom: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-main">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="../" class="logo">
+                    <img src="../images/logo-hyabc.svg" alt="HY-ABC 한양 첨단바이오융합연구소" class="logo-img" style="height: 44px; width: auto;">
+                    <span class="logo-text-group">
+                        <span class="logo-subtitle">HY-IBB</span>
+                        <span class="logo-text">한양 첨단바이오융합연구소</span>
+                    </span>
+                </a>
+            </div>
+
+            <button class="navbar-toggle" id="navbarToggle" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="nav-item dropdown">
+                    <a href="../pages/about.html" class="nav-link">연구소소개</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/about.html#intro">인사말</a></li>
+                        <li><a href="../pages/about.html#vision">설립목적</a></li>
+                        <li><a href="../pages/about.html#history">연혁</a></li>
+                        <li><a href="../pages/about.html#organization">조직도</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="../pages/members.html" class="nav-link">구성원</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#directors">연구소장</a></li>
+                        <li><a href="#researchers">참여연구자</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="../pages/research.html" class="nav-link">연구성과</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/research.html#publications">주요논문</a></li>
+                        <li><a href="../pages/research.html#projects">연구과제</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="../pages/facilities.html" class="nav-link">시설·장비</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/facilities.html#infrastructure">인프라현황</a></li>
+                        <li><a href="../pages/facilities.html#core">코어시설</a></li>
+                        <li><a href="../pages/facilities.html#openlab">오픈랩</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="../pages/activities.html" class="nav-link">학술활동</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/activities.html#symposium">국제심포지움</a></li>
+                        <li><a href="../pages/activities.html#minisymposium">미니심포지움</a></li>
+                        <li><a href="../pages/activities.html#seminar">세미나</a></li>
+                        <li><a href="../pages/activities.html#workshop">워크숍</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="../pages/news.html" class="nav-link">소식</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/news.html#notice">공지사항</a></li>
+                        <li><a href="../pages/news.html#gallery">갤러리</a></li>
+                        <li><a href="../pages/news.html#mou">MOU</a></li>
+                        <li><a href="news.html#publications">발간물</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header with Breadcrumb -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../">홈</a>
+                <span>></span>
+                <span>구성원</span>
+            </div>
+            <h1 class="page-title">구성원</h1>
+            <p class="page-subtitle">첨단바이오융합연구소의 소속 연구자들을 소개합니다</p>
+        </div>
+    </section>
+
+    <!-- Hero Banner -->
+    <section class="members-hero">
+        <div class="container">
+            <p>우리 연구소는 바이오빅데이터와 AI 기술의 융합을 통해 첨단 생명과학 연구를 선도하는 국내 최고 수준의 연구진으로 구성되어 있습니다.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Section 1: Current Director -->
+        <section class="members-section" id="directors">
+            <h2 class="members-section-title">연구소장</h2>
+
+            <div class="featured-director-card">
+                <div class="featured-director-image">
+                    <img src="../images/members/namjinwoo.png" alt="남진우 교수" loading="lazy">
+                </div>
+                <div class="featured-director-info">
+                    <h3>남진우</h3>
+                    <p class="title">교수 (5대 연구소장)</p>
+                    <span class="department">자연과학대학 생명과학과</span>
+
+                    <div class="bio-title">약력</div>
+                    <p class="bio-text">
+                        한양대학교 자연과학대학 생명과학과 교수로서 Bioinformatics & Genomics Lab을 운영하고 있으며, 바이오인포매틱스 분야의 전문가입니다.
+                    </p>
+
+                    <div class="bio-title">연구주제</div>
+                    <div class="research-topics">
+                        <span>바이오인포매틱스</span>
+                        <span>유전체학</span>
+                        <span>구조변이 예측</span>
+                        <span>범유전체 분석</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: 역대 연구소장 -->
+        <section class="members-section" id="past-directors">
+            <h2 class="members-section-title">역대 연구소장</h2>
+
+            <div class="previous-directors-grid">
+                <!-- 5대 남진우 (현) -->
+                <div class="director-card-small">
+                    <div class="director-card-small-image">
+                        <img src="../images/members/namjinwoo.png" alt="남진우 교수" loading="lazy">
+                    </div>
+                    <div class="director-card-small-content">
+                        <div class="director-badge-small current">5대 (현)</div>
+                        <h4 class="director-name-small">남진우</h4>
+                        <p class="director-info-small">생명과학과</p>
+                        <p class="director-period-small">2026.03~</p>
+                        <p class="director-research-small">바이오인포매틱스, 유전체학</p>
+                    </div>
+                </div>
+
+                <!-- 4대 김영필 -->
+                <div class="director-card-small">
+                    <div class="director-card-small-image">
+                        <img src="../images/members/kimyoungpil.jpeg" alt="김영필 교수" loading="lazy">
+                    </div>
+                    <div class="director-card-small-content">
+                        <div class="director-badge-small">4대</div>
+                        <h4 class="director-name-small">김영필</h4>
+                        <p class="director-info-small">생명과학과</p>
+                        <p class="director-period-small">2025.04~2026.02</p>
+                        <p class="director-research-small">나노바이올로지</p>
+                    </div>
+                </div>
+
+                <!-- 3대 이경민 -->
+                <div class="director-card-small">
+                    <div class="director-card-small-image">
+                        <img src="../images/members/leekyungmin.jpg" alt="이경민 교수" loading="lazy">
+                    </div>
+                    <div class="director-card-small-content">
+                        <div class="director-badge-small">3대</div>
+                        <h4 class="director-name-small">이경민</h4>
+                        <p class="director-info-small">생명과학과</p>
+                        <p class="director-period-small">2025.03~2025.04</p>
+                        <p class="director-research-small">암생물학</p>
+                    </div>
+                </div>
+
+                <!-- 2대 심지원 -->
+                <div class="director-card-small">
+                    <div class="director-card-small-image">
+                        <img src="../images/members/shimjiwon.jpg" alt="심지원 교수" loading="lazy">
+                    </div>
+                    <div class="director-card-small-content">
+                        <div class="director-badge-small">2대</div>
+                        <h4 class="director-name-small">심지원</h4>
+                        <p class="director-info-small">생명과학과</p>
+                        <p class="director-period-small">2023.12~2025.02</p>
+                        <p class="director-research-small">발생유전학</p>
+                    </div>
+                </div>
+
+                <!-- 1대 남진우 -->
+                <div class="director-card-small">
+                    <div class="director-card-small-image">
+                        <img src="../images/members/namjinwoo.png" alt="남진우 교수" loading="lazy">
+                    </div>
+                    <div class="director-card-small-content">
+                        <div class="director-badge-small">1대</div>
+                        <h4 class="director-name-small">남진우</h4>
+                        <p class="director-info-small">생명과학과</p>
+                        <p class="director-period-small">2023.06~2023.12</p>
+                        <p class="director-research-small">바이오인포매틱스, 유전체학</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Research Group Leaders -->
+        <section class="members-section">
+            <h2 class="members-section-title">연구그룹장</h2>
+
+            <div class="leaders-grid">
+                <!-- Leader 1: 김영필 -->
+                <div class="leader-card">
+                    <div class="leader-card-image">
+                        <img src="../images/members/kimyoungpil.jpeg" alt="김영필 교수" loading="lazy">
+                    </div>
+                    <div class="leader-card-content">
+                        <h4>김영필</h4>
+                        <p class="position">연구그룹장</p>
+                        <p class="department">자연과학대학 생명과학과<br>(전임교원)</p>
+                    </div>
+                </div>
+
+                <!-- Leader 2: 박범수 -->
+                <div class="leader-card">
+                    <div class="leader-card-image">
+                        <img src="../images/members/parkbumsu.jpeg" alt="박범수 교수" loading="lazy">
+                    </div>
+                    <div class="leader-card-content">
+                        <h4>박범수</h4>
+                        <p class="position">연구그룹장</p>
+                        <p class="department">자연과학대학 생명과학과<br>(전임교원)</p>
+                    </div>
+                </div>
+
+                <!-- Leader 3: 전대원 -->
+                <div class="leader-card">
+                    <div class="leader-card-image">
+                        <img src="../images/members/jeondaewon.png" alt="전대원 교수" loading="lazy">
+                    </div>
+                    <div class="leader-card-content">
+                        <h4>전대원</h4>
+                        <p class="position">연구그룹장</p>
+                        <p class="department">의과대학 내과학교실<br>(전임교원)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Officers & Secretary -->
+        <section class="members-section">
+            <h2 class="members-section-title">운영위원 및 간사</h2>
+
+            <div class="officers-section">
+                <div class="officers-subsection">
+                    <h4>운영위원</h4>
+                    <div class="officers-list">
+                        <span class="officer-name">김태욱</span> 교수 (자연과학대학 생명과학과),
+                        <span class="officer-name">박보영</span> 교수 (의과대학 예방의학교실),
+                        <span class="officer-name">배상철</span> 교수 (의과대학 내과학교실),
+                        <span class="officer-name">최동호</span> 교수 (의과대학 외과학교실),
+                        <span class="officer-name">최재훈</span> 교수 (자연과학대학 생명과학과),
+                        <span class="officer-name">최제민</span> 교수 (자연과학대학 생명과학과)
+                    </div>
+                </div>
+
+                <div class="officers-subsection">
+                    <h4>간사</h4>
+                    <div class="officers-list">
+                        <span class="officer-name">김헌석</span> 교수 (자연과학대학 생명과학과),
+                        <span class="officer-name">하유진</span> 교수 (자연과학대학 생명과학과)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: All Members by Department -->
+        <section class="members-section" id="researchers">
+            <h2 class="members-section-title">소속 연구원</h2>
+
+            <div class="members-list-section">
+                <!-- Department 1: 의과대학 -->
+                <div class="members-department-row">
+                    <div class="department-name">
+                        의과대학
+                        <span class="department-count">9</span>
+                    </div>
+                    <div class="members-names">
+                        <span>전대원</span>
+                        <span>박보영</span>
+                        <span>배상철</span>
+                        <span>최동호</span>
+                        <span>김유정</span>
+                        <span>이정연</span>
+                        <span>최종욱</span>
+                        <span>허준호</span>
+                        <span>황우창</span>
+                    </div>
+                </div>
+
+                <!-- Department 2: 자연과학대학 생명과학과 -->
+                <div class="members-department-row">
+                    <div class="department-name">
+                        자연과학대학<br>생명과학과
+                        <span class="department-count">20</span>
+                    </div>
+                    <div class="members-names">
+                        <span>남진우</span>
+                        <span>김영필</span>
+                        <span>박범수</span>
+                        <span>김태욱</span>
+                        <span>최재훈</span>
+                        <span>최제민</span>
+                        <span>김헌석</span>
+                        <span>하유진</span>
+                        <span>김도현</span>
+                        <span>김정목</span>
+                        <span>신인철</span>
+                        <span>안주홍</span>
+                        <span>유승준</span>
+                        <span>이경민</span>
+                        <span>이원철</span>
+                        <span>이진원</span>
+                        <span>진언선</span>
+                        <span>최준호</span>
+                        <span>박규성</span>
+                        <span>김주환</span>
+                    </div>
+                </div>
+
+                <!-- Department 3: 의생명공학전문대학원 -->
+                <div class="members-department-row">
+                    <div class="department-name">
+                        의생명공학<br>전문대학원
+                        <span class="department-count">2</span>
+                    </div>
+                    <div class="members-names">
+                        <span>오요한</span>
+                        <span>황정욱</span>
+                    </div>
+                </div>
+
+                <!-- Department 4: 한양생명과학기술원 -->
+                <div class="members-department-row">
+                    <div class="department-name">
+                        한양생명과학<br>기술원
+                        <span class="department-count">1</span>
+                    </div>
+                    <div class="members-names">
+                        <span>조재원</span>
+                    </div>
+                </div>
+
+                <!-- Department 5: 첨단바이오융합연구소 -->
+                <div class="members-department-row">
+                    <div class="department-name">
+                        첨단바이오융합<br>연구소
+                        <span class="department-count">3</span>
+                    </div>
+                    <div class="members-names">
+                        <span>박석주</span>
+                        <span>이도헌</span>
+                        <span>최민학</span>
+                    </div>
+                </div>
+
+                <!-- Department 6: 의학혁신융합연구소 -->
+                <div class="members-department-row">
+                    <div class="department-name">
+                        의학혁신융합<br>연구소
+                        <span class="department-count">2</span>
+                    </div>
+                    <div class="members-names">
+                        <span>김혜영</span>
+                        <span>이승민</span>
+                    </div>
+                </div>
+
+                <!-- Department 7: 자연과학연구소 -->
+                <div class="members-department-row">
+                    <div class="department-name">
+                        자연과학연구소
+                        <span class="department-count">2</span>
+                    </div>
+                    <div class="members-names">
+                        <span>손승한</span>
+                        <span>염지수</span>
+                    </div>
+                </div>
+
+                <!-- Department 8: 의생명연구원 -->
+                <div class="members-department-row">
+                    <div class="department-name">
+                        의생명연구원
+                        <span class="department-count">1</span>
+                    </div>
+                    <div class="members-names">
+                        <span>최희주</span>
+                    </div>
+                </div>
+
+                <!-- Department 9: 생체시료-다중오믹스 디지털바이오분석지원센터 -->
+                <div class="members-department-row">
+                    <div class="department-name">
+                        생체시료-다중<br>오믹스 디지털<br>바이오분석<br>지원센터
+                        <span class="department-count">1</span>
+                    </div>
+                    <div class="members-names">
+                        <span>박태기</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-subtitle">HY-IBB</span>
+                        <span class="logo-text">한양 첨단바이오융합연구소</span>
+                    </div>
+                    <p class="footer-description">바이오빅데이터와 AI 기술을 융합하여 데이터 기반 바이오 융합 연구를 선도하는 한양대학교 부설 연구소입니다.</p>
+                </div>
+
+                <div class="footer-column footer-contact">
+                    <h4>연락처</h4>
+                    <p class="address">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        한양대학교 학생회관 2층 93호<br>
+                        <span style="margin-left: 24px;">서울특별시 성동구 왕십리로 222</span>
+                    </p>
+                    <p class="phone">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Tel. 02-2220-XXXX
+                    </p>
+                    <p class="email">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        Email. hi-abc@hanyang.ac.kr
+                    </p>
+                </div>
+
+                <div class="footer-column footer-links">
+                    <h4>빠른 링크</h4>
+                    <ul>
+                        <li><a href="../pages/about.html">연구소 소개</a></li>
+                        <li><a href="../pages/research.html">연구성과</a></li>
+                        <li><a href="../pages/facilities.html">시설 안내</a></li>
+                        <li><a href="../pages/activities.html">학술활동</a></li>
+                        <li><a href="../pages/news.html">소식</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-social">
+                    <h4>팔로우</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 002.856-3.515 10 10 0 01-2.836.776 4.958 4.958 0 002.165-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417a9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.05-8.836 0-9.754h3.554v1.391c.43-.668 1.204-1.62 2.928-1.62 2.138 0 3.745 1.398 3.745 4.403v5.58zM5.337 9.433c-1.144 0-1.915-.762-1.915-1.715 0-.955.77-1.715 1.948-1.715 1.178 0 1.915.76 1.948 1.715 0 .953-.77 1.715-1.981 1.715zm1.946 11.019H3.391V9.678h3.892v10.774zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 HanYang Institute of Advanced BioConvergence (HY-ABC). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

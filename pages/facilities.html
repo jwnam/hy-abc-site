@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시설·장비 - 첨단바이오융합연구소</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --color-navy: #0a2850;
+            --color-teal: #00bcd4;
+            --color-purple: #5014a8;
+            --color-dark-gray: #1a1a1a;
+            --color-light-gray: #f5f5f5;
+            --color-text-dark: #333;
+            --color-text-light: #666;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        /* Page Header - Unsplash Background + Gradient Overlay */
+        .page-header {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(80, 20, 168, 0.75) 0%, rgba(122, 45, 191, 0.75) 100%);
+            z-index: 1;
+        }
+
+        .page-header > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Particle dots overlay effect */
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-header-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-top: 0.5rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 0.95rem;
+            opacity: 0.95;
+            margin-top: 1rem;
+        }
+
+        .breadcrumb span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .breadcrumb span:not(:last-child)::after {
+            content: ">";
+            margin-left: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Stats Section - Glassmorphism */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #f5f5f5 0%, #fafafa 100%);
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-teal);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Section */
+        .section {
+            padding: 3rem 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-navy);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::before {
+            content: "◈";
+            color: var(--color-teal);
+            font-size: 1.5rem;
+        }
+
+        /* Infrastructure Section */
+        .infrastructure-image {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            margin-bottom: 3rem;
+        }
+
+        .infrastructure-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .infrastructure-rooms {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .room-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            border-left: 4px solid var(--color-teal);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .room-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .room-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            color: var(--color-teal);
+        }
+
+        .room-number {
+            font-weight: 700;
+            color: var(--color-navy);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .room-description {
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Core Facilities */
+        .cores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .core-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .core-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+        }
+
+        .core-header {
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            color: white;
+            border-top: 4px solid;
+        }
+
+        .core-header.genomics {
+            background: linear-gradient(135deg, #00bcd4 0%, #00838f 100%);
+            border-top-color: #00bcd4;
+        }
+
+        .core-header.bioanalysis {
+            background: linear-gradient(135deg, #9c27b0 0%, #6a1b9a 100%);
+            border-top-color: #9c27b0;
+        }
+
+        .core-header.imaging {
+            background: linear-gradient(135deg, #2196f3 0%, #1565c0 100%);
+            border-top-color: #2196f3;
+        }
+
+        .core-header.computing {
+            background: linear-gradient(135deg, #5014a8 0%, #7a2dbf 100%);
+            border-top-color: #5014a8;
+        }
+
+        .core-header.biobanking {
+            background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+            border-top-color: #4caf50;
+        }
+
+        .core-icon {
+            font-size: 1.8rem;
+            min-width: 2rem;
+        }
+
+        .core-name {
+            flex: 1;
+        }
+
+        .core-count {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .core-body {
+            padding: 1.5rem;
+        }
+
+        .equipment-list {
+            list-style: none;
+        }
+
+        .equipment-list li {
+            padding: 0.6rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--color-text-dark);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .equipment-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-teal);
+            font-weight: bold;
+        }
+
+        .equipment-year {
+            display: inline-block;
+            background: rgba(0, 188, 212, 0.15);
+            color: var(--color-teal);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+        }
+
+        /* Computing Section */
+        .computing-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .computing-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        .computing-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .computing-specs {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .spec-category {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            border-left: 4px solid var(--color-purple);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .spec-category h4 {
+            color: var(--color-navy);
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-list {
+            list-style: none;
+            display: grid;
+            gap: 0.4rem;
+        }
+
+        .spec-list li {
+            color: var(--color-text-dark);
+            font-size: 0.9rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .spec-list li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            color: var(--color-teal);
+        }
+
+        /* Open Lab Section */
+        .openlab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .openlab-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .openlab-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .openlab-item-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            color: var(--color-teal);
+        }
+
+        .openlab-item-name {
+            font-weight: 600;
+            color: var(--color-navy);
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .openlab-item-count {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .infrastructure-rooms {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .computing-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .stats-section {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 2rem 1rem;
+            }
+
+            .stat-card {
+                padding: 1.5rem;
+            }
+
+            .infrastructure-rooms {
+                grid-template-columns: 1fr;
+            }
+
+            .cores-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .openlab-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .breadcrumb {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 3rem 1rem;
+                min-height: 300px;
+            }
+
+            .page-header h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .breadcrumb {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .breadcrumb span:not(:last-child)::after {
+                display: none;
+            }
+
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+
+            .openlab-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-main">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="../" class="logo">
+                    <img src="../images/logo-hyabc.svg" alt="HY-ABC" class="logo-img" style="height: 44px; width: auto;">
+                    <span class="logo-text-group">
+                        <span class="logo-subtitle">HY-IBB</span>
+                        <span class="logo-text">한양 첨단바이오융합연구소</span>
+                    </span>
+                </a>
+            </div>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="nav-item dropdown"><a href="about.html" class="nav-link">연구소소개</a><ul class="dropdown-menu"><li><a href="about.html#intro">인사말</a></li><li><a href="about.html#vision">설립목적</a></li><li><a href="about.html#history">연혁</a></li><li><a href="about.html#organization">조직도</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="members.html" class="nav-link">구성원</a><ul class="dropdown-menu"><li><a href="members.html#directors">연구소장</a></li><li><a href="members.html#researchers">참여연구자</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="research.html" class="nav-link">연구성과</a><ul class="dropdown-menu"><li><a href="research.html#publications">주요논문</a></li><li><a href="research.html#projects">연구과제</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="facilities.html" class="nav-link">시설·장비</a><ul class="dropdown-menu"><li><a href="facilities.html#infrastructure">인프라현황</a></li><li><a href="facilities.html#core">코어시설</a></li><li><a href="facilities.html#openlab">오픈랩</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="activities.html" class="nav-link">학술활동</a><ul class="dropdown-menu"><li><a href="activities.html#symposium">국제심포지움</a></li><li><a href="activities.html#minisymposium">미니심포지움</a></li><li><a href="activities.html#seminar">세미나</a></li><li><a href="activities.html#workshop">워크숍</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="news.html" class="nav-link">소식</a><ul class="dropdown-menu"><li><a href="news.html#notice">공지사항</a></li><li><a href="news.html#gallery">갤러리</a></li><li><a href="news.html#mou">MOU</a></li><li><a href="news.html#publications">발간물</a></li></ul></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <h1>시설·장비</h1>
+        <p class="page-header-subtitle">Advanced Research Facilities & Equipment</p>
+        <div class="breadcrumb">
+            <span><a href="../">홈</a></span>
+            <span>시설·장비</span>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="stat-card">
+            <div class="stat-icon">📏</div>
+            <div class="stat-number">543.76m²</div>
+            <div class="stat-label">전용면적</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🔬</div>
+            <div class="stat-number">5</div>
+            <div class="stat-label">코어시설</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">⚙️</div>
+            <div class="stat-number">49+</div>
+            <div class="stat-label">연구장비</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🧪</div>
+            <div class="stat-number">1</div>
+            <div class="stat-label">오픈랩</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Infrastructure Section -->
+        <section class="section" id="infrastructure">
+            <h2 class="section-title">인프라현황</h2>
+            <div class="infrastructure-image">
+                <img src="../images/facilities/infrastructure-map.png" alt="시설 인프라 구조도">
+            </div>
+            <div class="infrastructure-rooms">
+                <div class="room-item">
+                    <div class="room-icon">🏢</div>
+                    <div class="room-number">원장실/특훈교수실 (215호)</div>
+                    <div class="room-description">현장 업무 공간 지원</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">📋</div>
+                    <div class="room-number">행정실 (216호)</div>
+                    <div class="room-description">행정인력 3명 사용</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">👨‍🔬</div>
+                    <div class="room-number">박사후연구원실 (217호)</div>
+                    <div class="room-description">박사후연구원 사용</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">🎓</div>
+                    <div class="room-number">연구전담교원실 (218호, 214-1호)</div>
+                    <div class="room-description">연구전담교원 오피스 및 연구실</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">💬</div>
+                    <div class="room-number">회의실 (226호)</div>
+                    <div class="room-description">회의 및 협업 공간</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">📚</div>
+                    <div class="room-number">IC-PBL실 (225호)</div>
+                    <div class="room-description">교육 및 학습 공간</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">🔧</div>
+                    <div class="room-number">바이오공동기기센터 연구원실 (219호)</div>
+                    <div class="room-description">각 코어담당 장비지원 연구원</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">🧪</div>
+                    <div class="room-number">오픈랩 (223호)</div>
+                    <div class="room-description">공용 실험실</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">❄️</div>
+                    <div class="room-number">생체시료/바이오뱅킹코어 (224호)</div>
+                    <div class="room-description">샘플 처리 및 저장</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">💻</div>
+                    <div class="room-number">BI/컴퓨팅코어 (213호)</div>
+                    <div class="room-description">데이터 분석 및 컴퓨팅</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">🔭</div>
+                    <div class="room-number">이미징코어 (220호)</div>
+                    <div class="room-description">현미경 및 이미징 장비</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">🧬</div>
+                    <div class="room-number">유전체코어 (221호)</div>
+                    <div class="room-description">유전자 분석 장비</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">🔬</div>
+                    <div class="room-number">생체시료분석코어 (222호)</div>
+                    <div class="room-description">샘플 분석 및 처리</div>
+                </div>
+                <div class="room-item">
+                    <div class="room-icon">📊</div>
+                    <div class="room-number">바이오데이터분석 실습실 (212호)</div>
+                    <div class="room-description">학부생/대학원생/연구원 교육 시설</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Facilities Section -->
+        <section class="section" id="core">
+            <h2 class="section-title">코어시설</h2>
+
+            <div class="cores-grid">
+                <!-- Genomics Core -->
+                <div class="core-card">
+                    <div class="core-header genomics">
+                        <div class="core-icon">🧬</div>
+                        <div class="core-name">유전체 코어</div>
+                        <div class="core-count">6개</div>
+                    </div>
+                    <div class="core-body">
+                        <ul class="equipment-list">
+                            <li>자동 핵산 전기영동장치 (TapeStation)<span class="equipment-year">2022</span></li>
+                            <li>초음파 분쇄기 (Bioruptor)<span class="equipment-year">2022</span></li>
+                            <li>미세유체 단일세포 전사체 준비 장치 (Chromium X)<span class="equipment-year">2022</span></li>
+                            <li>미세방울 디지털 유전자증폭기 (ddPCR)<span class="equipment-year">2024</span></li>
+                            <li>핵산 농도 형광측정 정량장치 (Qubit)<span class="equipment-year">2023</span></li>
+                            <li>DNA 크기 분리 자동화장치 (BluePippin)<span class="equipment-year">2022</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Bioanalysis Core -->
+                <div class="core-card">
+                    <div class="core-header bioanalysis">
+                        <div class="core-icon">🔬</div>
+                        <div class="core-name">생체시료분석코어</div>
+                        <div class="core-count">5개</div>
+                    </div>
+                    <div class="core-body">
+                        <ul class="equipment-list">
+                            <li>등온적정열량계 (nITC)<span class="equipment-year">2023</span></li>
+                            <li>액체크로마토그래피 질량분석기 (LC-MS)<span class="equipment-year">2023</span></li>
+                            <li>세포대사분석기 (Seahorse XF pro)<span class="equipment-year">2022</span></li>
+                            <li>초고속 자동화 유세포 분석 및 분리기<span class="equipment-year">2024</span></li>
+                            <li>단일세포 수준 조직 분해기기 (gentleMACS)<span class="equipment-year">2023</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Imaging Core -->
+                <div class="core-card">
+                    <div class="core-header imaging">
+                        <div class="core-icon">🔭</div>
+                        <div class="core-name">바이오이미징코어</div>
+                        <div class="core-count">4개</div>
+                    </div>
+                    <div class="core-body">
+                        <ul class="equipment-list">
+                            <li>공초점레이저 주사 현미경 (LSM900)<span class="equipment-year">2022</span></li>
+                            <li>슬라이드 스캐너 (AxioScan 7)<span class="equipment-year">2023</span></li>
+                            <li>라이브셀이미징전용 공초점레이저 주사 현미경<span class="equipment-year">2022</span></li>
+                            <li>초고해상도 공초점레이저주사 현미경 (Airyscan 2)<span class="equipment-year">2023</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Computing Core -->
+                <div class="core-card">
+                    <div class="core-header computing">
+                        <div class="core-icon">💻</div>
+                        <div class="core-name">BI/컴퓨팅코어</div>
+                        <div class="core-count">29개</div>
+                    </div>
+                    <div class="core-body">
+                        <ul class="equipment-list">
+                            <li>Master Server</li>
+                            <li>GPU Node Server (GPU H100 포함)</li>
+                            <li>CPU Node Server x4</li>
+                            <li>MDS x2, MDT</li>
+                            <li>OSS x2, OST</li>
+                            <li>InfiniBand, 10GbE Switch, 1G Switch Hub</li>
+                            <li>LCD KVM, UPS</li>
+                            <li>Server Rack x7</li>
+                            <li>Monitoring System</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Biobanking Core -->
+                <div class="core-card">
+                    <div class="core-header biobanking">
+                        <div class="core-icon">❄️</div>
+                        <div class="core-name">생체시료바이오뱅킹코어</div>
+                        <div class="core-count">4개</div>
+                    </div>
+                    <div class="core-body">
+                        <ul class="equipment-list">
+                            <li>자동표본 조직가공기<span class="equipment-year">2023</span></li>
+                            <li>회전식 조직절편기<span class="equipment-year">2023</span></li>
+                            <li>파라핀 건조기<span class="equipment-year">2023</span></li>
+                            <li>저온실험장치<span class="equipment-year">2024</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Open Lab Section -->
+        <section class="section" id="openlab">
+            <h2 class="section-title">오픈랩</h2>
+            <p style="color: var(--color-text-light); margin-bottom: 2rem; font-size: 0.95rem;">공용 실험실로서 교내 연구자 누구나 이용 가능한 공간</p>
+            <div class="openlab-grid">
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">마이크로원심분리기</div>
+                    <div class="openlab-item-count">7대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">원심분리기</div>
+                    <div class="openlab-item-count">2대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">실시간 PCR</div>
+                    <div class="openlab-item-count">2대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">분광광도계</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">PCR</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">겔 문서화 시스템</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">마이크로플레이트 리더</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">항온수조</div>
+                    <div class="openlab-item-count">2대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">광학 현미경</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">진탕 인큐베이터</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">고압멸균기</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">건조 오븐</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">pH 미터</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">제빙기</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">클린 벤치</div>
+                    <div class="openlab-item-count">2대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">CO₂ 인큐베이터</div>
+                    <div class="openlab-item-count">2대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">일반 인큐베이터</div>
+                    <div class="openlab-item-count">2대</div>
+                </div>
+                <div class="openlab-item">
+                    <div class="openlab-item-icon">⊚</div>
+                    <div class="openlab-item-name">흄 후드</div>
+                    <div class="openlab-item-count">1대</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-about">
+                    <div class="footer-logo"><span class="logo-subtitle">HY-IBB</span><span class="logo-text">한양 첨단바이오융합연구소</span></div>
+                    <p class="footer-description">바이오빅데이터와 AI 기술을 융합하여 데이터 기반 바이오 융합 연구를 선도하는 한양대학교 부설 연구소입니다.</p>
+                </div>
+                <div class="footer-column footer-contact"><h4>연락처</h4><p>한양대학교 학생회관 2층 93호<br>서울특별시 성동구 왕십리로 222</p><p>Tel. 02-2220-XXXX</p><p>Email. hi-abc@hanyang.ac.kr</p></div>
+                <div class="footer-column footer-links"><h4>빠른 링크</h4><ul><li><a href="about.html">연구소 소개</a></li><li><a href="research.html">연구성과</a></li><li><a href="facilities.html">시설 안내</a></li><li><a href="activities.html">학술활동</a></li><li><a href="news.html">소식</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 HanYang Institute of Advanced BioConvergence (HY-ABC). All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

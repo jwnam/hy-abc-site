@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연구성과 | 첨단바이오융합연구소</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fafbfc;
+        }
+
+        /* ===== PAGE HEADER WITH BACKGROUND IMAGE ===== */
+        .page-header {
+            position: relative;
+            background: linear-gradient(135deg, rgba(10, 40, 80, 0.85) 0%, rgba(80, 20, 168, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1920&q=80') center/cover;
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.15), transparent),
+                radial-gradient(2px 2px at 60% 70%, rgba(255, 255, 255, 0.1), transparent),
+                radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.2), transparent),
+                radial-gradient(1px 1px at 80% 10%, rgba(255, 255, 255, 0.1), transparent),
+                radial-gradient(2px 2px at 90% 60%, rgba(255, 255, 255, 0.15), transparent),
+                radial-gradient(1px 1px at 30% 80%, rgba(255, 255, 255, 0.1), transparent);
+            background-size: 200% 200%;
+            background-repeat: repeat;
+            pointer-events: none;
+        }
+
+        .page-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .breadcrumb {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb span {
+            margin: 0 0.5rem;
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-header-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== RESEARCH AREAS SECTION ===== */
+        .research-areas-section {
+            padding: 4rem 0;
+            margin-top: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #0a2850;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            color: #5014a8;
+            margin-bottom: 3rem;
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+        .research-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .research-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+            border-top: 4px solid;
+        }
+
+        .research-card:nth-child(1) {
+            border-top-color: #FF6B6B;
+        }
+
+        .research-card:nth-child(2) {
+            border-top-color: #4ECDC4;
+        }
+
+        .research-card:nth-child(3) {
+            border-top-color: #5014a8;
+        }
+
+        .research-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .research-card-header {
+            padding: 2rem 2rem 1rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .research-card-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(80, 20, 168, 0.1) 0%, rgba(79, 205, 196, 0.1) 100%);
+            border-radius: 10px;
+        }
+
+        .research-card-title {
+            font-size: 1.2rem;
+            color: #0a2850;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+        }
+
+        .research-card-content {
+            padding: 0 2rem 2rem 2rem;
+        }
+
+        .research-card-description {
+            color: #666;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        /* ===== PUBLICATIONS SECTION ===== */
+        .publications-section {
+            padding: 4rem 0;
+        }
+
+        .publications-container {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .year-group {
+            margin-bottom: 3rem;
+        }
+
+        .year-heading {
+            font-size: 1.6rem;
+            color: #0a2850;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #5014a8;
+            font-weight: 700;
+        }
+
+        .publications-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .publications-table thead {
+            background: linear-gradient(135deg, #0a2850 0%, #5014a8 100%);
+            color: white;
+        }
+
+        .publications-table th {
+            padding: 1.2rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        .publications-table th:nth-child(1) {
+            width: 8%;
+            text-align: center;
+        }
+
+        .publications-table th:nth-child(2) {
+            width: 22%;
+        }
+
+        .publications-table th:nth-child(3) {
+            width: 50%;
+        }
+
+        .publications-table th:nth-child(4) {
+            width: 20%;
+        }
+
+        .publications-table td {
+            padding: 1.2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .publications-table tbody tr {
+            transition: all 0.2s ease;
+        }
+
+        .publications-table tbody tr:hover {
+            background-color: #f8f9ff;
+            box-shadow: inset 0 2px 6px rgba(80, 20, 168, 0.08);
+        }
+
+        .publications-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .publications-table td:nth-child(1) {
+            text-align: center;
+            color: #666;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .journal-badge {
+            display: block;
+            color: #0a2850;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .if-badge {
+            display: inline-block;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 0.4rem;
+            letter-spacing: 0.5px;
+        }
+
+        .if-badge.high {
+            background-color: #FFE3E3;
+            color: #C92A2A;
+        }
+
+        .if-badge.medium {
+            background-color: #FFF4E3;
+            color: #E67700;
+        }
+
+        .if-badge.standard {
+            background-color: #E3F2FF;
+            color: #0a2850;
+        }
+
+        .article-title {
+            color: #0a2850;
+            font-weight: 500;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .author-info {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .author-role {
+            color: #5014a8;
+            font-weight: 600;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        /* ===== RESEARCH PROJECTS SECTION ===== */
+        .research-projects-section {
+            padding: 4rem 0;
+        }
+
+        .projects-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .project-item::after {
+            content: '';
+            position: absolute;
+            left: 75px;
+            top: 60px;
+            width: 2px;
+            height: calc(100% - 60px);
+            background: linear-gradient(180deg, #5014a8 0%, transparent 100%);
+        }
+
+        .project-item:last-child::after {
+            display: none;
+        }
+
+        .project-year {
+            font-size: 1.5rem;
+            color: #5014a8;
+            font-weight: 700;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .project-year::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: #5014a8;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px #5014a8;
+            z-index: 10;
+        }
+
+        .project-content {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-content h4 {
+            color: #0a2850;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .project-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, #0a2850 0%, #1a3f70 100%);
+            color: white;
+            padding: 3.5rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-about {
+            grid-column: 1;
+        }
+
+        .footer-logo {
+            margin-bottom: 1rem;
+        }
+
+        .logo-text {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .logo-subtitle {
+            display: block;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .footer-description {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            opacity: 0.85;
+            margin-top: 1rem;
+        }
+
+        .footer-contact p {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            opacity: 0.85;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+            opacity: 0.85;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1.5rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-bottom p {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 4rem 1.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .page-header-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.7rem;
+            }
+
+            .research-areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .publications-container {
+                padding: 1.5rem;
+            }
+
+            .publications-table th,
+            .publications-table td {
+                padding: 0.8rem;
+            }
+
+            .publications-table th:nth-child(1) {
+                width: 12%;
+            }
+
+            .publications-table th:nth-child(2) {
+                width: 20%;
+            }
+
+            .publications-table th:nth-child(3) {
+                width: 48%;
+            }
+
+            .publications-table th:nth-child(4) {
+                width: 20%;
+            }
+
+            .if-badge {
+                display: block;
+                margin-top: 0.4rem;
+            }
+
+            .project-item {
+                grid-template-columns: 120px 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-year {
+                font-size: 1.2rem;
+                padding-left: 35px;
+            }
+
+            .project-year::before {
+                width: 14px;
+                height: 14px;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header {
+                padding: 3rem 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .page-header-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .publications-table {
+                font-size: 0.8rem;
+            }
+
+            .publications-table th,
+            .publications-table td {
+                padding: 0.6rem;
+            }
+
+            .publications-table th:nth-child(1) {
+                width: 15%;
+            }
+
+            .publications-table th:nth-child(2) {
+                width: 18%;
+            }
+
+            .publications-table th:nth-child(3) {
+                width: 47%;
+            }
+
+            .publications-table th:nth-child(4) {
+                width: 20%;
+            }
+
+            .research-card-header {
+                padding: 1.5rem 1.5rem 0.8rem 1.5rem;
+            }
+
+            .research-card-content {
+                padding: 0 1.5rem 1.5rem 1.5rem;
+            }
+
+            .research-card-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 2rem;
+            }
+
+            .project-item {
+                grid-template-columns: 100px 1fr;
+                gap: 1rem;
+            }
+
+            .project-year {
+                font-size: 1rem;
+                padding-left: 30px;
+            }
+
+            .project-year::before {
+                width: 12px;
+                height: 12px;
+                left: -6px;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .publications-container {
+                padding: 1rem;
+            }
+
+            .footer-grid {
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-main">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="../" class="logo">
+                    <img src="../images/logo-hyabc.svg" alt="HY-ABC" class="logo-img" style="height: 44px; width: auto;">
+                    <span class="logo-text-group">
+                        <span class="logo-subtitle">HY-IBB</span>
+                        <span class="logo-text">한양 첨단바이오융합연구소</span>
+                    </span>
+                </a>
+            </div>
+            <button class="navbar-toggle" id="navbarToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="nav-item dropdown"><a href="about.html" class="nav-link">연구소소개</a><ul class="dropdown-menu"><li><a href="about.html#intro">인사말</a></li><li><a href="about.html#vision">설립목적</a></li><li><a href="about.html#history">연혁</a></li><li><a href="about.html#organization">조직도</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="members.html" class="nav-link">구성원</a><ul class="dropdown-menu"><li><a href="members.html#directors">연구소장</a></li><li><a href="members.html#researchers">참여연구자</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="research.html" class="nav-link">연구성과</a><ul class="dropdown-menu"><li><a href="research.html#publications">주요논문</a></li><li><a href="research.html#projects">연구과제</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="facilities.html" class="nav-link">시설·장비</a><ul class="dropdown-menu"><li><a href="facilities.html#infrastructure">인프라현황</a></li><li><a href="facilities.html#core">코어시설</a></li><li><a href="facilities.html#openlab">오픈랩</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="activities.html" class="nav-link">학술활동</a><ul class="dropdown-menu"><li><a href="activities.html#symposium">국제심포지움</a></li><li><a href="activities.html#minisymposium">미니심포지움</a></li><li><a href="activities.html#seminar">세미나</a></li><li><a href="activities.html#workshop">워크숍</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="news.html" class="nav-link">소식</a><ul class="dropdown-menu"><li><a href="news.html#notice">공지사항</a></li><li><a href="news.html#gallery">갤러리</a></li><li><a href="news.html#mou">MOU</a></li><li><a href="news.html#publications">발간물</a></li></ul></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== PAGE HEADER WITH BACKGROUND IMAGE ===== -->
+    <div class="page-header">
+        <div class="page-header-content">
+            <div class="breadcrumb">
+                홈 <span>/</span> 연구성과
+            </div>
+            <h1>연구성과</h1>
+            <p class="page-header-subtitle">선도적인 바이오 융합 연구의 성과를 소개합니다</p>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <div class="container">
+        <!-- ===== RESEARCH AREAS SECTION ===== -->
+        <section class="research-areas-section">
+            <h2 class="section-title">연구 분야 소개</h2>
+            <p class="section-subtitle">첨단바이오융합연구소의 핵심 연구 영역</p>
+
+            <div class="research-areas-grid">
+                <!-- Research Area 1 -->
+                <div class="research-card">
+                    <div class="research-card-header">
+                        <div class="research-card-icon">🧬</div>
+                        <h3 class="research-card-title">바이오인포매틱스 & 유전체학</h3>
+                    </div>
+                    <div class="research-card-content">
+                        <p class="research-card-description">
+                            차세대 염기서열 분석(NGS) 기술과 고급 생물정보학 알고리즘을 활용하여 유전체 데이터를 분석하고 질병의 원인을 규명하는 연구 분야입니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Research Area 2 -->
+                <div class="research-card">
+                    <div class="research-card-header">
+                        <div class="research-card-icon">🤖</div>
+                        <h3 class="research-card-title">AI 기반 바이오 융합 연구</h3>
+                    </div>
+                    <div class="research-card-content">
+                        <p class="research-card-description">
+                            인공지능과 머신러닝 기술을 생물의학 데이터에 적용하여 혁신적인 진단 및 치료 방법을 개발하는 첨단 융합 연구입니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Research Area 3 -->
+                <div class="research-card">
+                    <div class="research-card-header">
+                        <div class="research-card-icon">🔬</div>
+                        <h3 class="research-card-title">임상·중개 연구</h3>
+                    </div>
+                    <div class="research-card-content">
+                        <p class="research-card-description">
+                            기초 연구 성과를 실제 임상 치료에 응용하는 중개 연구로 환자 맞춤형 정밀의학 실현을 목표로 하는 연구 분야입니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PUBLICATIONS SECTION ===== -->
+        <section class="publications-section" id="publications">
+            <h2 class="section-title">주요 논문 실적</h2>
+            <p class="section-subtitle">최근 연도별 우수 논문 게재 현황</p>
+
+            <div class="publications-container">
+                <!-- 2025 Papers -->
+                <div class="year-group">
+                    <div class="year-heading">2025</div>
+                    <table class="publications-table">
+                        <thead>
+                            <tr>
+                                <th>연도</th>
+                                <th>저널</th>
+                                <th>제목</th>
+                                <th>저자 (직책)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025</td>
+                                <td>
+                                    <div class="journal-badge">BRITISH MEDICAL JOURNAL</div>
+                                    <span class="if-badge high">IF 93.7</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">Trajectories of breast density change over time and subsequent breast cancer risk: longitudinal study</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">박보영 교수<span class="author-role">운영위원</span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2025</td>
+                                <td>
+                                    <div class="journal-badge">Gastroenterology</div>
+                                    <span class="if-badge medium">IF 25.1</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">Preventive Effect of Helicobacter pylori Treatment on Gastric Cancer Incidence and Mortality: A Korean Population Study</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">박보영 교수<span class="author-role">운영위원</span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2025</td>
+                                <td>
+                                    <div class="journal-badge">Advanced Materials</div>
+                                    <span class="if-badge medium">IF 26.8</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">MUTE-Seq: An Ultrasensitive Method for Detecting Low-Frequency Mutations in cfDNA With Engineered Advanced-Fidelity FnCas9</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">허준호 교수<span class="author-role">소속교원</span></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 2024 Papers -->
+                <div class="year-group">
+                    <div class="year-heading">2024</div>
+                    <table class="publications-table">
+                        <thead>
+                            <tr>
+                                <th>연도</th>
+                                <th>저널</th>
+                                <th>제목</th>
+                                <th>저자 (직책)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024</td>
+                                <td>
+                                    <div class="journal-badge">Nature</div>
+                                    <span class="if-badge high">IF 50.5</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">Drosophila immune cells transport oxygen through PPO2 protein phase transition</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">심지원 교수<span class="author-role">연구소장</span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2024</td>
+                                <td>
+                                    <div class="journal-badge">Nature Biotechnology</div>
+                                    <span class="if-badge high">IF 33.1</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">Direct measurement of engineered cancer mutations and their transcriptional phenotypes in single cells</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">김헌석 교수<span class="author-role">간사</span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2024</td>
+                                <td>
+                                    <div class="journal-badge">Journal of Hepatology</div>
+                                    <span class="if-badge medium">IF 26.8</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">Diagnostic performance of non-invasive tests in patients with MetALD in a health check-up cohort</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">전대원 교수<span class="author-role">연구그룹장</span></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 2023 Papers -->
+                <div class="year-group">
+                    <div class="year-heading">2023</div>
+                    <table class="publications-table">
+                        <thead>
+                            <tr>
+                                <th>연도</th>
+                                <th>저널</th>
+                                <th>제목</th>
+                                <th>저자 (직책)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023</td>
+                                <td>
+                                    <div class="journal-badge">Nature Biomedical Engineering</div>
+                                    <span class="if-badge medium">IF 26.3</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">Ultrafast prediction of somatic structural variations by filtering out reads matched to pan-genome k-mer sets</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">남진우 교수<span class="author-role">연구소장</span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2023</td>
+                                <td>
+                                    <div class="journal-badge">Journal of Hepatology</div>
+                                    <span class="if-badge medium">IF 26.8</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">Letter to the Editor: Is lifestyle modification effective for individuals with high fibrosis-4 index without an additional second-tier test?</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">전대원 교수<span class="author-role">연구그룹장</span></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RESEARCH PROJECTS SECTION ===== -->
+        <section class="research-projects-section" id="projects">
+            <h2 class="section-title">연구과제</h2>
+            <p class="section-subtitle">진행 중인 주요 연구 과제</p>
+
+            <div class="projects-timeline">
+                <div class="project-item">
+                    <div class="project-year">2026</div>
+                    <div class="project-content">
+                        <h4>정밀의학 기반 개인맞춤형 치료 전략 개발</h4>
+                        <p>AI 기반 유전체 분석을 통한 암 환자의 개인맞춤형 치료 방법 개발 및 임상 검증</p>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-year">2025</div>
+                    <div class="project-content">
+                        <h4>신규 바이오마커 발굴 및 검증</h4>
+                        <p>고급 생물정보학 기법을 활용한 질병 관련 신규 바이오마커 발굴 및 임상 적용 연구</p>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-year">2024</div>
+                    <div class="project-content">
+                        <h4>바이오빅데이터 통합 분석 플랫폼 구축</h4>
+                        <p>다양한 출처의 생물의학 데이터를 통합 분석할 수 있는 클라우드 기반 플랫폼 개발</p>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-year">2023</div>
+                    <div class="project-content">
+                        <h4>머신러닝 기반 질병 진단 모델 개발</h4>
+                        <p>임상 데이터와 유전체 정보를 활용한 고정확도 질병 진단 AI 모델 구축</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-column footer-about">
+                <div class="footer-logo">
+                    <span class="logo-subtitle">HY-IBB</span>
+                    <span class="logo-text">한양 첨단바이오융합연구소</span>
+                </div>
+                <p class="footer-description">바이오빅데이터와 AI 기술을 융합하여 데이터 기반 바이오 융합 연구를 선도하는 한양대학교 부설 연구소입니다.</p>
+            </div>
+            <div class="footer-column footer-contact">
+                <h4>연락처</h4>
+                <p>한양대학교 학생회관 2층 93호<br>서울특별시 성동구 왕십리로 222</p>
+                <p>Tel. 02-2220-XXXX<br>Email. hi-abc@hanyang.ac.kr</p>
+            </div>
+            <div class="footer-column footer-links">
+                <h4>빠른 링크</h4>
+                <ul>
+                    <li><a href="about.html">연구소 소개</a></li>
+                    <li><a href="research.html">연구성과</a></li>
+                    <li><a href="facilities.html">시설 안내</a></li>
+                    <li><a href="activities.html">학술활동</a></li>
+                    <li><a href="news.html">소식</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 HanYang Institute of Advanced BioConvergence (HY-ABC). All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
