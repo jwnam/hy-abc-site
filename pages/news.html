@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* 월간 바이오정책동향 카드 (HY-IBB 연동) */
+        .policy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px}
+        @media(max-width:900px){.policy-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:560px){.policy-grid{grid-template-columns:1fr}}
+        a.policy-card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #e6ecf3;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(11,42,74,.05);transition:transform .15s,box-shadow .15s}
+        a.policy-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(11,42,74,.12)}
+        a.policy-card .thumb{aspect-ratio:16/10;overflow:hidden;background:#eef4fb}
+        a.policy-card .thumb img{width:100%;height:100%;object-fit:cover}
+        a.policy-card .pc-body{padding:14px 16px}
+        a.policy-card .pc-badge{display:inline-block;font-size:11px;font-weight:700;color:#1560bd;background:#eef4fb;border:1px solid #dbe7f5;border-radius:6px;padding:2px 8px;margin-bottom:8px}
+        a.policy-card .pc-title{font-size:15px;font-weight:700;color:#0b2a4a;margin:0 0 4px}
+        a.policy-card .pc-date{font-size:13px;color:#5b6b7b}
+        .policy-more{display:inline-block;margin-top:22px;color:#1560bd;font-weight:600}
         /* News Page Specific Styles */
 
         .page-body {
@@ -920,15 +933,49 @@
             <h2 class="section-title">발간물</h2>
             <p class="section-subtitle">첨단바이오융합연구소의 주요 발간물</p>
 
-            <!-- 월간 바이오정책동향 -->
-            <h3 class="subsection-title">월간 바이오정책동향</h3>
+            <!-- 월간 바이오정책동향 (HY-IBB/HY-ABC) -->
+            <h3 class="subsection-title">월간 바이오정책동향 (HY-IBB / HY-ABC)</h3>
             <p class="subsection-description">
-                2023년부터 생명과학, 의학 관련 정책 동향을 파악하고 전략적 연구 방향 수립
+                2023년부터 생명과학·의학 관련 정책 동향을 파악하고 전략적 연구 방향을 수립합니다.
+                한양생명과학기술원(HY-IBB)에서 <strong>매월 발간</strong>하며, 각 호를 클릭하면 원문으로 이동합니다.
+                <br>(자료 제공: 한양생명과학기술원 HY-IBB)
             </p>
 
-            <div class="large-image-wrapper">
-                <img src="../images/activities/policy-brief.jpg" alt="월간 바이오정책동향">
+            <div class="policy-grid">
+                <a class="policy-card" href="https://ibb.hanyang.ac.kr/community/newsletter.php?ptype=view&idx=950&page=1&code=newsletter" target="_blank" rel="noopener">
+                    <div class="thumb"><img src="../images/activities/policy-brief.jpg" alt="2026년 7월 BIO 동향"></div>
+                    <div class="pc-body"><span class="pc-badge">최신</span><h4 class="pc-title">2026년 7월 BIO 동향</h4><span class="pc-date">2026.08.04 발행</span></div>
+                </a>
+                <a class="policy-card" href="https://ibb.hanyang.ac.kr/community/newsletter.php?ptype=view&idx=948&page=1&code=newsletter" target="_blank" rel="noopener">
+                    <div class="thumb"><img src="../images/activities/policy-brief.jpg" alt="2026년 6월 BIO 동향"></div>
+                    <div class="pc-body"><h4 class="pc-title">2026년 6월 BIO 동향</h4><span class="pc-date">2026.07.06 발행</span></div>
+                </a>
+                <a class="policy-card" href="https://ibb.hanyang.ac.kr/community/newsletter.php?ptype=view&idx=947&page=1&code=newsletter" target="_blank" rel="noopener">
+                    <div class="thumb"><img src="../images/activities/policy-brief.jpg" alt="2026년 5월 BIO 동향"></div>
+                    <div class="pc-body"><h4 class="pc-title">2026년 5월 BIO 동향</h4><span class="pc-date">2026.06.02 발행</span></div>
+                </a>
+                <a class="policy-card" href="https://ibb.hanyang.ac.kr/community/newsletter.php?ptype=view&idx=944&page=1&code=newsletter" target="_blank" rel="noopener">
+                    <div class="thumb"><img src="../images/activities/policy-brief.jpg" alt="2026년 4월 BIO 동향"></div>
+                    <div class="pc-body"><h4 class="pc-title">2026년 4월 BIO 동향</h4><span class="pc-date">2026.05.06 발행</span></div>
+                </a>
+                <a class="policy-card" href="https://ibb.hanyang.ac.kr/community/newsletter.php?ptype=view&idx=941&page=1&code=newsletter" target="_blank" rel="noopener">
+                    <div class="thumb"><img src="../images/activities/policy-brief.jpg" alt="2026년 3월 BIO 동향"></div>
+                    <div class="pc-body"><h4 class="pc-title">2026년 3월 BIO 동향</h4><span class="pc-date">2026.04.03 발행</span></div>
+                </a>
+                <a class="policy-card" href="https://ibb.hanyang.ac.kr/community/newsletter.php?ptype=view&idx=939&page=1&code=newsletter" target="_blank" rel="noopener">
+                    <div class="thumb"><img src="../images/activities/policy-brief.jpg" alt="2026년 2월 BIO 동향"></div>
+                    <div class="pc-body"><h4 class="pc-title">2026년 2월 BIO 동향</h4><span class="pc-date">2026.03.03 발행</span></div>
+                </a>
+                <a class="policy-card" href="https://ibb.hanyang.ac.kr/community/newsletter.php?ptype=view&idx=925&page=1&code=newsletter" target="_blank" rel="noopener">
+                    <div class="thumb"><img src="../images/activities/policy-brief.jpg" alt="2026년 1월 BIO 동향"></div>
+                    <div class="pc-body"><h4 class="pc-title">2026년 1월 BIO 동향</h4><span class="pc-date">2026.02.05 발행</span></div>
+                </a>
+                <a class="policy-card" href="https://ibb.hanyang.ac.kr/community/newsletter.php?ptype=view&idx=920&page=1&code=newsletter" target="_blank" rel="noopener">
+                    <div class="thumb"><img src="../images/activities/policy-brief.jpg" alt="2025년 12월 BIO 동향"></div>
+                    <div class="pc-body"><h4 class="pc-title">2025년 12월 BIO 동향</h4><span class="pc-date">2026.01.05 발행</span></div>
+                </a>
             </div>
+            <a class="policy-more" href="https://ibb.hanyang.ac.kr/community/newsletter.php" target="_blank" rel="noopener">전체 발간물 보기 (HY-IBB) →</a>
 
             <!-- 애뉴얼 리포트 -->
             <h3 class="subsection-title">애뉴얼 리포트</h3>
