@@ -185,31 +185,98 @@
         <!-- 3대 핵심연구그룹 -->
         <section id="groups" class="section purpose-section">
             <div class="section-header animate-on-scroll">
-                <h2>3대 핵심연구그룹 &amp; AI 가상실험실</h2>
+                <h2>3대 핵심연구그룹 · AI가상실험실센터 (연구조직 · 연계)</h2>
                 <div class="header-line"></div>
             </div>
+            <!-- 연구조직·연계 도식 (SVG) -->
+            <figure class="rg-figure animate-on-scroll" style="margin:0 auto 34px;max-width:1000px;">
+                <svg viewBox="0 0 1000 500" width="100%" role="img" aria-label="3대 핵심연구그룹과 AI가상실험실센터의 공통 협력·연계 도식" style="background:#fff;border:1px solid #e5e9f0;border-radius:14px;">
+                    <defs>
+                        <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#334155"/></marker>
+                        <marker id="arwB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+                        <marker id="arwC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0891b2"/></marker>
+                    </defs>
+                    <!-- 공통 허브 -->
+                    <rect x="280" y="24" width="440" height="92" rx="14" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
+                    <text x="500" y="52" text-anchor="middle" font-size="19" font-weight="700" fill="#3730a3">AI바이오 가상실험실 개발센터</text>
+                    <text x="500" y="73" text-anchor="middle" font-size="12" fill="#6366f1">3대 그룹 공통 협력 허브 · 바이오공동기기센터 AI-컴퓨팅 코어</text>
+                    <text x="500" y="98" text-anchor="middle" font-size="12.5" fill="#475569">남진우(소장 겸직) · 하유진 · 오요한 · 이정연 · 황우창</text>
+                    <!-- 허브 캡션 -->
+                    <text x="500" y="140" text-anchor="middle" font-size="12.5" fill="#64748b">공통 협력 : 데이터·모델 실시간 공유 · 상호 검증 · 지능형 피드백 루프(Lab-in-the-Loop)</text>
+                    <!-- 허브 ↔ 각 RG (양방향: 공유 + 피드백) -->
+                    <line x1="410" y1="116" x2="185" y2="196" stroke="#334155" stroke-width="1.6" marker-start="url(#arw)" marker-end="url(#arw)"/>
+                    <line x1="500" y1="116" x2="500" y2="196" stroke="#334155" stroke-width="1.6" marker-start="url(#arw)" marker-end="url(#arw)"/>
+                    <line x1="590" y1="116" x2="815" y2="196" stroke="#334155" stroke-width="1.6" marker-start="url(#arw)" marker-end="url(#arw)"/>
+                    <!-- RG1 -->
+                    <rect x="20" y="200" width="290" height="150" rx="12" fill="#ecfeff" stroke="#0891b2" stroke-width="2"/>
+                    <text x="165" y="228" text-anchor="middle" font-size="14.5" font-weight="700" fill="#0e7490">RG1 · 바이오의약소재 탐색·설계</text>
+                    <text x="165" y="249" text-anchor="middle" font-size="12" fill="#334155">그룹장 박범수 (외 4인)</text>
+                    <text x="36" y="278" font-size="11.5" fill="#475569">· 해양·미세조류 생물다양성 빅데이터</text>
+                    <text x="36" y="299" font-size="11.5" fill="#475569">· AI 구조예측 수퍼유전자·신규 BGC 발굴</text>
+                    <text x="36" y="320" font-size="11.5" fill="#475569">· CRISPR-Cas 이종발현 세포공장</text>
+                    <text x="36" y="341" font-size="11" fill="#0891b2">▸ AI가상실험실 : 소재 생성·DBTL·가상스크리닝</text>
+                    <!-- RG2 -->
+                    <rect x="355" y="200" width="290" height="150" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+                    <text x="500" y="228" text-anchor="middle" font-size="14.5" font-weight="700" fill="#1d4ed8">RG2 · 정밀의료·바이오혁신의약</text>
+                    <text x="500" y="249" text-anchor="middle" font-size="12" fill="#334155">그룹장 전대원 (외 3인)</text>
+                    <text x="371" y="278" font-size="11.5" fill="#475569">· 대사질환 다중오믹스 통합분석</text>
+                    <text x="371" y="299" font-size="11.5" fill="#475569">· Perturbation AI 치료반응·마커 예측</text>
+                    <text x="371" y="320" font-size="11.5" fill="#475569">· 자연어 기반 폐쇄루프 자율연구</text>
+                    <text x="371" y="341" font-size="11" fill="#1d4ed8">▸ AI가상실험실 : 오믹스 통합·예측·코호트</text>
+                    <!-- RG3 -->
+                    <rect x="690" y="200" width="290" height="150" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+                    <text x="835" y="228" text-anchor="middle" font-size="14.5" font-weight="700" fill="#6d28d9">RG3 · RNA·펩타이드 치료제</text>
+                    <text x="835" y="249" text-anchor="middle" font-size="12" fill="#334155">그룹장 김영필 (외 4인)</text>
+                    <text x="706" y="278" font-size="11.5" fill="#475569">· siRNA/ASO 대사질환 치료제 설계</text>
+                    <text x="706" y="299" font-size="11.5" fill="#475569">· 인공항체(나노바디) AI 최적화</text>
+                    <text x="706" y="320" font-size="11.5" fill="#475569">· 고리형 펩타이드 표적 설계</text>
+                    <text x="706" y="341" font-size="11" fill="#6d28d9">▸ AI가상실험실 : 라이브러리 스크리닝·최적화</text>
+                    <!-- 그룹간 연계: RG2 → RG3 (표적 선정) -->
+                    <text x="667" y="266" text-anchor="middle" font-size="10.5" fill="#1d4ed8">표적 선정</text>
+                    <line x1="645" y1="275" x2="690" y2="275" stroke="#2563eb" stroke-width="1.8" marker-end="url(#arwB)"/>
+                    <!-- 그룹간 연계: RG1 → RG3 (바이오소재·단백질) -->
+                    <path d="M165,350 Q500,468 835,350" fill="none" stroke="#0891b2" stroke-width="1.8" stroke-dasharray="5,4" marker-end="url(#arwC)"/>
+                    <text x="500" y="432" text-anchor="middle" font-size="11.5" fill="#0891b2">바이오소재 · 단백질(리간드) 공급 → 표적형 치료제 정밀 설계</text>
+                    <!-- 공통 파이프라인 바 -->
+                    <rect x="20" y="446" width="960" height="46" rx="10" fill="#f8fafc" stroke="#cbd5e1"/>
+                    <text x="500" y="466" text-anchor="middle" font-size="12" font-weight="600" fill="#334155">공통 파이프라인 : 다중오믹스 DB → AI 다층 가상실험실 → 자율실험실 고속검증 → Lab-in-the-Loop 선도물질 최적화</text>
+                    <text x="500" y="484" text-anchor="middle" font-size="10.5" fill="#64748b">자율실험실 검증데이터가 가상실험실 허브로 재학습(피드백)되어 self-improving 지능형 루프를 형성</text>
+                </svg>
+                <figcaption style="text-align:center;color:#7b8794;font-size:0.86rem;margin-top:10px;">3대 핵심연구그룹–AI가상실험실센터 공통 협력 체계 및 그룹간 연계 · 출처: 2026 글로컬랩(거점형) 연구계획서</figcaption>
+            </figure>
+
+            <!-- RG 상세 (참여교원 + 연구내용) -->
             <div class="purpose-grid animate-on-scroll">
                 <div class="purpose-card animate-on-scroll">
-                    <h3>RG1 · 바이오소재 AI 설계</h3>
-                    <p><strong>그룹장 박범수 교수</strong> (생명과학과·분자생태학)</p>
-                    <p>해양·미세조류 생물다양성 빅데이터, AI 구조예측 기반 신규 소재 발굴, CRISPR-Cas 이종발현 세포공장</p>
-                    <p><em>AI가상실험실: AI 소재 생성 · DBTL 자동화 · 가상 스크리닝</em></p>
+                    <h3>RG1 · 바이오의약소재 탐색·설계</h3>
+                    <p><strong>그룹장</strong> 박범수 교수 (생명과학과·분자생태학)</p>
+                    <p><strong>참여교원</strong> 진언선 · 이원철 · 이진원 · 김도현</p>
+                    <p>해양·담수 생물다양성(미세조류·환경미생물·해양생물) 빅데이터를 신약소재 발굴에 활용. AI 구조예측(AlphaFold·ESMFold)으로 수퍼 유전자·신규 생합성 유전자군(BGC)을 발굴하는 투트랙(Two-Track) 전략, CRISPR-Cas 이종발현 세포공장 구축.</p>
+                    <p><em>AI가상실험실 : AI 소재 생성 · DBTL 자동화 · 가상 스크리닝</em></p>
                 </div>
                 <div class="purpose-card animate-on-scroll">
-                    <h3>RG2 · 오믹스 정밀의료</h3>
-                    <p><strong>그룹장 전대원 교수</strong> (의과대학 내과학)</p>
-                    <p>대사질환 다중오믹스 통합 분석, Perturbation 기반 AI 바이오마커 탐색, 자연어 기반 가상실험실</p>
-                    <p><em>AI가상실험실: 오믹스 통합 · 예측 · 임상코호트 분석</em></p>
+                    <h3>RG2 · 정밀의료·바이오혁신의약</h3>
+                    <p><strong>그룹장</strong> 전대원 교수 (의과대학 내과학)</p>
+                    <p><strong>참여교원</strong> 윤아일린 · 김유정 · 최종욱</p>
+                    <p>대사질환(지방간·제2형당뇨·고지혈·고혈압) 다중오믹스 통합과 Perturbation 기반 치료반응·바이오마커 예측 AI. 연구자가 자연어만으로 설계·분석·검증하는 폐쇄루프형 자율연구(가상실험실) 플랫폼 구축.</p>
+                    <p><em>AI가상실험실 : 오믹스 통합 · 예측 · 임상코호트 분석</em></p>
                 </div>
                 <div class="purpose-card animate-on-scroll">
                     <h3>RG3 · RNA·펩타이드 치료제</h3>
-                    <p><strong>그룹장 김영필 교수</strong> (생명과학과)</p>
-                    <p>siRNA/ASO 대사질환 치료제 설계, 인공항체(나노바디) AI 최적화, 고리형 펩타이드 표적 설계</p>
-                    <p><em>AI가상실험실: 치료제 라이브러리 스크리닝 · 기전규명 · 최적화</em></p>
+                    <p><strong>그룹장</strong> 김영필 교수 (생명과학과)</p>
+                    <p><strong>참여교원</strong> 이경민 · 최재훈 · 최준호 · 신인철</p>
+                    <p>MASH·제2형당뇨 등 대사질환 표적에 대해 ①siRNA/ASO ②인공항체(나노바디) ③고리형 펩타이드(SICLOPPS) 3대 모달리티를 AI로 설계. 자율실험실 고속 스크리닝과 표적형 통합 전달 플랫폼으로 복합치료제 정밀 설계.</p>
+                    <p><em>AI가상실험실 : 치료제 라이브러리 스크리닝 · 기전규명 · 최적화</em></p>
                 </div>
             </div>
-            <p class="animate-on-scroll" style="text-align:center;max-width:860px;margin:28px auto 0;color:#5b6b7b;">
-                공통 파이프라인: 다중오믹스 DB → AI 다층 가상실험실 → 자율실험실 고속검증 → <strong>Lab-in-the-Loop</strong> 선도물질 최적화 (self-improving 피드백 루프)</p>
+
+            <!-- AI가상실험실센터 (공통 허브) 설명 -->
+            <div class="ack-box animate-on-scroll" style="margin-top:28px;">
+                <p><strong>AI바이오 가상실험실 개발센터 (3대 그룹 공통 협력 허브)</strong> — 남진우 소장(겸직) · 하유진 · 오요한 · 이정연 · 황우창 (바이오공동기기센터 AI-컴퓨팅 코어).</p>
+                <p style="margin-bottom:0;">3대 핵심연구그룹이 <strong>공통으로 협력하는 허브</strong>로서 데이터·모델을 실시간 공유·상호 검증하여, 한 그룹의 발견이 즉시 다른 그룹의 연구 설계로 이어지는 <strong>지능형 피드백 루프(Lab-in-the-Loop)</strong>를 구성합니다. 이를 통해 그룹간 칸막이를 제거하고 연구 속도를 혁신적으로 높입니다.</p>
+            </div>
+            <p class="animate-on-scroll" style="text-align:center;max-width:900px;margin:24px auto 0;color:#5b6b7b;">
+                공통 파이프라인 : 다중오믹스 DB → AI 다층 가상실험실 → 자율실험실 고속검증 → <strong>Lab-in-the-Loop</strong> 선도물질 최적화 (self-improving 피드백 루프)</p>
         </section>
 
         <!-- EAST-ARC Valley -->
@@ -257,6 +324,67 @@
             </div>
             <p class="animate-on-scroll" style="text-align:center;max-width:860px;margin:28px auto 0;color:#5b6b7b;">
                 인프라 : 바이오공동기기센터 6코어 82대+ · AI컴퓨팅(A100 80GB SXM 8장 + H100·RTX3090) · 전용 연구공간 165평+57평</p>
+        </section>
+
+        <!-- 융합인재교육 프로그램 -->
+        <section id="education" class="section purpose-section">
+            <div class="section-header animate-on-scroll">
+                <h2>글로컬랩 융합인재교육 프로그램</h2>
+                <div class="header-line"></div>
+            </div>
+            <p class="animate-on-scroll" style="text-align:center;max-width:900px;margin:0 auto 30px;color:#5b6b7b;">
+                Post-AI 시대형 <strong>양손잡이(Dual-Skill) AI바이오 융합인재</strong> 양성 — Wet(생명과학·실험) × Dry(AI·데이터)
+                <strong>Cross-Training 의무화</strong>, 자율실험실(Bio-Foundry) 기반 교육, 글로컬 커리어 패스로 우수 학문후속세대의 유치·정착 선순환 구축</p>
+
+            <div class="purpose-grid animate-on-scroll">
+                <div class="purpose-card animate-on-scroll">
+                    <h3>① Post-AI 양손잡이 교육 트랙<br><span style="font-size:0.85em;color:#6b7b8b;">Dual-Skill Master</span></h3>
+                    <p>Bio-Data Literacy 전용 커리큘럼(RNA 구조예측 AI 모델링 등) 운영, Wet/Dry lab 연구자 간 <strong>Cross-Training 의무화</strong>로 실험·AI 역량을 겸비한 융합 연구인력 양성.</p>
+                </div>
+                <div class="purpose-card animate-on-scroll">
+                    <h3>② AI-시너지 인재<br><span style="font-size:0.85em;color:#6b7b8b;">AI-Augmented Scientist</span></h3>
+                    <p>자율실험실 활용 교육으로 연구원은 <strong>설계·해석</strong>에 집중. AI+IP 융합 전문가(삼극특허 전략 교육 병행) 육성으로 창의적 통찰이 혁신의 중심이 되는 Human-AI 협력 모델 구축.</p>
+                </div>
+                <div class="purpose-card animate-on-scroll">
+                    <h3>③ 글로컬 커리어 패스 &amp; 유치</h3>
+                    <p>파트너기업–글로컬랩 <strong>Joint-Appointment</strong>, Global Mobility 단기 연수, 글로컬랩–RISE–BK21 연계 정착 장학금, 채용보장형 현장 파견(Residential Program)으로 지역 정착 지원.</p>
+                </div>
+            </div>
+
+            <div class="ack-box animate-on-scroll" style="margin-top:28px;">
+                <p><strong>성장단계별 지원</strong> — 학부(Bio-AI 창업 인재·CES 참가) → 학·석·박 통합과정 → 대학원(Full-Stipend : 석사 180만·박사 250만원↑/월, Glocal Fellowship 월 +100만) → 박사후·독립연구자(해외 Co-advisor 1:1, 해외학회 전액, Staff Scientist 임용).</p>
+                <p style="margin-bottom:14px;"><strong>연계</strong> — 글로컬랩 × BK21(산업 난제 연구주제화·IC-PBL) · 글로컬랩 × RISE(자율실험실 전주기 숙련) · AI 인재양성 부트캠프(2025~) · 한양 Bridge / 인터칼리지 융합학부.</p>
+                <div style="overflow-x:auto;">
+                <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+                    <thead>
+                        <tr style="background:#eef2ff;color:#3730a3;">
+                            <th style="padding:8px 10px;text-align:left;border:1px solid #dbe2ea;">연간 인력 확보(정상단계 기준)</th>
+                            <th style="padding:8px 10px;border:1px solid #dbe2ea;">학사(인턴)</th>
+                            <th style="padding:8px 10px;border:1px solid #dbe2ea;">석사과정</th>
+                            <th style="padding:8px 10px;border:1px solid #dbe2ea;">박사과정</th>
+                            <th style="padding:8px 10px;border:1px solid #dbe2ea;">박사후연구원</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding:8px 10px;border:1px solid #dbe2ea;color:#5b6b7b;">1차년도(’26)</td>
+                            <td style="padding:8px 10px;border:1px solid #dbe2ea;text-align:center;">6</td>
+                            <td style="padding:8px 10px;border:1px solid #dbe2ea;text-align:center;">6</td>
+                            <td style="padding:8px 10px;border:1px solid #dbe2ea;text-align:center;">4</td>
+                            <td style="padding:8px 10px;border:1px solid #dbe2ea;text-align:center;">2</td>
+                        </tr>
+                        <tr style="background:#f8fafc;">
+                            <td style="padding:8px 10px;border:1px solid #dbe2ea;color:#5b6b7b;">정상단계(’27~)</td>
+                            <td style="padding:8px 10px;border:1px solid #dbe2ea;text-align:center;">10</td>
+                            <td style="padding:8px 10px;border:1px solid #dbe2ea;text-align:center;">15</td>
+                            <td style="padding:8px 10px;border:1px solid #dbe2ea;text-align:center;">10</td>
+                            <td style="padding:8px 10px;border:1px solid #dbe2ea;text-align:center;">5</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <p class="en" style="margin:12px 0 0;color:#7b8794;font-size:0.85rem;">※ 목표 : 지역 정주 연구인력 누적 30명 이상 · 국내외 우수 Post-Doc 유치를 통한 Staff Scientist·연구교수 임용 (출처: 2026 글로컬랩(거점형) 연구계획서)</p>
+            </div>
         </section>
 
         <!-- 논문 사사 (Acknowledgement) -->
