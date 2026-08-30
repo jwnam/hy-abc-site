@@ -6,6 +6,28 @@
     <title>글로컬랩 | 첨단바이오융합연구소(HY-ABC)</title>
     <meta name="description" content="2026 글로컬랩(거점형) — 한양대학교 첨단바이오융합연구소(HY-ABC)의 AI바이오 특화 융합연구소 육성 사업 소개">
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+      /* 글로컬랩 페이지 전용: 카드 3개 그리드 중앙정렬 (공통 style.css는 4열이라 좌측 쏠림 방지) */
+      .about-container .purpose-grid{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 1040px;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+      }
+      @media (max-width: 900px){
+        .about-container .purpose-grid{ grid-template-columns: 1fr; max-width: 480px; }
+      }
+      /* 거버넌스 이미지 */
+      .gov-figure{ text-align:center; margin: 0 auto; max-width: 960px; }
+      .gov-figure img{ width:100%; height:auto; border:1px solid #e6ecf3; border-radius:12px; box-shadow:0 4px 16px rgba(11,42,74,.08); }
+      .gov-figure figcaption{ color:#5b6b7b; font-size:14px; margin-top:12px; }
+      /* 논문 사사 */
+      .ack-box{ max-width: 900px; margin: 0 auto; background:#f6f8fb; border:1px solid #e6ecf3; border-left:4px solid #1560bd; border-radius:10px; padding:22px 26px; }
+      .ack-box p{ margin:0 0 12px; }
+      .ack-box .en{ color:#5b6b7b; font-size:14px; }
+      .ack-box code{ background:#eef4fb; padding:1px 6px; border-radius:4px; }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -41,6 +63,7 @@
                         <li><a href="glocallab.html#groups">핵심연구그룹</a></li>
                         <li><a href="glocallab.html#valley">EAST-ARC Valley</a></li>
                         <li><a href="glocallab.html#goals">성과목표</a></li>
+                        <li><a href="glocallab.html#governance">거버넌스</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -207,6 +230,18 @@
             </div>
         </section>
 
+        <!-- 거버넌스 -->
+        <section id="governance" class="section greeting-section">
+            <div class="section-header animate-on-scroll">
+                <h2>연구소 거버넌스 (의사결정체계)</h2>
+                <div class="header-line"></div>
+            </div>
+            <figure class="gov-figure animate-on-scroll">
+                <img src="../images/glocallab/governance.png" alt="글로컬랩 연구소 거버넌스(의사결정체계) — 발표자료 기반">
+                <figcaption>글로컬랩 연구소 거버넌스(의사결정체계) · 출처: 2026 글로컬랩(거점형) 발표자료</figcaption>
+            </figure>
+        </section>
+
         <!-- 성과목표 -->
         <section id="goals" class="section purpose-section">
             <div class="section-header animate-on-scroll">
@@ -220,6 +255,21 @@
             </div>
             <p class="animate-on-scroll" style="text-align:center;max-width:860px;margin:28px auto 0;color:#5b6b7b;">
                 인프라 : 바이오공동기기센터 6코어 82대+ · AI컴퓨팅(A100 80GB SXM 8장 + H100·RTX3090) · 전용 연구공간 165평+57평</p>
+        </section>
+
+        <!-- 논문 사사 (Acknowledgement) -->
+        <section id="acknowledgement" class="section purpose-section">
+            <div class="section-header animate-on-scroll">
+                <h2>논문 사사 (Acknowledgement)</h2>
+                <div class="header-line"></div>
+            </div>
+            <div class="ack-box animate-on-scroll">
+                <p><strong>[국문]</strong> 이 성과(논문)는 2026년도 대한민국 교육부와 한국연구재단의 지원을 받아 수행된
+                글로컬랩(거점형) 사업의 결과입니다. (과제번호: <code>000</code>)</p>
+                <p class="en"><strong>[English]</strong> This work was supported by the GlocalLab (Hub-type) program
+                through the National Research Foundation of Korea (NRF) funded by the Ministry of Education (No. <code>000</code>).</p>
+                <p class="en" style="margin-bottom:0;">※ 과제번호는 추후 확정되는 번호로 <code>000</code>을 대체해 사용하시기 바랍니다.</p>
+            </div>
         </section>
 
     </main>
