@@ -766,7 +766,27 @@
         <!-- ===== PUBLICATIONS SECTION ===== -->
         <section class="publications-section" id="publications">
             <h2 class="section-title">주요 논문 실적</h2>
-            <p class="section-subtitle">최근 연도별 우수 논문 게재 현황</p>
+            <p class="section-subtitle">연구소 주요 구성원(소장·연구그룹장·운영위원·간사·참여전임교원)이 <strong>주저자(제1·교신저자)</strong>인 IF 5 이상 논문 (2023년~현재, PubMed 기준 매월 갱신)</p>
+
+            <style>
+                .if-filter{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 26px}
+                .if-filter-label{font-weight:700;color:#0a2850;margin-right:4px}
+                .if-btn{border:1px solid #dbe7f5;background:#fff;color:#1560bd;font-weight:600;font-size:14px;padding:7px 16px;border-radius:20px;cursor:pointer;transition:all .15s}
+                .if-btn:hover{background:#eef4fb}
+                .if-btn.active{background:#1560bd;color:#fff;border-color:#1560bd}
+                .if-count{margin-left:auto;color:#5b6b7b;font-size:13px}
+                .if-badge.t20{background:#0a2850;color:#fff}
+                .if-badge.t10{background:#1560bd;color:#fff}
+                .if-badge.t5{background:#00a8a8;color:#fff}
+            </style>
+            <div class="if-filter" id="ifFilter">
+                <span class="if-filter-label">IF 필터</span>
+                <button class="if-btn active" data-min="0">전체</button>
+                <button class="if-btn" data-min="5">IF ≥ 5</button>
+                <button class="if-btn" data-min="10">IF ≥ 10</button>
+                <button class="if-btn" data-min="20">IF ≥ 20</button>
+                <span class="if-count" id="ifCount"></span>
+            </div>
 
             <div class="publications-container">
                 <!-- 2025 Papers -->
@@ -782,6 +802,33 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td>2025</td>
+                                <td>
+                                    <div class="journal-badge">Mol Ther Nucleic Acids</div>
+                                    <span class="if-badge">IF 7.9</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">shRNAI: A deep neural network for the design of highly potent shRNAs</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">남진우 교수<span class="author-role">소장 · 교신</span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2025</td>
+                                <td>
+                                    <div class="journal-badge">Cell Death Discovery</div>
+                                    <span class="if-badge">IF 7.0</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">O-GlcNAcylation of NONO regulates paraspeckle component assembly and contributes to colon cancer cell proliferation</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">남진우 교수<span class="author-role">소장 · 공동교신</span></div>
+                                </td>
+                            </tr>
+
                             <tr>
                                 <td>2025</td>
                                 <td>
@@ -838,6 +885,33 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td>2024</td>
+                                <td>
+                                    <div class="journal-badge">Experimental & Molecular Medicine</div>
+                                    <span class="if-badge">IF 9.5</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">Optimal design of synthetic circular RNAs</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">남진우 교수<span class="author-role">소장 · 교신</span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2024</td>
+                                <td>
+                                    <div class="journal-badge">eLife</div>
+                                    <span class="if-badge">IF 6.4</span>
+                                </td>
+                                <td>
+                                    <div class="article-title">Comparative interactome analysis of α-arrestin families in human and Drosophila</div>
+                                </td>
+                                <td>
+                                    <div class="author-info">남진우 교수<span class="author-role">소장 · 교신</span></div>
+                                </td>
+                            </tr>
+
                             <tr>
                                 <td>2024</td>
                                 <td>
@@ -925,6 +999,44 @@
                 </div>
             </div>
         </section>
+
+        <script>
+        (function(){
+            var filter=document.getElementById('ifFilter');
+            if(!filter) return;
+            var btns=filter.querySelectorAll('.if-btn');
+            var groups=document.querySelectorAll('#publications .year-group');
+            var countEl=document.getElementById('ifCount');
+            function parseIF(tr){
+                var b=tr.querySelector('.if-badge');
+                if(!b) return 0;
+                var m=b.textContent.replace(/,/g,'').match(/([\d.]+)/);
+                return m?parseFloat(m[1]):0;
+            }
+            // IF 값에 따라 뱃지 색상 등급(t20/t10/t5) 자동 부여
+            document.querySelectorAll('#publications .if-badge').forEach(function(b){
+                var m=b.textContent.replace(/,/g,'').match(/([\d.]+)/); var v=m?parseFloat(m[1]):0;
+                b.classList.remove('t20','t10','t5');
+                if(v>=20)b.classList.add('t20'); else if(v>=10)b.classList.add('t10'); else if(v>=5)b.classList.add('t5');
+            });
+            function apply(min){
+                var total=0;
+                groups.forEach(function(g){
+                    var gv=0;
+                    g.querySelectorAll('tbody tr').forEach(function(tr){
+                        var ok=parseIF(tr)>=min; tr.style.display=ok?'':'none'; if(ok){gv++;total++;}
+                    });
+                    g.style.display=gv?'':'none';
+                });
+                if(countEl) countEl.textContent='총 '+total+'편';
+            }
+            btns.forEach(function(b){ b.addEventListener('click',function(){
+                btns.forEach(function(x){x.classList.remove('active');}); b.classList.add('active');
+                apply(parseFloat(b.dataset.min));
+            }); });
+            apply(0);
+        })();
+        </script>
 
         <!-- ===== RESEARCH PROJECTS SECTION ===== -->
         <section class="research-projects-section" id="projects">
