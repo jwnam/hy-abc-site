@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
+        /* 보도자료 카드 */
+        .press-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:8px}
+        @media(max-width:760px){.press-grid{grid-template-columns:1fr}}
+        a.press-card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #e6ecf3;border-left:4px solid #1560bd;border-radius:12px;padding:18px 20px;box-shadow:0 2px 10px rgba(11,42,74,.05);transition:transform .15s,box-shadow .15s}
+        a.press-card:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(11,42,74,.12)}
+        a.press-card.lead{border-left-color:#00a8a8}
+        a.press-card.committee{border-left-color:#7a8aa0}
+        .pr-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:8px;flex-wrap:wrap}
+        .pr-person{font-size:12px;font-weight:700;color:#fff;background:#1560bd;border-radius:6px;padding:3px 10px}
+        a.press-card.lead .pr-person{background:#00a8a8}
+        a.press-card.committee .pr-person{background:#7a8aa0}
+        .pr-date{font-size:12px;color:#5b6b7b}
+        .pr-title{font-size:16px;font-weight:700;color:#0b2a4a;margin:0 0 8px;line-height:1.45}
+        .pr-summary{font-size:14px;color:#42505f;margin:0 0 10px;line-height:1.6}
+        .pr-outlet{font-size:13px;font-weight:600;color:#1560bd}
         /* 월간 바이오정책동향 카드 (HY-IBB 연동) */
         .policy-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px}
         @media(max-width:900px){.policy-grid{grid-template-columns:repeat(2,1fr)}}
@@ -681,6 +696,7 @@
                     <a href="news.html" class="nav-link">소식</a>
                     <ul class="dropdown-menu">
                         <li><a href="news.html#notice">공지사항</a></li>
+                        <li><a href="news.html#press">보도자료</a></li>
                         <li><a href="news.html#gallery">갤러리</a></li>
                         <li><a href="news.html#mou">MOU</a></li>
                         <li><a href="news.html#publications">발간물</a></li>
@@ -792,6 +808,91 @@
         </section>
 
         <!-- Gallery Section -->
+        <section id="press" class="container">
+            <h2 class="section-title">보도자료</h2>
+            <p class="section-subtitle">연구소 주요 구성원(소장·연구그룹장·운영위원 등)의 언론 보도 — 2026년 기사</p>
+            <div class="press-grid">
+                <a class="press-card director" href="https://www.etnews.com/20260805000107" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">남진우 · 소장</span><span class="pr-date">2026.08.05</span></div>
+                    <h4 class="pr-title">[人사이트] 남진우 한양대 교수 “AI 신약 병목, K-문샷으로 극복해 개발 속도 10배 향상”</h4>
+                    <p class="pr-summary">K-문샷 신약 미션 PD인 남진우 소장이 AI 신약개발의 병목(데이터·실험 자동화)을 해결하고 플랫폼 혁신으로 개발 성공률과 속도를 끌어올리겠다는 구상을 밝힘.</p>
+                    <span class="pr-outlet">전자신문 원문 →</span>
+                </a>
+                <a class="press-card director" href="https://www.mt.co.kr/tech/2026/07/20/2026072010513745179" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">남진우 · 소장</span><span class="pr-date">2026.07.20</span></div>
+                    <h4 class="pr-title">K-문샷 신약 개발 로드맵, 산·학·연·병 전문가 의견 듣는다</h4>
+                    <p class="pr-summary">K-문샷 AI 신약 미션 의견수렴회에서 발견 중심→AI 설계 중심 패러다임 전환과 2035년까지 신약 발굴 속도 10배 가속 목표, 현장 데이터 협력의 필요성을 강조.</p>
+                    <span class="pr-outlet">머니투데이 원문 →</span>
+                </a>
+                <a class="press-card director" href="https://www.ddaily.co.kr/page/view/2026072009531737393" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">남진우 · 소장</span><span class="pr-date">2026.07.20</span></div>
+                    <h4 class="pr-title">정부 ‘K-문샷 AI 신약’ 시동…AI로 신약개발 패러다임 전환 속도 [AI정책노트]</h4>
+                    <p class="pr-summary">남진우 소장이 K-문샷 AI 신약 미션 책임자로서 추진 배경·목표와 AI 기반 설계 중심 전환, 신약 발굴 10배 가속 목표를 소개.</p>
+                    <span class="pr-outlet">디지털데일리 원문 →</span>
+                </a>
+                <a class="press-card director" href="https://newsseoul.co.kr/news/view/1065611410760599" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">남진우 · 소장</span><span class="pr-date">2026.07.20</span></div>
+                    <h4 class="pr-title">과기정통부, ′K-문샷 AI 신약 미션′ 본격 추진을 위한 현장 소통 나서</h4>
+                    <p class="pr-summary">현장 의견수렴회에서 국내 신약 파이프라인 세계 3위이나 실질 개발역량 강화 필요성을 지적하고, AI 설계 중심 전환과 산·학·연·병 협력을 강조.</p>
+                    <span class="pr-outlet">뉴스서울 원문 →</span>
+                </a>
+                <a class="press-card committee" href="https://www.rapportian.com/news/articleView.html?idxno=237466" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">배상철 · 운영위원</span><span class="pr-date">2026.06.25</span></div>
+                    <h4 class="pr-title">치료 반응 없는 루푸스 신염, 혈액검사로 조기 예측 가능성 제시</h4>
+                    <p class="pr-summary">배상철 의학석좌교수가 KAIST와 공동으로 루푸스 신염 환자에서 제1형 인터페론 신호 지속 활성화가 치료 불응과 연관됨을 규명(Ann Rheum Dis), 혈액검사 기반 조기 예측 가능성 제시.</p>
+                    <span class="pr-outlet">라포르시안 원문 →</span>
+                </a>
+                <a class="press-card director" href="https://www.ajunews.com/view/20260527151327382" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">남진우 · 소장</span><span class="pr-date">2026.05.27</span></div>
+                    <h4 class="pr-title">K-문샷 프로젝트 본격화…과기정통부, PD 12명 위촉</h4>
+                    <p class="pr-summary">과기정통부가 K-문샷 미션별 PD 12명을 위촉, 신약 분야에 남진우 한양대 교수가 선정.</p>
+                    <span class="pr-outlet">아주경제 원문 →</span>
+                </a>
+                <a class="press-card director" href="https://www.korea.kr/news/policyNewsView.do?newsId=148965259" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">남진우 · 소장</span><span class="pr-date">2026.05.27</span></div>
+                    <h4 class="pr-title">과학기술 12대 국가미션 해결 ‘K-문샷 프로젝트’ 개시</h4>
+                    <p class="pr-summary">12대 국가미션 해결을 위한 K-문샷 프로젝트 개시와 미션별 PD 발표. 신약 분야 PD로 한양대 남진우 교수 명시.</p>
+                    <span class="pr-outlet">대한민국 정책브리핑 원문 →</span>
+                </a>
+                <a class="press-card director" href="https://www.hellodd.com/news/articleView.html?idxno=111915" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">남진우 · 소장</span><span class="pr-date">2026.05.27</span></div>
+                    <h4 class="pr-title">‘K-문샷’ 본격 가동···과기정통부, 12개 미션 책임자 위촉</h4>
+                    <p class="pr-summary">K-문샷 프로젝트 공식 출범과 12개 미션 PD 위촉. 신약개발 미션 PD로 남진우 한양대 교수 위촉.</p>
+                    <span class="pr-outlet">헬로디디 원문 →</span>
+                </a>
+                <a class="press-card committee" href="https://v.daum.net/v/UwXPnxd8lW" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">최제민 · 운영위원</span><span class="pr-date">2026.05.15</span></div>
+                    <h4 class="pr-title">한양대 최제민 교수팀, 새로운 ‘병용 치료 전략’ 규명</h4>
+                    <p class="pr-summary">최제민 교수팀이 CTLA-4 Ig에 저용량 IL-2를 병용해 조절 T세포를 유도, 중추신경계 자가면역질환을 억제하는 병용 치료 전략을 규명(EMBO Mol Med).</p>
+                    <span class="pr-outlet">중앙일보 원문 →</span>
+                </a>
+                <a class="press-card lead" href="https://www.hankyung.com/article/2026051329351" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">전대원 · 연구그룹장</span><span class="pr-date">2026.05.13</span></div>
+                    <h4 class="pr-title">전대원 “지방간, 환자 맞춤 치료 이뤄져야…산학연 ‘임상 협업’ 절실”</h4>
+                    <p class="pr-summary">전대원 교수가 대사이상 지방간염(MASH)에서 지방 감소와 섬유화 개선을 동시 해결하는 환자 맞춤형 치료와 산학연 협력의 필요성을 강조.</p>
+                    <span class="pr-outlet">한국경제 원문 →</span>
+                </a>
+                <a class="press-card committee" href="https://www.newshyu.com/news/articleView.html?idxno=1023076" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">박보영 · 운영위원</span><span class="pr-date">2026.03.04</span></div>
+                    <h4 class="pr-title">한양대 2026년 2월 3·4주차 우수논문 (박보영)</h4>
+                    <p class="pr-summary">박보영 교수가 젊은 유방암 환자의 타목시펜 일시 중단(임신 목적) 코호트(약 3만명)를 분석해 재발 위험 경향을 규명(BREAST), 한양대 우수논문 선정.</p>
+                    <span class="pr-outlet">뉴스H 원문 →</span>
+                </a>
+                <a class="press-card lead" href="https://www.newshyu.com/news/articleView.html?idxno=1022706" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">전대원 · 연구그룹장</span><span class="pr-date">2026.02.09</span></div>
+                    <h4 class="pr-title">한양대, 2026년도 최상위논문연구자 10명 선정 (전대원)</h4>
+                    <p class="pr-summary">한양대 최상위논문연구자 10명에 의과대학 내과학교실 전대원 교수가 3년 연속 선정.</p>
+                    <span class="pr-outlet">뉴스H 원문 →</span>
+                </a>
+                <a class="press-card lead" href="https://www.newshyu.com/news/articleView.html?idxno=1022400" target="_blank" rel="noopener">
+                    <div class="pr-top"><span class="pr-person">김영필 · 연구그룹장</span><span class="pr-date">2026.01.23</span></div>
+                    <h4 class="pr-title">한양대 2026년 1월 1·2주차 우수논문 (김영필)</h4>
+                    <p class="pr-summary">김영필 교수가 생체분자 고리화(cyclization) 전략의 바이오기술 응용을 정리한 리뷰(Biotechnology Advances, IF 12.5)로 우수논문 저자 선정.</p>
+                    <span class="pr-outlet">뉴스H 원문 →</span>
+                </a>
+            </div>
+        </section>
+
         <section id="gallery" class="container">
             <h2 class="section-title">갤러리</h2>
             <p class="section-subtitle">첨단바이오융합연구소의 주요 활동 사진 및 이미지</p>
