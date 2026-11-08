@@ -298,6 +298,79 @@
         .activities-section {
             animation: slideInUp 0.6s ease-out;
         }
+
+        /* ── 연구소 학술활동 게시판 (썸네일 보드) ── */
+        .event-board {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 24px;
+            margin-top: 10px;
+            margin-bottom: 60px;
+        }
+        .event-card {
+            cursor: pointer;
+            background: #fff;
+            border: 1px solid #e6ecf3;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(11,42,74,.07);
+            transition: transform .18s, box-shadow .18s;
+            display: flex;
+            flex-direction: column;
+        }
+        .event-card:hover { transform: translateY(-6px); box-shadow: 0 14px 34px rgba(0,188,212,.20); }
+        .event-thumb { position: relative; aspect-ratio: 3/4; overflow: hidden; background: #eef4fb; }
+        .event-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+        .event-card:hover .event-thumb img { transform: scale(1.05); }
+        .event-badge { position: absolute; top: 10px; left: 10px; z-index: 2; font-size: 11px; font-weight: 700; color: #fff; background: rgba(80,20,168,.88); border-radius: 6px; padding: 3px 9px; }
+        .event-thumb::after {
+            content: '자세히 보기 →';
+            position: absolute; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, rgba(80,20,168,.75), rgba(0,188,212,.65));
+            color: #fff; font-weight: 700; font-size: 15px; letter-spacing: .02em;
+            opacity: 0; transition: opacity .25s;
+        }
+        .event-card:hover .event-thumb::after { opacity: 1; }
+        .event-meta { padding: 14px 16px; }
+        .event-meta h4 { font-size: 15px; font-weight: 700; color: #0b2a4a; margin: 0 0 6px; line-height: 1.4; }
+        .event-meta .ev-date { font-size: 13px; color: #5014a8; font-weight: 600; }
+
+        /* ── 이벤트 모달(라이트박스) ── */
+        .event-modal {
+            position: fixed; inset: 0; z-index: 1000;
+            display: none; align-items: center; justify-content: center;
+            padding: 30px; background: rgba(10,20,40,.72); backdrop-filter: blur(4px);
+        }
+        .event-modal.open { display: flex; }
+        .event-modal-box {
+            position: relative; background: #fff; border-radius: 16px;
+            max-width: 1000px; width: 100%; max-height: 90vh; overflow: hidden;
+            display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr);
+            box-shadow: 0 24px 70px rgba(0,0,0,.4);
+        }
+        .event-modal-images {
+            background: #0b1b33; padding: 20px; max-height: 90vh; overflow-y: auto;
+            display: flex; flex-direction: column; gap: 14px; align-items: center;
+        }
+        .event-modal-images img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.35); }
+        .event-modal-body { padding: 30px 32px; max-height: 90vh; overflow-y: auto; }
+        .event-modal-body .em-date { display: inline-block; background: linear-gradient(135deg,#5014a8,#00bcd4); color: #fff; font-size: 13px; font-weight: 700; padding: 5px 13px; border-radius: 20px; margin-bottom: 16px; }
+        .event-modal-body h3 { font-size: 1.5rem; color: #0a2850; margin: 0 0 16px; line-height: 1.35; }
+        .event-modal-body p { font-size: 15px; line-height: 1.75; color: #42505f; margin: 0 0 12px; }
+        .event-modal-body ul { margin: 6px 0 14px; padding-left: 20px; }
+        .event-modal-body li { font-size: 14.5px; line-height: 1.7; color: #42505f; }
+        .event-modal-close {
+            position: absolute; top: 16px; right: 18px; z-index: 5;
+            width: 40px; height: 40px; border: none; border-radius: 50%;
+            background: rgba(255,255,255,.92); color: #0a2850; font-size: 24px; line-height: 1; cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0,0,0,.25); transition: background .2s, transform .2s;
+        }
+        .event-modal-close:hover { background: #fff; transform: rotate(90deg); }
+        @media (max-width: 760px) {
+            .event-modal-box { grid-template-columns: 1fr; max-height: 92vh; overflow-y: auto; }
+            .event-modal-images, .event-modal-body { max-height: none; }
+        }
     </style>
 </head>
 <body>
@@ -330,7 +403,7 @@
                 <li class="nav-item dropdown"><a href="research.html" class="nav-link">연구성과</a><ul class="dropdown-menu"><li><a href="research.html#publications">주요논문</a></li><li><a href="research.html#projects">연구과제</a></li>
                         <li><a href="research.html#patents">특허</a></li></ul></li>
                 <li class="nav-item dropdown"><a href="facilities.html" class="nav-link">시설·장비</a><ul class="dropdown-menu"><li><a href="facilities.html#infrastructure">인프라현황</a></li><li><a href="facilities.html#core">코어시설</a></li><li><a href="facilities.html#openlab">오픈랩</a></li></ul></li>
-                <li class="nav-item dropdown"><a href="activities.html" class="nav-link">학술활동</a><ul class="dropdown-menu"><li><a href="activities.html#symposium">국제심포지움</a></li><li><a href="activities.html#minisymposium">미니심포지움</a></li><li><a href="activities.html#seminar">세미나</a></li><li><a href="activities.html#workshop">워크숍</a></li></ul></li>
+                <li class="nav-item dropdown"><a href="activities.html" class="nav-link">학술활동</a><ul class="dropdown-menu"><li><a href="activities.html#symposium">국제심포지움</a></li><li><a href="activities.html#minisymposium">미니심포지움</a></li><li><a href="activities.html#annual">애뉴얼 심포지엄</a></li><li><a href="activities.html#wedseminar">생명과학수요세미나</a></li><li><a href="activities.html#seminar">연구소 학술활동</a></li><li><a href="activities.html#workshop">교육 프로그램</a></li></ul></li>
                 <li class="nav-item dropdown"><a href="news.html" class="nav-link">소식</a><ul class="dropdown-menu"><li><a href="news.html#notice">공지사항</a></li>
                         <li><a href="news.html#press">보도자료</a></li><li><a href="news.html#mou">MOU</a></li><li><a href="news.html#publications">발간물</a></li></ul></li>
             </ul>
@@ -516,14 +589,10 @@
             </div>
         </section>
 
-        <!-- Section 3: 국내 학술 활동 -->
-        <section class="activities-section" id="seminar">
-            <h2 class="section-title">국내 학술 활동</h2>
-            <div style="margin-top: 50px;"></div>
-
-            <!-- Subsection A: 한양생명과학기술원 애뉴얼 심포지엄 -->
-            <h3 class="subsection-title">한양생명과학기술원 애뉴얼 심포지엄</h3>
-            <p class="subsection-description">
+        <!-- Section 3: 한양생명과학기술원 애뉴얼 심포지엄 (상위 레벨) -->
+        <section class="activities-section" id="annual">
+            <h2 class="section-title">한양생명과학기술원 애뉴얼 심포지엄</h2>
+            <p class="subsection-description" style="margin-top: 30px;">
                 한양생명과학기술원(특성화연구원)과 공동 개최하는 애뉴얼 심포지엄을 통해 매년 국내 저명 연구자를 초청하여 국내외 연구 동향 및 최신 기술의 공유로 연구 역량 강화
             </p>
 
@@ -561,10 +630,12 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Subsection B: 생명과학수요세미나 -->
-            <h3 class="subsection-title">생명과학수요세미나</h3>
-            <p class="subsection-description">
+        <!-- Section 4: 생명과학수요세미나 (상위 레벨) -->
+        <section class="activities-section" id="wedseminar">
+            <h2 class="section-title">생명과학수요세미나</h2>
+            <p class="subsection-description" style="margin-top: 30px;">
                 학기 당 매주 수요일 진행하는 생명과학 분야 세미나. 바이오 각 분야의 국내 저명 연구자를 초청하여 최신 연구 동향을 소개
             </p>
 
@@ -613,87 +684,69 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Subsection C: KBSI 광주센터 공동 Workshop -->
-            <h3 class="subsection-title">KBSI 광주센터 공동 Workshop</h3>
-            <div class="grid-1">
-                <div class="large-image-wrapper">
-                    <img src="../images/activities/kbsi-workshop.jpg" alt="KBSI 광주센터 공동 Workshop (2025.5.29)">
-                </div>
-            </div>
-
-            <!-- Subsection D: HY-ABC–KIST(CABR) 공동 연구 심포지움 -->
-            <h3 class="subsection-title">HY-ABC–KIST(CABR) 공동 연구 심포지움</h3>
-            <p class="subsection-description">
-                첨단바이오융합연구소와 한국과학기술연구원(KIST) 바이오분자인식연구센터(CABR)가 공동 개최한 추계 연구 심포지엄(2026 Autumn HY IBB–KIST CABR Joint Research Symposium). 전대원 교수와 의과대학을 중심으로, 바이오의약혁신기술연구센터·HY-KIST 바이오융합학과가 공동 주최했습니다(한양대학교 의과대학 본관 608호). 정영도·정승원 박사(KIST, 바이오모방 나노소재·광 기반 PCR 진단), 전대원 교수(지방간질환 다중오믹스 가상실험실), 김혜영 박사(간 오가노이드)의 발표가 진행되었습니다.
+        <!-- Section 5: 연구소 학술활동 (게시판 — 썸네일 클릭 시 원본·설명 모달) -->
+        <section class="activities-section" id="seminar">
+            <h2 class="section-title">연구소 학술활동</h2>
+            <p class="subsection-description" style="margin-top: 30px;">
+                첨단바이오융합연구소가 주최·공동 개최하는 심포지움·세미나·워크숍·웨비나 등 주요 학술행사입니다. 썸네일을 클릭하면 포스터 원본과 상세 내용을 함께 볼 수 있습니다.
             </p>
-            <div class="grid-3">
-                <div class="poster-card" style="max-width:360px">
-                    <div class="poster-image-wrapper">
-                        <img src="../images/activities/kist-cabr-symposium-2026-11.jpg" alt="2026.11.16 - 2026 Autumn HY IBB–KIST CABR Joint Research Symposium (한양대학교 의과대학 본관 608호, 사회: 윤아일린)">
+
+            <div class="event-board">
+                <!-- KIST-CABR 공동 심포지움 -->
+                <div class="event-card" onclick="openEventModal('kist-cabr')" tabindex="0" role="button" aria-label="HY-ABC–KIST(CABR) 공동 연구 심포지움 자세히 보기">
+                    <div class="event-thumb">
+                        <span class="event-badge">심포지움</span>
+                        <img src="../images/activities/kist-cabr-symposium-2026-11.jpg" alt="HY-ABC–KIST(CABR) 공동 연구 심포지움 포스터">
                     </div>
-                    <div class="poster-card-content">
-                        <h4 class="poster-title">HY-ABC–KIST(CABR) 공동 연구 심포지움</h4>
-                        <span class="poster-date">2026.11.16</span>
+                    <div class="event-meta">
+                        <h4>HY-ABC–KIST(CABR) 공동 연구 심포지움</h4>
+                        <span class="ev-date">2026.11.16</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Subsection E: Cellanome–한양대학교 공동 웨비나 -->
-            <h3 class="subsection-title">Cellanome–한양대학교 공동 웨비나</h3>
-            <p class="subsection-description">
-                첨단바이오융합연구소 글로컬랩이 Cellanome과 공동 개최한 온라인 웨비나(Zoom). 「Live Cell Dynamics, Same-Cell Imaging and Transcriptomics for Model-Driven Cell Biology」를 주제로, Shawn Levy 박사(Senior Vice President, Scientific Affairs, Cellanome)와 Mostafa Ronaghi 박사(Co-founder & Board Member, Cellanome)가 발표했습니다.
-            </p>
-            <div class="grid-3">
-                <div class="poster-card" style="max-width:360px">
-                    <div class="poster-image-wrapper">
-                        <img src="../images/activities/cellanome-webinar-2026-10.jpg" alt="2026.10.22 - Cellanome × Hanyang University Webinar: Live Cell Dynamics, Same-Cell Imaging and Transcriptomics for Model-Driven Cell Biology (Zoom)">
+                <!-- 글로컬랩 킥오프 미팅 -->
+                <div class="event-card" onclick="openEventModal('kickoff')" tabindex="0" role="button" aria-label="글로컬랩 킥오프 미팅 자세히 보기">
+                    <div class="event-thumb">
+                        <span class="event-badge">미팅</span>
+                        <img src="../images/activities/kickoff-2026-11.jpg" alt="글로컬랩 킥오프 미팅 포스터">
                     </div>
-                    <div class="poster-card-content">
-                        <h4 class="poster-title">Cellanome–한양대학교 공동 웨비나</h4>
-                        <span class="poster-date">2026.10.22</span>
+                    <div class="event-meta">
+                        <h4>글로컬랩 킥오프 미팅</h4>
+                        <span class="ev-date">2026.11.4</span>
+                    </div>
+                </div>
+
+                <!-- Cellanome 웨비나 -->
+                <div class="event-card" onclick="openEventModal('cellanome')" tabindex="0" role="button" aria-label="Cellanome–한양대학교 공동 웨비나 자세히 보기">
+                    <div class="event-thumb">
+                        <span class="event-badge">웨비나</span>
+                        <img src="../images/activities/cellanome-webinar-2026-10.jpg" alt="Cellanome–한양대학교 공동 웨비나 포스터">
+                    </div>
+                    <div class="event-meta">
+                        <h4>Cellanome–한양대학교 공동 웨비나</h4>
+                        <span class="ev-date">2026.10.22</span>
+                    </div>
+                </div>
+
+                <!-- HANYANG–KBSI 호남권센터 공동 워크숍 (광주센터 Workshop 통합) -->
+                <div class="event-card" onclick="openEventModal('kbsi-honam')" tabindex="0" role="button" aria-label="HANYANG–KBSI 호남권센터 공동 워크숍 자세히 보기">
+                    <div class="event-thumb">
+                        <span class="event-badge">워크숍</span>
+                        <img src="../images/activities/kbsi-workshop-2026-10.jpg" alt="HANYANG–KBSI 호남권센터 공동 워크숍 포스터">
+                    </div>
+                    <div class="event-meta">
+                        <h4>HANYANG–KBSI 호남권센터 공동 워크숍</h4>
+                        <span class="ev-date">2026.10.21 · 2025.5.29</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 4: 교육 프로그램 -->
+        <!-- Section 6: 교육 프로그램 -->
         <section class="activities-section" id="workshop">
             <h2 class="section-title">교육 프로그램</h2>
-
-            <!-- Subsection: 글로컬랩 킥오프 미팅 -->
-            <h3 class="subsection-title">글로컬랩 킥오프 미팅</h3>
-            <p class="subsection-description">
-                첨단바이오융합연구소 글로컬랩(거점형) 사업 착수를 알리는 킥오프 미팅(2026.11.4, 자연과학관 B119 NatureHall 강의실). 남진우 소장의 사업 소개, 전대원·김영필 교수의 2대 핵심연구그룹(정밀의료·바이오혁신신약 / 신약소재·RNA·펩타이드 치료제) 발표, 사업운영 안내 및 자율실험실 공모 설명이 진행되었습니다(참여연구자 전원 대상).
-            </p>
-            <div class="grid-3">
-                <div class="poster-card" style="max-width:360px">
-                    <div class="poster-image-wrapper">
-                        <img src="../images/activities/kickoff-2026-11.jpg" alt="2026.11.4 - 글로컬랩 킥오프 미팅: AI 가상실험실로 여는 첨단바이오융합연구 (자연과학관 B119 NatureHall 강의실)">
-                    </div>
-                    <div class="poster-card-content">
-                        <h4 class="poster-title">글로컬랩 킥오프 미팅</h4>
-                        <span class="poster-date">2026.11.4</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Subsection: HANYANG–KBSI 호남권센터 공동 워크숍 -->
-            <h3 class="subsection-title">HANYANG–KBSI 호남권센터 공동 워크숍</h3>
-            <p class="subsection-description">
-                한양대학교 생명과학과와 한국기초과학지원연구원(KBSI) 호남권센터의 학연 공동연구사업 2차년도 하반기 워크숍(2026.10.21, 자연과학대 B117 Science홀). 「실시간 멀티모달 이미징을 활용한 지질방울 표적기반 지방간질환 치료 연구」를 주제로, 김영필 교수·이성수 센터장의 개회에 이어 학연사업 성과발표와 지질방울 선택적 흡착·제거 나노기술(이준석 교수, 화학과) 발표가 진행되었습니다. (주관: 한양 BK21-BIO4 교육연구단 · HY-IBB 첨단바이오융합연구소 글로컬랩)
-            </p>
-            <div class="grid-3">
-                <div class="poster-card" style="max-width:360px">
-                    <div class="poster-image-wrapper">
-                        <img src="../images/activities/kbsi-workshop-2026-10.jpg" alt="2026.10.21 - HANYANG–KBSI Joint Workshop: 실시간 멀티모달 이미징을 활용한 지질방울 표적기반 지방간질환 치료 연구 (자연과학대 B117 Science홀)">
-                    </div>
-                    <div class="poster-card-content">
-                        <h4 class="poster-title">HANYANG–KBSI 공동 워크숍</h4>
-                        <span class="poster-date">2026.10.21</span>
-                    </div>
-                </div>
-            </div>
 
             <!-- Subsection: BI/컴퓨팅 코어 사용자 교육 및 바이오데이터 분석 워크숍 -->
             <h3 class="subsection-title">BI/컴퓨팅 코어 사용자 교육 및 바이오데이터 분석 워크숍</h3>
@@ -773,6 +826,19 @@
 
     </main>
 
+    <!-- 연구소 학술활동 이벤트 모달(라이트박스) -->
+    <div class="event-modal" id="eventModal" onclick="if(event.target===this)closeEventModal()">
+        <div class="event-modal-box">
+            <button class="event-modal-close" onclick="closeEventModal()" aria-label="닫기">&times;</button>
+            <div class="event-modal-images" id="emImages"></div>
+            <div class="event-modal-body">
+                <span class="em-date" id="emDate"></span>
+                <h3 id="emTitle"></h3>
+                <div id="emDesc"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -809,5 +875,88 @@
 
     <!-- Scripts -->
     <script src="../js/main.js"></script>
+
+    <!-- 연구소 학술활동 이벤트 데이터 & 모달 제어 -->
+    <script>
+        const HYABC_EVENTS = {
+            'kist-cabr': {
+                title: 'HY-ABC–KIST(CABR) 공동 연구 심포지움',
+                date: '2026.11.16 (월) 16:30–18:20 · 한양대학교 의과대학 본관 608호',
+                images: ['../images/activities/kist-cabr-symposium-2026-11.jpg'],
+                desc: `<p>첨단바이오융합연구소와 한국과학기술연구원(KIST) 바이오분자인식연구센터(CABR)가 공동 개최한 추계 연구 심포지엄(2026 Autumn HY IBB–KIST CABR Joint Research Symposium)입니다. 전대원 교수와 의과대학을 중심으로, 바이오의약혁신기술연구센터·HY-KIST 바이오융합학과가 공동 주최했습니다. (사회: 윤아일린, 소화기내과)</p>
+                <p><strong>프로그램</strong></p>
+                <ul>
+                    <li>정영도 박사 (KIST · HY-KIST 겸임교수) — Biomimetic Nanomaterials for Biomedical Applications</li>
+                    <li>정승원 박사 (KIST · HY-KIST 겸임교수) — Rethinking PCR: Harnessing Light for Faster Diagnostics</li>
+                    <li>전대원 교수 (HY IBB · 소화기내과) — 지방간질환 다중오믹스 기반 가상실험실 구축</li>
+                    <li>김혜영 박사 (의학혁신융합연구소) — 간 오가노이드 소개 및 오가노이드 활용 연구</li>
+                </ul>`
+            },
+            'kickoff': {
+                title: '글로컬랩 킥오프 미팅',
+                date: '2026.11.4 (수) 17:00–18:00 · 자연과학관 B119 NatureHall 강의실',
+                images: ['../images/activities/kickoff-2026-11.jpg'],
+                desc: `<p>첨단바이오융합연구소 글로컬랩(거점형) 사업 착수를 알리는 킥오프 미팅입니다. 참여연구자 전원(참여교원·전담연구원·대학원생)을 대상으로 개최했습니다. (사회: 박범수 교수)</p>
+                <p><strong>프로그램</strong></p>
+                <ul>
+                    <li>개회 및 오프닝</li>
+                    <li>글로컬랩 사업 소개 — 남진우 연구소장</li>
+                    <li>핵심연구1 · 정밀의료·바이오혁신신약 — 전대원 교수 (의과대학)</li>
+                    <li>핵심연구2 · 신약소재·RNA·펩타이드 치료제 — 김영필 교수 (생명과학과)</li>
+                    <li>사업운영 안내 · 자율실험실 공모 설명 · 사진 촬영</li>
+                </ul>`
+            },
+            'cellanome': {
+                title: 'Cellanome–한양대학교 공동 웨비나',
+                date: '2026.10.22 · 온라인(Zoom)',
+                images: ['../images/activities/cellanome-webinar-2026-10.jpg'],
+                desc: `<p>첨단바이오융합연구소 글로컬랩이 Cellanome과 공동 개최한 온라인 웨비나입니다.</p>
+                <p><strong>주제</strong><br>Live Cell Dynamics, Same-Cell Imaging and Transcriptomics for Model-Driven Cell Biology</p>
+                <p><strong>연사(Featured Speakers)</strong></p>
+                <ul>
+                    <li>Shawn Levy 박사 — Senior Vice President, Scientific Affairs, Cellanome</li>
+                    <li>Mostafa Ronaghi 박사 — Co-founder &amp; Board Member, Cellanome</li>
+                </ul>`
+            },
+            'kbsi-honam': {
+                title: 'HANYANG–KBSI 호남권센터 공동 워크숍',
+                date: '2026.10.21 (수) 15:00–17:00 · 자연과학대 B117 Science홀',
+                images: ['../images/activities/kbsi-workshop-2026-10.jpg', '../images/activities/kbsi-workshop.jpg'],
+                desc: `<p>한양대학교 생명과학과와 한국기초과학지원연구원(KBSI) 호남권센터의 학연 공동연구사업 2차년도 하반기 워크숍입니다. 「실시간 멀티모달 이미징을 활용한 지질방울 표적기반 지방간질환 치료 연구」를 주제로 진행되었습니다. (주관: 한양 BK21-BIO4 교육연구단 · HY-IBB 첨단바이오융합연구소 글로컬랩)</p>
+                <p><strong>프로그램</strong></p>
+                <ul>
+                    <li>개회사 및 인사말 — 김영필 교수(생명과학과) · 이성수 센터장(KBSI)</li>
+                    <li>HYU–KBSI 학연사업 2차년도 성과발표 — 한양대–KBSI 참여연구원</li>
+                    <li>지질방울 선택적 흡착 및 제거를 위한 나노기술 — 이준석 교수(화학과)</li>
+                    <li>종합 토론 및 공동연구 협의</li>
+                </ul>
+                <p style="color:#5b6b7b;font-size:13.5px;">※ 본 협력은 KBSI 호남권센터(광주)와의 지속 공동연구로, 2025.5.29 공동 워크숍(아래 두 번째 이미지)에 이어 개최되었습니다.</p>`
+            }
+        };
+
+        function openEventModal(id) {
+            const e = HYABC_EVENTS[id];
+            if (!e) return;
+            document.getElementById('emTitle').textContent = e.title;
+            document.getElementById('emDate').textContent = e.date;
+            document.getElementById('emDesc').innerHTML = e.desc;
+            document.getElementById('emImages').innerHTML =
+                e.images.map(src => `<img src="${src}" alt="${e.title}">`).join('');
+            const m = document.getElementById('eventModal');
+            m.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeEventModal() {
+            document.getElementById('eventModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeEventModal(); });
+        // 카드 키보드 접근성(Enter/Space)
+        document.querySelectorAll('.event-card[role="button"]').forEach(card => {
+            card.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+            });
+        });
+    </script>
 </body>
 </html>
