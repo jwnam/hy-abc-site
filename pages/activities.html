@@ -934,27 +934,60 @@
             }
         };
 
-        function openEventModal(id) {
-            const e = HYABC_EVENTS[id];
-            if (!e) return;
-            document.getElementById('emTitle').textContent = e.title;
-            document.getElementById('emDate').textContent = e.date;
-            document.getElementById('emDesc').innerHTML = e.desc;
+        // 공통 모달 렌더러 — {title, date, images[], desc(HTML)}
+        function openModalData(e) {
+            if (!e || !e.images || !e.images.length) return;
+            document.getElementById('emTitle').textContent = e.title || '';
+            const dateEl = document.getElementById('emDate');
+            dateEl.textContent = e.date || '';
+            dateEl.style.display = e.date ? '' : 'none';
+            document.getElementById('emDesc').innerHTML = e.desc || '';
             document.getElementById('emImages').innerHTML =
-                e.images.map(src => `<img src="${src}" alt="${e.title}">`).join('');
+                e.images.map(src => `<img src="${src}" alt="${(e.title||'').replace(/"/g,'&quot;')}">`).join('');
             const m = document.getElementById('eventModal');
             m.classList.add('open');
             document.body.style.overflow = 'hidden';
+        }
+        // 연구소 학술활동 보드 카드(데이터 정의형)
+        function openEventModal(id) {
+            openModalData(HYABC_EVENTS[id]);
         }
         function closeEventModal() {
             document.getElementById('eventModal').classList.remove('open');
             document.body.style.overflow = '';
         }
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeEventModal(); });
-        // 카드 키보드 접근성(Enter/Space)
+        // 연구소 학술활동 보드 카드 키보드 접근성(Enter/Space)
         document.querySelectorAll('.event-card[role="button"]').forEach(card => {
             card.addEventListener('keydown', e => {
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+            });
+        });
+
+        // 일반 포스터 카드(국제심포지움·미니심포지움·애뉴얼·수요세미나·교육 프로그램)도
+        // 클릭 시 동일 모달로 포스터 원본 + 설명(없으면 이미지 alt)을 표시
+        document.querySelectorAll('.poster-card').forEach(card => {
+            const img = card.querySelector('.poster-image-wrapper img');
+            if (!img) return;
+            card.style.cursor = 'pointer';
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('role', 'button');
+            const open = () => {
+                const titleEl = card.querySelector('.poster-title');
+                const dateEl = card.querySelector('.poster-date');
+                const title = titleEl ? titleEl.textContent.trim() : '';
+                const date = dateEl ? dateEl.textContent.trim() : '';
+                // 설명: data-desc 우선, 없으면 이미지 alt에서 날짜 접두어 제거 후 사용
+                let desc = card.dataset.desc || '';
+                if (!desc && img.alt) {
+                    const cleaned = img.alt.replace(/^\s*[\d.]+\s*(년)?[^-–]*[-–]\s*/, '').trim();
+                    desc = cleaned ? `<p>${cleaned}</p>` : '';
+                }
+                openModalData({ title, date, images: [img.src], desc });
+            };
+            card.addEventListener('click', open);
+            card.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
             });
         });
     </script>
