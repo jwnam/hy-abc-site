@@ -1156,6 +1156,31 @@
         </section>
     </main>
 
+    <!-- 공지사항 상세 모달 -->
+    <style>
+        #notice .notice-item { cursor: pointer; }
+        #notice .notice-description { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .notice-more { display: inline-block; margin-top: 0.6rem; font-size: 0.85rem; font-weight: 600; color: #5014a8; opacity: 0; transition: opacity .2s; }
+        #notice .notice-item:hover .notice-more { opacity: 1; }
+        .notice-modal { position: fixed; inset: 0; z-index: 1000; display: none; align-items: center; justify-content: center; padding: 30px; background: rgba(10,20,40,.72); backdrop-filter: blur(4px); }
+        .notice-modal.open { display: flex; }
+        .notice-modal-box { position: relative; background: #fff; border-radius: 16px; max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 38px 40px; box-shadow: 0 24px 70px rgba(0,0,0,.4); animation: nmIn .25s ease-out; }
+        @keyframes nmIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+        .notice-modal-box .nm-date { display: inline-block; background: linear-gradient(135deg,#5014a8,#00bcd4); color: #fff; font-size: 13px; font-weight: 700; padding: 5px 13px; border-radius: 20px; margin-bottom: 16px; }
+        .notice-modal-box h3 { font-size: 1.5rem; color: #0a2850; margin: 0 0 16px; line-height: 1.4; }
+        .notice-modal-box .nm-desc { font-size: 15.5px; line-height: 1.85; color: #42505f; }
+        .notice-modal-close { position: absolute; top: 16px; right: 18px; width: 38px; height: 38px; border: none; border-radius: 50%; background: #eef4fb; color: #0a2850; font-size: 22px; line-height: 1; cursor: pointer; transition: background .2s, transform .2s; }
+        .notice-modal-close:hover { background: #dfeaf7; transform: rotate(90deg); }
+    </style>
+    <div class="notice-modal" id="noticeModal" onclick="if(event.target===this)closeNoticeModal()">
+        <div class="notice-modal-box">
+            <button class="notice-modal-close" onclick="closeNoticeModal()" aria-label="닫기">&times;</button>
+            <span class="nm-date" id="nmDate"></span>
+            <h3 id="nmTitle"></h3>
+            <div class="nm-desc" id="nmDesc"></div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -1191,5 +1216,44 @@
     </footer>
 
     <script src="../js/main.js"></script>
+
+    <!-- 공지사항 상세 모달 제어 -->
+    <script>
+        (function () {
+            function openNoticeModal(item) {
+                var t = item.querySelector('.notice-title');
+                var d = item.querySelector('.notice-date');
+                var p = item.querySelector('.notice-description');
+                document.getElementById('nmTitle').textContent = t ? t.textContent.trim() : '';
+                var de = document.getElementById('nmDate');
+                de.textContent = d ? d.textContent.trim() : '';
+                de.style.display = d ? '' : 'none';
+                document.getElementById('nmDesc').innerHTML = p ? p.innerHTML : '';
+                var m = document.getElementById('noticeModal');
+                m.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+            window.closeNoticeModal = function () {
+                document.getElementById('noticeModal').classList.remove('open');
+                document.body.style.overflow = '';
+            };
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') window.closeNoticeModal(); });
+            document.querySelectorAll('#notice .notice-item').forEach(function (item) {
+                item.setAttribute('tabindex', '0');
+                item.setAttribute('role', 'button');
+                // '자세히 보기' 힌트 주입(HTML 수정 없이)
+                if (!item.querySelector('.notice-more')) {
+                    var hint = document.createElement('span');
+                    hint.className = 'notice-more';
+                    hint.textContent = '자세히 보기 →';
+                    item.appendChild(hint);
+                }
+                item.addEventListener('click', function () { openNoticeModal(item); });
+                item.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openNoticeModal(item); }
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
