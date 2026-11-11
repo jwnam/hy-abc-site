@@ -336,6 +336,11 @@
         .event-meta h4 { font-size: 15px; font-weight: 700; color: #0b2a4a; margin: 0 0 6px; line-height: 1.4; }
         .event-meta .ev-date { font-size: 13px; color: #5014a8; font-weight: 600; }
 
+        /* 포스터 없는 텍스트 썸네일(임시) */
+        .event-thumb-text { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; background: linear-gradient(135deg, #0a2850 0%, #5014a8 60%, #00bcd4 100%); }
+        .event-thumb-text .ett-title { font-size: 15px; font-weight: 700; line-height: 1.5; color: #fff; }
+        .event-thumb-text .ett-sub { margin-top: 12px; font-size: 12px; font-weight: 600; color: rgba(255,255,255,.85); }
+
         /* ── 이벤트 모달(라이트박스) ── */
         .event-modal {
             position: fixed; inset: 0; z-index: 1000;
@@ -343,6 +348,7 @@
             padding: 30px; background: rgba(10,20,40,.72); backdrop-filter: blur(4px);
         }
         .event-modal.open { display: flex; }
+        .event-modal-box.no-images { grid-template-columns: 1fr; max-width: 640px; }
         .event-modal-box {
             position: relative; background: #fff; border-radius: 16px;
             max-width: 1000px; width: 100%; max-height: 90vh; overflow: hidden;
@@ -696,9 +702,10 @@
             <div class="event-board">
                 <!-- BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop -->
                 <div class="event-card" onclick="openEventModal('iscb-asia-2026')" tabindex="0" role="button" aria-label="BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop 자세히 보기">
-                    <div class="event-thumb">
+                    <div class="event-thumb event-thumb-text">
                         <span class="event-badge">워크숍</span>
-                        <img src="../images/activities/iscb-asia-workshop-2026-11.jpg" alt="BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop 포스터">
+                        <div class="ett-title">BIOINFO/GIW ISCB-Asia 2026<br>HY-ABC Glocal Workshop</div>
+                        <div class="ett-sub">포스터 준비 중 · 클릭하여 상세 보기</div>
                     </div>
                     <div class="event-meta">
                         <h4>BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop</h4>
@@ -906,7 +913,7 @@
             'iscb-asia-2026': {
                 title: 'BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop',
                 date: '2026.11.18 (화) 15:45~17:45 · 한국생명정보학회 ISCB-Asia 2026',
-                images: ['../images/activities/iscb-asia-workshop-2026-11.jpg'],
+                images: [],
                 desc: `<p>첨단바이오융합연구소 글로컬랩이 한국생명정보학회 ISCB-Asia 2026(BIOINFO/GIW) 학술대회 내 공동주최 세션으로 개최한 워크숍입니다.</p>
                 <p><strong>세션명</strong><br>HY-ABC Glocal Workshop — Drug Discovery AI Co-Scientist for Self-Driving Lab</p>
                 <ul>
@@ -983,14 +990,24 @@
 
         // 공통 모달 렌더러 — {title, date, images[], desc(HTML)}
         function openModalData(e) {
-            if (!e || !e.images || !e.images.length) return;
+            if (!e) return;
             document.getElementById('emTitle').textContent = e.title || '';
             const dateEl = document.getElementById('emDate');
             dateEl.textContent = e.date || '';
             dateEl.style.display = e.date ? '' : 'none';
             document.getElementById('emDesc').innerHTML = e.desc || '';
-            document.getElementById('emImages').innerHTML =
-                e.images.map(src => `<img src="${src}" alt="${(e.title||'').replace(/"/g,'&quot;')}">`).join('');
+            const imgs = e.images || [];
+            const box = document.querySelector('.event-modal-box');
+            const imgPanel = document.getElementById('emImages');
+            if (imgs.length) {
+                imgPanel.innerHTML = imgs.map(src => `<img src="${src}" alt="${(e.title||'').replace(/"/g,'&quot;')}">`).join('');
+                imgPanel.style.display = '';
+                box.classList.remove('no-images');
+            } else {
+                imgPanel.innerHTML = '';
+                imgPanel.style.display = 'none';
+                box.classList.add('no-images');
+            }
             const m = document.getElementById('eventModal');
             m.classList.add('open');
             document.body.style.overflow = 'hidden';
