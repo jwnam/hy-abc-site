@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>연구성과 현황 | 첨단바이오융합연구소</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+ *{margin:0;padding:0;box-sizing:border-box}
+ body{font-family:'Noto Sans KR',sans-serif;color:#2c3e50;background:#fafbfc;line-height:1.6}
+ .page-header{background:linear-gradient(135deg,rgba(10,40,80,.9),rgba(80,20,168,.9));color:#fff;padding:4rem 2rem;text-align:center}
+ .page-header h1{font-size:2.2rem;font-weight:700}
+ .page-header p{opacity:.9;margin-top:.5rem}
+ .wrap{max-width:1160px;margin:0 auto;padding:2.5rem 1.5rem}
+ .kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:2rem}
+ .kpi .card{background:#fff;border-radius:12px;padding:1.2rem;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+ .kpi .num{font-size:1.9rem;font-weight:700;color:#1F4E79}
+ .kpi .lbl{color:#7b8a9a;font-size:.85rem}
+ .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+ @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+ .chart-card{background:#fff;border-radius:12px;padding:1.3rem;box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:1.5rem}
+ .chart-card h3{font-size:1.05rem;margin-bottom:.8rem;color:#1F4E79}
+ .tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0 1rem}
+ .tab{padding:.5rem 1rem;border-radius:20px;border:1px solid #cfd8e3;background:#fff;cursor:pointer;font-size:.9rem}
+ .tab.active{background:#1F4E79;color:#fff;border-color:#1F4E79}
+ .item{background:#fff;border-radius:10px;padding:1rem 1.2rem;margin-bottom:.7rem;box-shadow:0 1px 5px rgba(0,0,0,.04);cursor:pointer;transition:box-shadow .15s,transform .15s}
+ .item:hover{box-shadow:0 4px 16px rgba(31,78,121,.15);transform:translateY(-1px)}
+ .item .t{font-weight:600}
+ .item .meta{color:#7b8a9a;font-size:.85rem;margin-top:.2rem}
+ .item .ev{color:#C55A11;font-size:.78rem;margin-left:.3rem}
+ .badge{display:inline-block;background:#eaf1f8;color:#1F4E79;border-radius:6px;padding:.1rem .5rem;font-size:.78rem;margin-right:.3rem}
+ .back{display:inline-block;margin-top:1rem;color:#fff;opacity:.85;text-decoration:none}
+ /* 성과 상세 모달 */
+ .pm{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:28px;background:rgba(10,20,40,.72)}
+ .pm.open{display:flex}
+ .pm-box{position:relative;background:#fff;border-radius:16px;max-width:860px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 24px 70px rgba(0,0,0,.4)}
+ .pm-box .pm-head{padding:26px 30px 10px}
+ .pm-box h3{font-size:1.3rem;color:#13263d;line-height:1.4}
+ .pm-close{position:absolute;top:14px;right:16px;width:38px;height:38px;border:none;border-radius:50%;background:#eef2f7;color:#0a2850;font-size:22px;line-height:1;cursor:pointer}
+ .pm-close:hover{background:#dde5ef}
+ .pm-body{padding:6px 30px 28px}
+ .pm-content{white-space:pre-wrap;color:#34465a;margin:14px 0;font-size:.95rem}
+ .pm-sec{font-weight:600;color:#1F4E79;margin:18px 0 10px;font-size:.95rem}
+ .pm-ev{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+ .pm-ev a{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:#34465a;border:1px solid #e2e8f0;border-radius:10px;padding:8px;font-size:.8rem;word-break:break-all;background:#fafbfc}
+ .pm-ev a:hover{border-color:#1F4E79;background:#f2f7fc}
+ .pm-ev img{width:100%;height:110px;object-fit:cover;border-radius:6px;background:#eee}
+ .pm-ev .fileicon{height:110px;display:flex;align-items:center;justify-content:center;font-size:2.4rem;background:#eef2f7;border-radius:6px}
+ .pm-links a{color:#1F4E79}
+</style>
+</head>
+<body>
+<div class="page-header">
+ <h1>연구성과 현황</h1>
+ <p>첨단바이오융합연구소(HY-ABC) · 글로컬랩 성과 집계</p>
+ <a class="back" href="../index.html">← 연구소 홈으로</a>
+</div>
+<div class="wrap">
+ <div class="kpi" id="kpi"></div>
+ <div class="grid2">
+  <div class="chart-card"><h3>연도별 × 성과 그룹</h3><canvas id="cYearGroup"></canvas></div>
+  <div class="chart-card"><h3>성과 그룹별 비중</h3><canvas id="cPie"></canvas></div>
+ </div>
+ <div class="chart-card"><h3>정량 집계지표 — 연도별 추이</h3><canvas id="cMetric" height="90"></canvas></div>
+
+ <h2 style="margin-top:2rem;color:#1F4E79">성과 목록</h2>
+ <div class="tabs" id="tabs"></div>
+ <div id="items"></div>
+ <p id="gen" style="color:#aab;font-size:.8rem;margin-top:1.5rem"></p>
+</div>
+
+<!-- 성과 상세 모달 -->
+<div class="pm" id="pm" onclick="if(event.target===this)closePm()">
+ <div class="pm-box">
+  <button class="pm-close" onclick="closePm()" aria-label="닫기">&times;</button>
+  <div class="pm-head"><h3 id="pmTitle"></h3><div class="meta" id="pmMeta" style="color:#7b8a9a;font-size:.85rem;margin-top:.5rem"></div></div>
+  <div class="pm-body">
+   <div class="pm-content" id="pmContent"></div>
+   <div id="pmEvWrap" style="display:none"><div class="pm-sec">📎 증빙 자료</div><div class="pm-ev" id="pmEv"></div></div>
+   <div id="pmLinkWrap" style="display:none"><div class="pm-sec">🔗 관련 링크</div><div class="pm-links" id="pmLinks"></div></div>
+  </div>
+ </div>
+</div>
+<script>
+const PAL=['#1F4E79','#2E75B6','#9DC3E6','#70AD47','#FFC000','#C55A11','#7030A0','#A6A6A6'];
+let ITEMS=[], CURG='all';
+Promise.all([
+ fetch('../data/performance_aggregate.json').then(r=>r.json()),
+ fetch('../data/performance_items.json').then(r=>r.json())
+]).then(([s,it])=>{
+ ITEMS=it.items||[]; document.getElementById('gen').textContent='최종 갱신: '+(s.generated_at||'')+' · 총 '+(s.total_records||0)+'건';
+ // KPI
+ const kpi=document.getElementById('kpi');
+ const gtot=s.by_group_total||{};
+ kpi.innerHTML='<div class="card"><div class="num">'+(s.total_records||0)+'</div><div class="lbl">전체 성과</div></div>'+
+  Object.entries(gtot).map(([k,v])=>'<div class="card"><div class="num">'+v+'</div><div class="lbl">'+k+'</div></div>').join('');
+ const years=(s.years||[]).map(String);
+ const groups=s.groups||[];
+ new Chart(cYearGroup,{type:'bar',data:{labels:years,datasets:groups.map((g,i)=>({label:g,backgroundColor:PAL[i%PAL.length],data:years.map(y=>(s.by_year_group[y]||{})[g]||0)}))},options:{plugins:{legend:{position:'bottom'}},scales:{x:{stacked:true},y:{stacked:true}}}});
+ new Chart(cPie,{type:'doughnut',data:{labels:Object.keys(gtot),datasets:[{data:Object.values(gtot),backgroundColor:PAL}]},options:{plugins:{legend:{position:'right'}}}});
+ new Chart(cMetric,{type:'line',data:{labels:years,datasets:(s.metrics||[]).filter(m=>m.total>0).map((m,i)=>({label:m.label,borderColor:PAL[i%PAL.length],backgroundColor:'transparent',data:years.map(y=>m.by_year[y]||0),tension:.3}))},options:{plugins:{legend:{position:'bottom'}}}});
+ // 탭
+ const tabs=document.getElementById('tabs');
+ const gset=[['all','전체']].concat([...new Map(ITEMS.map(i=>[i.group,i.group_label])).entries()]);
+ tabs.innerHTML=gset.map(([k,l])=>'<div class="tab'+(k==='all'?' active':'')+'" data-g="'+k+'">'+l+'</div>').join('');
+ tabs.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{CURG=t.dataset.g;tabs.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');render();});
+ render();
+});
+let VIEW=[];
+function render(){
+ const box=document.getElementById('items');
+ VIEW=ITEMS.filter(i=>CURG==='all'||i.group===CURG);
+ box.innerHTML=VIEW.length?VIEW.map((i,idx)=>{
+  const ex=i.extra||{};const tags=[i.category,i.center].filter(Boolean);
+  if(ex.journal)tags.push(ex.journal);if(ex.patent_scope)tags.push(ex.patent_scope+' 특허');
+  if(ex.has_affiliation)tags.push('🏛 연구소');if(ex.has_grant)tags.push('📑 사사');
+  const nev=(i.evidence||[]).length;
+  const evbadge=nev?'<span class="ev">📎 '+nev+'</span>':'';
+  return '<div class="item" onclick="openPm('+idx+')"><div class="t">'+esc(i.title)+evbadge+'</div><div class="meta">'+
+   '<span class="badge">'+esc(i.group_label)+'</span>'+tags.map(t=>'<span class="badge">'+esc(t)+'</span>').join('')+
+   ' '+(i.date||'')+' · '+(i.performers||[]).map(esc).join(', ')+'</div></div>';
+ }).join(''):'<p style="color:#aab">등록된 성과가 없습니다.</p>';
+}
+function openPm(idx){
+ const i=VIEW[idx]; if(!i)return;
+ const ex=i.extra||{};
+ document.getElementById('pmTitle').textContent=i.title||'';
+ const tags=[i.group_label,i.category,i.center].filter(Boolean);
+ if(ex.journal)tags.push(ex.journal);if(ex.impact_factor)tags.push('IF '+ex.impact_factor);
+ if(ex.patent_scope)tags.push(ex.patent_scope+' 특허');
+ if(ex.has_affiliation)tags.push('🏛 연구소');if(ex.has_grant)tags.push('📑 사사');
+ document.getElementById('pmMeta').innerHTML=tags.map(t=>'<span class="badge">'+esc(t)+'</span>').join('')+
+  ' '+(i.date||'')+(i.performers&&i.performers.length?' · '+i.performers.map(esc).join(', '):'');
+ document.getElementById('pmContent').textContent=i.content_full||i.summary||'';
+ // 증빙(파일/이미지)
+ const evAll=i.evidence||[];
+ const files=evAll.filter(e=>e.kind!=='link');
+ const links=evAll.filter(e=>e.kind==='link');
+ const evWrap=document.getElementById('pmEvWrap'),evBox=document.getElementById('pmEv');
+ if(files.length){
+  evBox.innerHTML=files.map(e=>{
+   const inner=e.kind==='image'
+    ?'<img src="'+esc(e.url)+'" alt="'+esc(e.name)+'" loading="lazy">'
+    :'<div class="fileicon">'+(e.kind==='pdf'?'📕':'📄')+'</div>';
+   return '<a href="'+esc(e.url)+'" target="_blank" rel="noopener" title="원본 보기">'+inner+'<span>'+esc(e.name)+'</span></a>';
+  }).join('');
+  evWrap.style.display='';
+ } else evWrap.style.display='none';
+ // 외부 링크(논문·특허 등)
+ const extraLinks=[];
+ links.forEach(e=>extraLinks.push({url:e.url,label:e.name}));
+ if(ex.doi_url&&!extraLinks.some(l=>l.url===ex.doi_url))extraLinks.unshift({url:ex.doi_url,label:'🔗 원문/DOI'});
+ const lWrap=document.getElementById('pmLinkWrap'),lBox=document.getElementById('pmLinks');
+ if(extraLinks.length){
+  lBox.innerHTML=extraLinks.map(l=>'<div><a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label||l.url)+'</a></div>').join('');
+  lWrap.style.display='';
+ } else lWrap.style.display='none';
+ const m=document.getElementById('pm');m.classList.add('open');document.body.style.overflow='hidden';
+}
+function closePm(){document.getElementById('pm').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePm();});
+function esc(s){return (s==null?'':String(s)).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+</script>
+</body>
+</html>
