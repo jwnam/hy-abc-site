@@ -1,5 +1,1435 @@
 {
-  "generated_at": "2026-11-15T23:31:00",
-  "count": 0,
-  "items": []
+  "generated_at": "2026-11-16T00:20:03",
+  "count": 87,
+  "items": [
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "국제미니심포지움",
+      "title": "BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop",
+      "performers": [],
+      "date": "2026-11-18",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "학술활동(워크숍): BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop. 일자 2026.11.18. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
+      "extra": {}
+    },
+    {
+      "group": "academic",
+      "group_label": "학술활동 성과",
+      "category": "워크샵",
+      "title": "BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop",
+      "performers": [],
+      "date": "2026-11-18",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "학술활동(워크숍): BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop. 일자 2026.11.18. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
+      "extra": {}
+    },
+    {
+      "group": "academic",
+      "group_label": "학술활동 성과",
+      "category": "국내 심포지움",
+      "title": "HY-ABC–KIST(CABR) 공동 연구 심포지움",
+      "performers": [],
+      "date": "2026-11-16",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "학술활동(심포지움): HY-ABC–KIST(CABR) 공동 연구 심포지움. 일자 2026.11.16. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
+      "extra": {}
+    },
+    {
+      "group": "academic",
+      "group_label": "학술활동 성과",
+      "category": "세미나",
+      "title": "글로컬랩 킥오프 미팅",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2026-11-04",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "학술활동(미팅): 글로컬랩 킥오프 미팅. 일자 2026.11.4. 첨단바이오융합연구소(HY-ABC) 주최 킥오프 행사를 진행함. 전체 글로컬랩 참여교수 참여하였고, 사업설명, 안내사항 전달, 핵심연구그룹 연구소개, 가상실험실 개념소개 등을 진행함.",
+      "extra": {}
+    },
+    {
+      "group": "academic",
+      "group_label": "학술활동 성과",
+      "category": "국내 심포지움",
+      "title": "제1회 한양대 × 서울시립대 학술교류 심포지엄",
+      "performers": [],
+      "date": "2026-10-27",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "학술활동(심포지움): 제1회 한양대 × 서울시립대 학술교류 심포지엄. 일자 2026.10.27. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
+      "extra": {}
+    },
+    {
+      "group": "academic",
+      "group_label": "학술활동 성과",
+      "category": "세미나",
+      "title": "Cellanome–한양대학교 공동 웨비나",
+      "performers": [],
+      "date": "2026-10-22",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "학술활동(웨비나): Cellanome–한양대학교 공동 웨비나. 일자 2026.10.22. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
+      "extra": {}
+    },
+    {
+      "group": "academic",
+      "group_label": "학술활동 성과",
+      "category": "워크샵",
+      "title": "HANYANG–KBSI 호남권센터 공동 워크숍",
+      "performers": [],
+      "date": "2026-10-21",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "학술활동(워크숍): HANYANG–KBSI 호남권센터 공동 워크숍. 일자 2026.10.21 · 2025.5.29. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
+      "extra": {}
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "VSL#3 Co-Administration Is Associated with Altered Early-Phase Obeticholic Acid Exposure in MASLD Mice",
+      "performers": [
+        "전대원"
+      ],
+      "date": "2026-10-08",
+      "year": 2026,
+      "center": "RG1 (AI정밀의료·바이오의약혁신)",
+      "summary": "Nutrients (IF 5.9) 게재 논문. 저자: 전대원 교수 (연구그룹장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: VSL#3 Co-Administration Is Associated with Altered Early-Phase Obeticholic Acid Exposure in MASLD Mice",
+      "extra": {
+        "journal": "Nutrients",
+        "impact_factor": 5.9,
+        "doi_url": "https://doi.org/10.3390/nu18193296"
+      }
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "해외초청세미나/심포지움",
+      "title": "Complex Gene Regulation by Long Noncoding RNAs Encoding Small Peptides",
+      "performers": [],
+      "date": "2026-10-02",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "학술활동(발표/행사): Complex Gene Regulation by Long Noncoding RNAs Encoding Small Peptides. 일자 2026.10.2 · 특별초청 세미나 (Prof. Igor Ulitsky, Weizmann). 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동. (국제활동: 해외/국제 연자 초청 강연·포럼 등 글",
+      "extra": {}
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Baseline and longitudinal joint associations of alcohol consumption and obesity with diabetes risk",
+      "performers": [
+        "박보영"
+      ],
+      "date": "2026-10-01",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "Diabetologia (IF 8.4) 게재 논문. 저자: 박보영 교수 (운영위원 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Baseline and longitudinal joint associations of alcohol consumption and obesity with diabetes risk",
+      "extra": {
+        "journal": "Diabetologia",
+        "impact_factor": 8.4,
+        "doi_url": "https://doi.org/10.1007/s00125-026-06790-7"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Cut-and-Bind Colorimetric Detection of Viral and Non-Coding RNAs Using CRISPR/Cas12a with Zinc Finger-Facilitated Gold Nanoparticle Assembly",
+      "performers": [
+        "김영필"
+      ],
+      "date": "2026-09-25",
+      "year": 2026,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "ACS Sensors (IF 8.2) 게재 논문. 저자: 김영필 교수 (연구그룹장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Cut-and-Bind Colorimetric Detection of Viral and Non-Coding RNAs Using CRISPR/Cas12a with Zinc Finger-Facilitated ",
+      "extra": {
+        "journal": "ACS Sensors",
+        "impact_factor": 8.2,
+        "doi_url": "https://doi.org/10.1021/acssensors.6c01324"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Alcohol-Use Trajectories and Major Adverse Liver Outcomes in MetALD: A Nationwide Longitudinal Cohort Study",
+      "performers": [
+        "전대원"
+      ],
+      "date": "2026-09-18",
+      "year": 2026,
+      "center": "RG1 (AI정밀의료·바이오의약혁신)",
+      "summary": "American Journal of Gastroenterology (IF 14.9) 게재 논문. 저자: 전대원 교수 (연구그룹장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Alcohol-Use Trajectories and Major Adverse Liver Outcomes in MetALD: A Nationwide Longit",
+      "extra": {
+        "journal": "American Journal of Gastroenterology",
+        "impact_factor": 14.9,
+        "doi_url": "https://doi.org/10.14309/ajg.0000000000004212"
+      }
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "해외초청세미나/심포지움",
+      "title": "AI-driven Advanced Genomics and Drug Discovery",
+      "performers": [],
+      "date": "2026-09-04",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "학술활동(발표/행사): AI-driven Advanced Genomics and Drug Discovery. 일자 2026.9.4 · 특별초청 세미나. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동. (국제활동: 해외/국제 연자 초청 강연·포럼 등 글로벌 학술교류 성과로 분류.)",
+      "extra": {}
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Contrasting growth phase-dependent microbiota dynamics between dinoflagellates and diatoms",
+      "performers": [
+        "박범수"
+      ],
+      "date": "2026-09-01",
+      "year": 2026,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "Harmful Algae (IF 5.8) 게재 논문. 저자: 박범수 교수 (연구그룹장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Contrasting growth phase-dependent microbiota dynamics between dinoflagellates and diatoms",
+      "extra": {
+        "journal": "Harmful Algae",
+        "impact_factor": 5.8,
+        "attribution": "연구소",
+        "doi_url": "https://doi.org/10.1016/j.hal.2026.103179",
+        "has_affiliation": true
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Family History of Cancer and Risks of Concordant and Discordant Cancers: A Nationwide Cohort Study of Korean Women",
+      "performers": [
+        "박보영"
+      ],
+      "date": "2026-08-31",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "International Journal of Cancer (IF 5.7) 게재 논문. 저자: 박보영 교수 (운영위원 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Family History of Cancer and Risks of Concordant and Discordant Cancers: A Nationwide Cohort St",
+      "extra": {
+        "journal": "International Journal of Cancer",
+        "impact_factor": 5.7,
+        "doi_url": "https://doi.org/10.1002/ijc.70730"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Cryptogenic steatotic liver disease: a lean phenotype associated with increased liver-related mortality",
+      "performers": [
+        "전대원"
+      ],
+      "date": "2026-08-14",
+      "year": 2026,
+      "center": "RG1 (AI정밀의료·바이오의약혁신)",
+      "summary": "Gut (IF 23.0) 게재 논문. 저자: 전대원 교수 (연구그룹장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Cryptogenic steatotic liver disease: a lean phenotype associated with increased liver-related mortality",
+      "extra": {
+        "journal": "Gut",
+        "impact_factor": 23.0,
+        "doi_url": "https://doi.org/10.1136/gutjnl-2026-339142"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Association between smoking habits and breast density, changes in breast density, and breast cancer in Asian women",
+      "performers": [
+        "박보영"
+      ],
+      "date": "2026-07-21",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "Journal of the National Cancer Institute (IF 9.9) 게재 논문. 저자: 박보영 교수 (운영위원 · 제1). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Association between smoking habits and breast density, changes in breast density, and ",
+      "extra": {
+        "journal": "Journal of the National Cancer Institute",
+        "impact_factor": 9.9,
+        "doi_url": "https://doi.org/10.1093/jnci/djag231"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Longitudinal Mammographic Breast Density Changes and Associated Factors in Older Korean Women",
+      "performers": [
+        "박보영"
+      ],
+      "date": "2026-07-01",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "Radiology: Imaging Cancer (IF 5.0) 게재 논문. 저자: 박보영 교수 (운영위원 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Longitudinal Mammographic Breast Density Changes and Associated Factors in Older Korean Women",
+      "extra": {
+        "journal": "Radiology: Imaging Cancer",
+        "impact_factor": 5.0,
+        "doi_url": "https://doi.org/10.1148/rycan.250332"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Costimulation loss enhances IL-2-driven Treg generation by PI3K-STAT3 inhibition in CNS autoimmunity",
+      "performers": [
+        "최제민"
+      ],
+      "date": "2026-06-01",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "EMBO Molecular Medicine (IF 9.0) 게재 논문. 저자: 최제민 교수 (운영위원 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Costimulation loss enhances IL-2-driven Treg generation by PI3K-STAT3 inhibition in CNS autoimmunity",
+      "extra": {
+        "journal": "EMBO Molecular Medicine",
+        "impact_factor": 9.0,
+        "doi_url": "https://doi.org/10.1038/s44321-026-00431-7"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Immunoregulatory protein-hybrid extracellular vesicles via self-loadable backbone cyclization for oral inflammatory bowel disease therapy",
+      "performers": [
+        "김영필"
+      ],
+      "date": "2026-04-01",
+      "year": 2026,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "Bioactive Materials (IF 18.0) 게재 논문. 저자: 김영필 교수 (연구그룹장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Immunoregulatory protein-hybrid extracellular vesicles via self-loadable backbone cyclization for oral in",
+      "extra": {
+        "journal": "Bioactive Materials",
+        "impact_factor": 18.0,
+        "doi_url": "https://doi.org/10.1016/j.bioactmat.2025.11.036"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Improving HER2 Diagnostics with Digital Real-Time PCR for Ultrafast, Precise Prediction of Anti-HER2 Therapy Response in Breast Cancer",
+      "performers": [
+        "이정연"
+      ],
+      "date": "2026-02-01",
+      "year": 2026,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "Small Methods (IF 12.0) 게재 논문. 저자: 이정연 교수 (전임교원 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Improving HER2 Diagnostics with Digital Real-Time PCR for Ultrafast, Precise Prediction of Anti-HER2 Therapy Res",
+      "extra": {
+        "journal": "Small Methods",
+        "impact_factor": 12.0,
+        "attribution": "연구소",
+        "doi_url": "https://doi.org/10.1002/smtd.202500599",
+        "has_affiliation": true
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Preventive Effect of Helicobacter pylori Treatment on Gastric Cancer Incidence and Mortality: A Korean Population Study",
+      "performers": [
+        "박보영"
+      ],
+      "date": "2026-02-01",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "Gastroenterology (IF 25.1) 게재 논문. 저자: 박보영 교수 (운영위원). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Preventive Effect of Helicobacter pylori Treatment on Gastric Cancer Incidence and Mortality: A Korean Population ",
+      "extra": {
+        "journal": "Gastroenterology",
+        "impact_factor": 25.1,
+        "doi_url": "https://doi.org/10.1053/j.gastro.2025.04.055"
+      }
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "국제미니심포지움",
+      "title": "한양국제바이오미니심포지움 제11회",
+      "performers": [],
+      "date": "2026-01-01",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "한양국제바이오미니심포지움 제11회 개최/참여. 일자 2026-01-01. 한양대학교 첨단바이오융합연구소(HY-ABC)가 주최한 국제 바이오 미니심포지움으로, 국내외 연자 초청 강연 및 학술교류를 통해 글로벌 협력을 수행한 국제활동 성과.",
+      "extra": {}
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "국제미니심포지움",
+      "title": "한양국제바이오미니심포지움 제10회",
+      "performers": [],
+      "date": "2026-01-01",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "한양국제바이오미니심포지움 제10회 개최/참여. 일자 2026-01-01. 한양대학교 첨단바이오융합연구소(HY-ABC)가 주최한 국제 바이오 미니심포지움으로, 국내외 연자 초청 강연 및 학술교류를 통해 글로벌 협력을 수행한 국제활동 성과.",
+      "extra": {}
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "담도 문합부 세포치료용 환자맞춤형 3D 프린팅 나노섬유 코팅 실리콘 스텐트",
+      "performers": [
+        "최동호"
+      ],
+      "date": "2026-01-01",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 최동호(운영위원). 출원/등록번호: KR20260045927A. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 담도 문합부 세포치료용 환자맞춤형 3D 프린팅 나노섬유 코팅 실리콘 스텐트",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR20260045927A"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "인간 화학적 유래 간전구세포 유래 오가노이드, 제조방법 및 용도",
+      "performers": [
+        "최동호"
+      ],
+      "date": "2026-01-01",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 최동호(운영위원). 출원/등록번호: KR20260004652A. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 인간 화학적 유래 간전구세포 유래 오가노이드, 제조방법 및 용도",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR20260004652A"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "Biliary tract cancer organoid derived from hCdHs",
+      "performers": [
+        "최동호"
+      ],
+      "date": "2026-01-01",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "특허 출원(해외). 발명자: 최동호(운영위원). 출원/등록번호: US20260036570A1. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: Biliary tract cancer organoid derived from hCdHs",
+      "extra": {
+        "patent_scope": "해외",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/US20260036570A1"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "CRISPR-Cas9 기반 인간 화학적 유래 간전구세포(hCdHs) 유래 담도암 오가노이드",
+      "performers": [
+        "최동호"
+      ],
+      "date": "2026-01-01",
+      "year": 2026,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 최동호(운영위원). 출원/등록번호: KR20260020314A. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: CRISPR-Cas9 기반 인간 화학적 유래 간전구세포(hCdHs) 유래 담도암 오가노이드",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR20260020314A"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "Analysis method based on de novo structural variation and hardware apparatus",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2026-01-01",
+      "year": 2026,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "특허 출원(해외). 발명자: 남진우(소장). 출원/등록번호: US20260134995A1. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: Analysis method based on de novo structural variation and hardware apparatus",
+      "extra": {
+        "patent_scope": "해외",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/US20260134995A1"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Core Microbiota Drives Host-Specific Growth Enhancement: Evidence in a Harmful Algal Bloom Causing Dinoflagellate",
+      "performers": [
+        "박범수"
+      ],
+      "date": "2026-01-01",
+      "year": 2026,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "Environmental Science & Technology (IF 11.4) 게재 논문. 저자: 박범수 교수 (연구그룹장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Core Microbiota Drives Host-Specific Growth Enhancement: Evidence in a Harmful Algal Bloom",
+      "extra": {
+        "journal": "Environmental Science & Technology",
+        "impact_factor": 11.4
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Rule-Out Cutoff of Two-Dimensional Shear Wave Elastography for Significant Fibrosis in MASLD",
+      "performers": [
+        "전대원"
+      ],
+      "date": "2026-01-01",
+      "year": 2026,
+      "center": "RG1 (AI정밀의료·바이오의약혁신)",
+      "summary": "Clinical Gastroenterology and Hepatology (IF 11.6) 게재 논문. 저자: 전대원 교수 (연구그룹장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Rule-Out Cutoff of Two-Dimensional Shear Wave Elastography for Significant Fibrosis ",
+      "extra": {
+        "journal": "Clinical Gastroenterology and Hepatology",
+        "impact_factor": 11.6
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Alcohol-Aware Risk Stratification and Subtype-Specific Care Pathways Across MASLD, MetALD, and ALD",
+      "performers": [
+        "전대원"
+      ],
+      "date": "2026-01-01",
+      "year": 2026,
+      "center": "RG1 (AI정밀의료·바이오의약혁신)",
+      "summary": "Clinical and Molecular Hepatology (IF 14.0) 게재 논문. 저자: 전대원 교수 (연구그룹장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Alcohol-Aware Risk Stratification and Subtype-Specific Care Pathways Across MASLD, MetALD, ",
+      "extra": {
+        "journal": "Clinical and Molecular Hepatology",
+        "impact_factor": 14.0
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "shRNAI: A deep neural network for the design of highly potent shRNAs",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2025-12-09",
+      "year": 2025,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "Mol Ther Nucleic Acids (IF 7.9) 게재 논문. 저자: 남진우 교수 (소장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: shRNAI: A deep neural network for the design of highly potent shRNAs",
+      "extra": {
+        "journal": "Mol Ther Nucleic Acids",
+        "impact_factor": 7.9,
+        "attribution": "연구소",
+        "doi_url": "https://doi.org/10.1016/j.omtn.2025.102738",
+        "has_affiliation": true
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Engineering cyclized biomolecules for advanced diagnostic and therapeutic applications",
+      "performers": [
+        "김영필"
+      ],
+      "date": "2025-11-01",
+      "year": 2025,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "Biotechnology Advances (IF 12.5) 게재 논문. 저자: 김영필 교수 (연구그룹장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Engineering cyclized biomolecules for advanced diagnostic and therapeutic applications",
+      "extra": {
+        "journal": "Biotechnology Advances",
+        "impact_factor": 12.5,
+        "doi_url": "https://doi.org/10.1016/j.biotechadv.2025.108694"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "MUTE-Seq: An Ultrasensitive Method for Detecting Low-Frequency Mutations in cfDNA With Engineered Advanced-Fidelity FnCas9",
+      "performers": [
+        "허준호"
+      ],
+      "date": "2025-11-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "Advanced Materials (IF 26.8) 게재 논문. 저자: 허준호 교수 (소속교원). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: MUTE-Seq: An Ultrasensitive Method for Detecting Low-Frequency Mutations in cfDNA With Engineered Advanced-Fidel",
+      "extra": {
+        "journal": "Advanced Materials",
+        "impact_factor": 26.8,
+        "doi_url": "https://doi.org/10.1002/adma.202505208"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "O-GlcNAcylation of NONO regulates paraspeckle component assembly and contributes to colon cancer cell proliferation",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2025-05-13",
+      "year": 2025,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "Cell Death Discovery (IF 7.0) 게재 논문. 저자: 남진우 교수 (소장 · 공동교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: O-GlcNAcylation of NONO regulates paraspeckle component assembly and contributes to colon cancer cell prol",
+      "extra": {
+        "journal": "Cell Death Discovery",
+        "impact_factor": 7.0,
+        "doi_url": "https://doi.org/10.1038/s41420-025-02405-z"
+      }
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "국제미니심포지움",
+      "title": "AIxBIO Global Forum",
+      "performers": [],
+      "date": "2025-04-23",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "학술활동(발표/행사): AIxBIO Global Forum. 일자 2025.4.23. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동.",
+      "extra": {}
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "국제미니심포지움",
+      "title": "AIxBIO Global Forum",
+      "performers": [],
+      "date": "2025-04-23",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "학술활동(발표/행사): AIxBIO Global Forum. 일자 2025.4.23. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동. (국제활동: 해외/국제 연자 초청 강연·포럼 등 글로벌 학술교류 성과로 분류.)",
+      "extra": {}
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "해외초청세미나/심포지움",
+      "title": "AIxBIO Distinguished Lecture",
+      "performers": [],
+      "date": "2025-04-22",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "학술활동(발표/행사): AIxBIO Distinguished Lecture. 일자 2025.4.22. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동. (국제활동: 해외/국제 연자 초청 강연·포럼 등 글로벌 학술교류 성과로 분류.)",
+      "extra": {}
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Th1-poised naive CD4 T cell subpopulation reflects anti-tumor immunity and autoimmune disease",
+      "performers": [
+        "최제민"
+      ],
+      "date": "2025-02-25",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "Nature Communications (IF 15.7) 게재 논문. 저자: 최제민 교수 (운영위원 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Th1-poised naive CD4 T cell subpopulation reflects anti-tumor immunity and autoimmune disease",
+      "extra": {
+        "journal": "Nature Communications",
+        "impact_factor": 15.7,
+        "doi_url": "https://doi.org/10.1038/s41467-025-57237-3"
+      }
+    },
+    {
+      "group": "academic",
+      "group_label": "학술활동 성과",
+      "category": "세미나",
+      "title": "생명과학수요세미나",
+      "performers": [],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "학술활동(발표/행사): 생명과학수요세미나. 일자 2025년 1학기. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동.",
+      "extra": {}
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "국제미니심포지움",
+      "title": "한양국제바이오미니심포지움 제9회",
+      "performers": [],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "한양국제바이오미니심포지움 제9회 개최/참여. 일자 2025-01-01. 한양대학교 첨단바이오융합연구소(HY-ABC)가 주최한 국제 바이오 미니심포지움으로, 국내외 연자 초청 강연 및 학술교류를 통해 글로벌 협력을 수행한 국제활동 성과.",
+      "extra": {}
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "국제미니심포지움",
+      "title": "한양국제바이오미니심포지움 제8회",
+      "performers": [],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "한양국제바이오미니심포지움 제8회 개최/참여. 일자 2025-01-01. 한양대학교 첨단바이오융합연구소(HY-ABC)가 주최한 국제 바이오 미니심포지움으로, 국내외 연자 초청 강연 및 학술교류를 통해 글로벌 협력을 수행한 국제활동 성과.",
+      "extra": {}
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "티에노[3.2-d]피리미딘-온 유도체 자가면역질환 치료용 조성물",
+      "performers": [
+        "최제민"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 최제민(운영위원). 출원/등록번호: 10-2025-0017950. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 티에노[3.2-d]피리미딘-온 유도체 자가면역질환 치료용 조성물",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020250017950"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "아연 집게 단백질 매개 금 나노입자 비색법 표적물질 검출법",
+      "performers": [
+        "김영필"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "특허 출원(국내). 발명자: 김영필(연구그룹장). 출원/등록번호: 10-2025-0063834. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 아연 집게 단백질 매개 금 나노입자 비색법 표적물질 검출법",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020250063834"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "항 PODXL 단일클론항체 및 이의 용도",
+      "performers": [
+        "최동호"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 최동호(운영위원). 출원/등록번호: KR20250021139A. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 항 PODXL 단일클론항체 및 이의 용도",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR20250021139A"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "Monoclonal antibody against liver stem cells and use thereof",
+      "performers": [
+        "최동호"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "특허 진행(PCT). 발명자: 최동호(운영위원). 출원/등록번호: WO2025084911A1. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: Monoclonal antibody against liver stem cells and use thereof",
+      "extra": {
+        "patent_scope": "해외",
+        "patent_status": "진행",
+        "doi_url": "https://patents.google.com/patent/WO2025084911A1"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "간 줄기세포에 대한 단일클론항체 및 이의 용도",
+      "performers": [
+        "최동호"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 최동호(운영위원). 출원/등록번호: KR20250057593A. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 간 줄기세포에 대한 단일클론항체 및 이의 용도",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR20250057593A"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "3D Printed Artificial Bile Ducts and Manufacturing Method Thereof",
+      "performers": [
+        "최동호"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "특허 출원(해외). 발명자: 최동호(운영위원). 출원/등록번호: US20250229006A1. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 3D Printed Artificial Bile Ducts and Manufacturing Method Thereof",
+      "extra": {
+        "patent_scope": "해외",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/US20250229006A1"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "3D 프린팅 인공 담관 및 이의 제조방법",
+      "performers": [
+        "최동호"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 최동호(운영위원). 출원/등록번호: KR20250112528A. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 3D 프린팅 인공 담관 및 이의 제조방법",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR20250112528A"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "인게놀-3-안젤레이트 처리 줄기세포 포함 자가면역질환 치료용 조성물",
+      "performers": [
+        "배상철"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 배상철(운영위원). 출원/등록번호: KR20250084347A. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 인게놀-3-안젤레이트 처리 줄기세포 포함 자가면역질환 치료용 조성물",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR20250084347A"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "개인 유전체의 단일염기다형성 정보를 이미지로 변환하는 방법",
+      "performers": [
+        "배상철"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 배상철(운영위원). 출원/등록번호: KR20250093238A. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 개인 유전체의 단일염기다형성 정보를 이미지로 변환하는 방법",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR20250093238A"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "Biomarker for predicting systemic lupus erythematosus flare",
+      "performers": [
+        "배상철"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "특허 진행(PCT). 발명자: 배상철(운영위원). 출원/등록번호: WO2025143577A1. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: Biomarker for predicting systemic lupus erythematosus flare",
+      "extra": {
+        "patent_scope": "해외",
+        "patent_status": "진행",
+        "doi_url": "https://patents.google.com/patent/WO2025143577A1"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "전신 홍반성 루푸스 플레어 예측용 바이오마커",
+      "performers": [
+        "배상철"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 배상철(운영위원). 출원/등록번호: KR20250103380A. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 전신 홍반성 루푸스 플레어 예측용 바이오마커",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR20250103380A"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "유방암 검출 방법 및 유방암 검출용 키트",
+      "performers": [
+        "이정연"
+      ],
+      "date": "2025-01-01",
+      "year": 2025,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "특허 출원(국내). 발명자: 이정연(전임교원). 출원/등록번호: 10-2025-0022231. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 유방암 검출 방법 및 유방암 검출용 키트",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020250022231"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Trajectories of breast density change over time and subsequent breast cancer risk: longitudinal study",
+      "performers": [
+        "박보영"
+      ],
+      "date": "2024-12-30",
+      "year": 2024,
+      "center": "공통/연구소",
+      "summary": "BRITISH MEDICAL JOURNAL (IF 93.7) 게재 논문. 저자: 박보영 교수 (운영위원). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Trajectories of breast density change over time and subsequent breast cancer risk: longitudinal study",
+      "extra": {
+        "journal": "BRITISH MEDICAL JOURNAL",
+        "impact_factor": 93.7,
+        "doi_url": "https://doi.org/10.1136/bmj-2024-079575"
+      }
+    },
+    {
+      "group": "academic",
+      "group_label": "학술활동 성과",
+      "category": "국내 심포지움",
+      "title": "애뉴얼 심포지엄",
+      "performers": [],
+      "date": "2024-08-23",
+      "year": 2024,
+      "center": "공통/연구소",
+      "summary": "학술활동(발표/행사): 애뉴얼 심포지엄. 일자 2024.8.23. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동.",
+      "extra": {}
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Direct measurement of engineered cancer mutations and their transcriptional phenotypes in single cells",
+      "performers": [
+        "김헌석"
+      ],
+      "date": "2024-08-01",
+      "year": 2024,
+      "center": "공통/연구소",
+      "summary": "Nature Biotechnology (IF 33.1) 게재 논문. 저자: 김헌석 교수 (간사). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Direct measurement of engineered cancer mutations and their transcriptional phenotypes in single cells",
+      "extra": {
+        "journal": "Nature Biotechnology",
+        "impact_factor": 33.1,
+        "doi_url": "https://doi.org/10.1038/s41587-023-01949-8"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Drosophila immune cells transport oxygen through PPO2 protein phase transition",
+      "performers": [
+        "심지원"
+      ],
+      "date": "2024-07-01",
+      "year": 2024,
+      "center": "공통/연구소",
+      "summary": "Nature (IF 50.5) 게재 논문. 저자: 심지원 교수 (연구소장). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Drosophila immune cells transport oxygen through PPO2 protein phase transition",
+      "extra": {
+        "journal": "Nature",
+        "impact_factor": 50.5,
+        "attribution": "연구소",
+        "doi_url": "https://doi.org/10.1038/s41586-024-07583-x",
+        "has_affiliation": true
+      }
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "해외초청세미나/심포지움",
+      "title": "AI-Driven Digital Biology and Advanced BioConvergence",
+      "performers": [],
+      "date": "2024-05-31",
+      "year": 2024,
+      "center": "공통/연구소",
+      "summary": "학술활동(발표/행사): AI-Driven Digital Biology and Advanced BioConvergence. 일자 2024.5.31. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동. (국제활동: 해외/국제 연자 초청 강연·포럼 등 글로벌 학술교류 성과로 분류.)",
+      "extra": {}
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "국제미니심포지움",
+      "title": "한양국제바이오미니심포지움 제7회",
+      "performers": [],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "공통/연구소",
+      "summary": "한양국제바이오미니심포지움 제7회 개최/참여. 일자 2024-01-01. 한양대학교 첨단바이오융합연구소(HY-ABC)가 주최한 국제 바이오 미니심포지움으로, 국내외 연자 초청 강연 및 학술교류를 통해 글로벌 협력을 수행한 국제활동 성과.",
+      "extra": {}
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "국제미니심포지움",
+      "title": "한양국제바이오미니심포지움 제6회",
+      "performers": [],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "공통/연구소",
+      "summary": "한양국제바이오미니심포지움 제6회 개최/참여. 일자 2024-01-01. 한양대학교 첨단바이오융합연구소(HY-ABC)가 주최한 국제 바이오 미니심포지움으로, 국내외 연자 초청 강연 및 학술교류를 통해 글로벌 협력을 수행한 국제활동 성과.",
+      "extra": {}
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "케토-카로테노이드 생산능 향상 클라미도모나스 레인하디티 변이 균주",
+      "performers": [
+        "진언선"
+      ],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "특허 출원(국내). 발명자: 진언선(전임교원). 출원/등록번호: 10-2024-0054815. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 케토-카로테노이드 생산능 향상 클라미도모나스 레인하디티 변이 균주",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020240054815"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "금 나노입자를 이용한 초고속 DNA 압타머 선별법",
+      "performers": [
+        "김영필"
+      ],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "특허 출원(국내). 발명자: 김영필(연구그룹장). 출원/등록번호: 10-2024-0150905. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 금 나노입자를 이용한 초고속 DNA 압타머 선별법",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020240150905"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "근적외선 이미징 유도·광열 치료용 다기능성 입자 및 복합체",
+      "performers": [
+        "김영필"
+      ],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "특허 출원(국내). 발명자: 김영필(연구그룹장). 출원/등록번호: 10-2024-0058782. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 근적외선 이미징 유도·광열 치료용 다기능성 입자 및 복합체",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020240058782"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "부모 정보가 누락된 불완전 트리오에서 드노보 돌연변이 탐지 방법",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "특허 출원(국내). 발명자: 남진우(소장). 출원/등록번호: 10-2024-0057619. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 부모 정보가 누락된 불완전 트리오에서 드노보 돌연변이 탐지 방법",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020240057619"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "드노보 구조변이를 검출하는 방법 및 분석장치",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "특허 출원(국내). 발명자: 남진우(소장). 출원/등록번호: 10-2024-0159596. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 드노보 구조변이를 검출하는 방법 및 분석장치",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020240159596"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "디지털 PCR을 이용한 암 진단용 조성물 및 암 진단 정보제공 방법 (HER2)",
+      "performers": [
+        "이정연"
+      ],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "특허 출원(국내). 발명자: 이정연(전임교원). 출원/등록번호: 10-2024-0138461. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 디지털 PCR을 이용한 암 진단용 조성물 및 암 진단 정보제공 방법 (HER2)",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020240138461"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Comparative interactome analysis of α-arrestin families in human and Drosophila",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "eLife (IF 6.4) 게재 논문. 저자: 남진우 교수 (소장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Comparative interactome analysis of α-arrestin families in human and Drosophila",
+      "extra": {
+        "journal": "eLife",
+        "impact_factor": 6.4,
+        "attribution": "연구소",
+        "has_affiliation": true
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Optimal design of synthetic circular RNAs",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "Experimental & Molecular Medicine (IF 9.5) 게재 논문. 저자: 남진우 교수 (소장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Optimal design of synthetic circular RNAs",
+      "extra": {
+        "journal": "Experimental & Molecular Medicine",
+        "impact_factor": 9.5,
+        "attribution": "연구소",
+        "has_affiliation": true
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Diagnostic performance of non-invasive tests in patients with MetALD in a health check-up cohort",
+      "performers": [
+        "전대원"
+      ],
+      "date": "2024-01-01",
+      "year": 2024,
+      "center": "RG1 (AI정밀의료·바이오의약혁신)",
+      "summary": "Journal of Hepatology (IF 26.8) 게재 논문. 저자: 전대원 교수 (연구그룹장). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Diagnostic performance of non-invasive tests in patients with MetALD in a health check-up cohort",
+      "extra": {
+        "journal": "Journal of Hepatology",
+        "impact_factor": 26.8
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Clustering malignant cell states using universally variable genes",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2023-11-22",
+      "year": 2023,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "Briefings in Bioinformatics (IF 6.8) 게재 논문. 저자: 남진우 교수 (소장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Clustering malignant cell states using universally variable genes",
+      "extra": {
+        "journal": "Briefings in Bioinformatics",
+        "impact_factor": 6.8,
+        "attribution": "연구소",
+        "doi_url": "https://doi.org/10.1093/bib/bbad460",
+        "has_affiliation": true
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Toward the functional interpretation of somatic structural variations: bulk- and single-cell approaches",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2023-09-20",
+      "year": 2023,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "Briefings in Bioinformatics (IF 6.8) 게재 논문. 저자: 남진우 교수 (소장 · 교신). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Toward the functional interpretation of somatic structural variations: bulk- and single-cell approach",
+      "extra": {
+        "journal": "Briefings in Bioinformatics",
+        "impact_factor": 6.8,
+        "attribution": "연구소",
+        "doi_url": "https://doi.org/10.1093/bib/bbad297",
+        "has_affiliation": true
+      }
+    },
+    {
+      "group": "academic",
+      "group_label": "학술활동 성과",
+      "category": "워크샵",
+      "title": "BI 워크숍",
+      "performers": [],
+      "date": "2023-08-31",
+      "year": 2023,
+      "center": "공통/연구소",
+      "summary": "학술활동(발표/행사): BI 워크숍. 일자 2023.8.31. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동.",
+      "extra": {}
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Ultrafast prediction of somatic structural variations by filtering out reads matched to pan-genome k-mer sets",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2023-07-01",
+      "year": 2023,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "Nature Biomedical Engineering (IF 26.3) 게재 논문. 저자: 남진우 교수 (연구소장). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Ultrafast prediction of somatic structural variations by filtering out reads matched to pan-genome k-",
+      "extra": {
+        "journal": "Nature Biomedical Engineering",
+        "impact_factor": 26.3,
+        "doi_url": "https://doi.org/10.1038/s41551-022-00980-5"
+      }
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "해외초청세미나/심포지움",
+      "title": "Data-driven, AI-aided Molecular Modeling and Drug Design",
+      "performers": [],
+      "date": "2023-06-19",
+      "year": 2023,
+      "center": "공통/연구소",
+      "summary": "학술활동(발표/행사): Data-driven, AI-aided Molecular Modeling and Drug Design. 일자 2023.6.19. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동. (국제활동: 해외/국제 연자 초청 강연·포럼 등 글로벌 학술교류 성과로 분류.)",
+      "extra": {}
+    },
+    {
+      "group": "etc",
+      "group_label": "기타 성과",
+      "category": "발간물",
+      "title": "[발간물] 애뉴얼 리포트",
+      "performers": [],
+      "date": "2023-01-01",
+      "year": 2023,
+      "center": "공통/연구소",
+      "summary": "발간물: 애뉴얼 리포트 (2023년 발간). 첨단바이오융합연구소(HY-ABC) 발간 성과물.",
+      "extra": {
+        "publication": "애뉴얼 리포트"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "Method and device for evaluating efficiency of candidate shRNA for RNA interference",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2023-01-01",
+      "year": 2023,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "특허 출원(해외). 발명자: 남진우(소장). 출원/등록번호: EP4579668A1. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: Method and device for evaluating efficiency of candidate shRNA for RNA interference",
+      "extra": {
+        "patent_scope": "해외",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/EP4579668A1"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "세포자멸괴사를 저해하는 신규 화합물 및 약학 조성물 (necroptosis inhibitor)",
+      "performers": [
+        "전대원"
+      ],
+      "date": "2023-01-01",
+      "year": 2023,
+      "center": "RG1 (AI정밀의료·바이오의약혁신)",
+      "summary": "특허 출원(국내). 발명자: 전대원(연구그룹장). 출원/등록번호: 10-2023-0127905. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 세포자멸괴사를 저해하는 신규 화합물 및 약학 조성물 (necroptosis inhibitor)",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020230127905"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "고리형 단백질의 제조방법 및 이의 응용 (Cyclic protein)",
+      "performers": [
+        "김영필"
+      ],
+      "date": "2023-01-01",
+      "year": 2023,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "특허 출원(국내). 발명자: 김영필(연구그룹장). 출원/등록번호: 10-2023-0158140. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 고리형 단백질의 제조방법 및 이의 응용 (Cyclic protein)",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020230158140"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "암 표적 광역학치료용 단백질-상향변환 나노입자 복합체 및 제조방법",
+      "performers": [
+        "김영필"
+      ],
+      "date": "2023-01-01",
+      "year": 2023,
+      "center": "RG2 (신약소재·RNA·펩타이드)",
+      "summary": "특허 등록(국내). 발명자: 김영필(연구그룹장). 출원/등록번호: 10-2023-0059637. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 암 표적 광역학치료용 단백질-상향변환 나노입자 복합체 및 제조방법",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "등록",
+        "doi_url": "https://patents.google.com/patent/KR1020230059637"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "RNA간섭에 사용되는 후보 shRNA의 효율성을 평가하는 방법 및 장치",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2023-01-01",
+      "year": 2023,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "특허 출원(국내). 발명자: 남진우(소장). 출원/등록번호: 10-2023-0110104. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: RNA간섭에 사용되는 후보 shRNA의 효율성을 평가하는 방법 및 장치",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020230110104"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "mRNA 백신의 번역 효율을 예측하는 방법 및 분석장치",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2023-01-01",
+      "year": 2023,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "특허 출원(국내). 발명자: 남진우(소장). 출원/등록번호: 10-2023-0110772. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: mRNA 백신의 번역 효율을 예측하는 방법 및 분석장치",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020230110772"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "증강된 유전자 발현을 위한 5' 비번역영역 포함 뉴클레오타이드 조성물 및 방법",
+      "performers": [
+        "남진우"
+      ],
+      "date": "2023-01-01",
+      "year": 2023,
+      "center": "가상실험실센터 (AI 가상실험실 기반센터)",
+      "summary": "특허 등록(국내). 발명자: 남진우(소장). 출원/등록번호: 10-2023-0116096. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: 증강된 유전자 발현을 위한 5' 비번역영역 포함 뉴클레오타이드 조성물 및 방법",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "등록",
+        "doi_url": "https://patents.google.com/patent/KR1020230116096"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "특허",
+      "title": "LIN28A·UPF1 단백질 상호작용 억제제 및 줄기세포 분화 촉진용 조성물·방법",
+      "performers": [
+        "황정욱"
+      ],
+      "date": "2023-01-01",
+      "year": 2023,
+      "center": "공통/연구소",
+      "summary": "특허 출원(국내). 발명자: 황정욱(전임교원). 출원/등록번호: 10-2023-0175552. 첨단바이오융합연구소(HY-ABC) 연구성과(특허). 명칭: LIN28A·UPF1 단백질 상호작용 억제제 및 줄기세포 분화 촉진용 조성물·방법",
+      "extra": {
+        "patent_scope": "국내",
+        "patent_status": "출원",
+        "doi_url": "https://patents.google.com/patent/KR1020230175552"
+      }
+    },
+    {
+      "group": "research",
+      "group_label": "연구성과",
+      "category": "논문",
+      "title": "Letter to the Editor: Is lifestyle modification effective for individuals with high fibrosis-4 index without an additional second-tier test?",
+      "performers": [
+        "전대원"
+      ],
+      "date": "2023-01-01",
+      "year": 2023,
+      "center": "RG1 (AI정밀의료·바이오의약혁신)",
+      "summary": "Journal of Hepatology (IF 26.8) 게재 논문. 저자: 전대원 교수 (연구그룹장). 첨단바이오융합연구소(HY-ABC) 연구성과(논문). 제목: Letter to the Editor: Is lifestyle modification effective for individuals with high fibrosis-4 index without",
+      "extra": {
+        "journal": "Journal of Hepatology",
+        "impact_factor": 26.8
+      }
+    },
+    {
+      "group": "international",
+      "group_label": "국제활동 성과",
+      "category": "국제미니심포지움",
+      "title": "한양국제바이오미니심포지움 제1회",
+      "performers": [],
+      "date": "2021-01-01",
+      "year": 2021,
+      "center": "공통/연구소",
+      "summary": "한양국제바이오미니심포지움 제1회 개최/참여. 일자 2021-01-01. 한양대학교 첨단바이오융합연구소(HY-ABC)가 주최한 국제 바이오 미니심포지움으로, 국내외 연자 초청 강연 및 학술교류를 통해 글로벌 협력을 수행한 국제활동 성과.",
+      "extra": {}
+    }
+  ]
 }
