@@ -1,0 +1,96 @@
+{
+  "years": [],
+  "groups": [
+    "연구성과",
+    "학술활동 성과",
+    "교육활동 성과",
+    "대외활동 성과",
+    "국제활동 성과",
+    "기타 성과"
+  ],
+  "by_year_group": {},
+  "by_year_center": {},
+  "by_group_total": {},
+  "metrics": [
+    {
+      "key": "top10_paper",
+      "label": "상위 10% 이내 논문",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "best_conf",
+      "label": "최우수학회 논문",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "patent_dom",
+      "label": "국내 특허",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "patent_intl",
+      "label": "해외 특허",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "next_gen",
+      "label": "학문후속세대 양성",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "grad_support",
+      "label": "대학원생 지원",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "edu_headcount",
+      "label": "교육인원",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "global_exch",
+      "label": "글로벌 교류",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "infra_use",
+      "label": "거점 인프라 활용",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "company_support",
+      "label": "기업 지원",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "tech_transfer",
+      "label": "기술이전",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "econ_impact",
+      "label": "경제적 파급효과",
+      "by_year": {},
+      "total": 0
+    },
+    {
+      "key": "jobs",
+      "label": "고용창출 효과",
+      "by_year": {},
+      "total": 0
+    }
+  ],
+  "total_records": 0,
+  "generated_at": "2026-11-15T23:30:53"
+}
