@@ -1,29 +1,7 @@
 {
-  "generated_at": "2026-11-25T23:56:21",
-  "count": 25,
+  "generated_at": "2026-11-26T00:14:48",
+  "count": 21,
   "items": [
-    {
-      "section": "minisymposium",
-      "title": "BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop",
-      "date": "2026-11-18",
-      "year": 2026,
-      "poster": "../images/performance/1795591585536_0_169_PPT2x.png",
-      "venue": "",
-      "summary": "학술활동(워크숍): BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop. 일자 2026.11.18. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
-      "category": "국제미니심포지움",
-      "id": 87
-    },
-    {
-      "section": "workshop",
-      "title": "BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop",
-      "date": "2026-11-18",
-      "year": 2026,
-      "poster": "../images/performance/1795591721739_0_169_PPT2x.png",
-      "venue": "연세대학교",
-      "summary": "학술활동(워크숍): BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop. 일자 2026.11.18. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
-      "category": "워크샵",
-      "id": 80
-    },
     {
       "section": "seminar",
       "title": "글로컬랩 킥오프 미팅",
@@ -111,28 +89,6 @@
       "summary": "첨단바이오융합연구소(HY-ABC) 주최 교육 프로그램. 교내 연구자(교원 및 학생)를 대상으로 BI/컴퓨팅 코어 사용자 교육 및 바이오데이터 분석 방법을 교육하는 워크숍을 2025년 8월 21일 개최하였다. 바이오데이터 처리·분석 역량 강화를 통해 교내 연구 인프라 활용도를 높이는 것을 목적으로 한다.",
       "category": "교육 워크숍",
       "id": 92
-    },
-    {
-      "section": "minisymposium",
-      "title": "AIxBIO Global Forum",
-      "date": "2025-04-23",
-      "year": 2025,
-      "poster": "../images/performance/1794755058155_symposium-2025-forum.jpg",
-      "venue": "",
-      "summary": "학술활동(발표/행사): AIxBIO Global Forum. 일자 2025.4.23. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동.",
-      "category": "국제미니심포지움",
-      "id": 88
-    },
-    {
-      "section": "minisymposium",
-      "title": "AIxBIO Global Forum",
-      "date": "2025-04-23",
-      "year": 2025,
-      "poster": "../images/performance/1794755058155_symposium-2025-forum.jpg",
-      "venue": "",
-      "summary": "학술활동(발표/행사): AIxBIO Global Forum. 일자 2025.4.23. 첨단바이오융합연구소(HY-ABC) 주최/참여 학술활동. (국제활동: 해외/국제 연자 초청 강연·포럼 등 글로벌 학술교류 성과로 분류.)",
-      "category": "국제미니심포지움",
-      "id": 67
     },
     {
       "section": "symposium",
