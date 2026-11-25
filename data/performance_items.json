@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T00:19:07",
+  "generated_at": "2026-11-26T00:21:31",
   "count": 93,
   "items": [
     {
@@ -174,14 +174,25 @@
       "group_label": "학술활동 성과",
       "category": "세미나",
       "title": "Cellanome–한양대학교 공동 웨비나",
-      "performers": [],
+      "performers": [
+        "남진우"
+      ],
       "date": "2026-10-22",
       "year": 2026,
       "center": "공통/연구소",
       "summary": "학술활동(웨비나): Cellanome–한양대학교 공동 웨비나. 일자 2026.10.22. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
       "content_full": "학술활동(웨비나): Cellanome–한양대학교 공동 웨비나. 일자 2026.10.22. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
-      "extra": {},
-      "evidence": []
+      "extra": {
+        "host": "첨단바이오융합연구소, Cellanome",
+        "venue": "온라인"
+      },
+      "evidence": [
+        {
+          "kind": "pdf",
+          "url": "../images/performance/1795620091329_0_Cellanome_-_Hanyang_University_Webinar_Poster.pdf",
+          "name": "Cellanome - Hanyang University Webinar Poster.pdf"
+        }
+      ]
     },
     {
       "id": 85,
