@@ -96,8 +96,8 @@
 const PAL=['#1F4E79','#2E75B6','#9DC3E6','#70AD47','#FFC000','#C55A11','#7030A0','#A6A6A6'];
 let ITEMS=[], CURG='all';
 Promise.all([
- fetch('../data/performance_aggregate.json').then(r=>r.json()),
- fetch('../data/performance_items.json').then(r=>r.json())
+ fetch('../data/performance_aggregate.json?v='+Date.now()).then(r=>r.json()),
+ fetch('../data/performance_items.json?v='+Date.now()).then(r=>r.json())
 ]).then(([s,it])=>{
  ITEMS=it.items||[]; document.getElementById('gen').textContent='최종 갱신: '+(s.generated_at||'')+' · 총 '+(s.total_records||0)+'건';
  // KPI
