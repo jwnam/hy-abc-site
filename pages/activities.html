@@ -1054,6 +1054,67 @@
                 if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
             });
         });
+
+        /* ── 성과관리 DB 연동: 포스터 보유 행사 성과를 섹션별 카드로 자동 추가 ──
+           (기존 수기 카드와 제N회·동일날짜·동일제목 중복은 건너뜀) */
+        (function () {
+            const esc = s => (s == null ? '' : String(s)).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+            const norm = s => (s || '').replace(/\s/g, '').toLowerCase();
+            const hoeOf = s => { const m = (s || '').match(/제\s*\d+\s*회/); return m ? m[0].replace(/\s/g, '') : ''; };
+            const dkey = s => { const m = (s || '').match(/(\d{4})[.\-](\d{1,2})[.\-](\d{1,2})/); return m ? (m[1] + '-' + (+m[2]) + '-' + (+m[3])) : ''; };
+            const fmtDate = s => { const m = (s || '').match(/^(\d{4})-(\d{2})-(\d{2})/); if (!m) return s || ''; return (m[2] === '01' && m[3] === '01') ? m[1] : (m[1] + '.' + (+m[2]) + '.' + (+m[3])); };
+            const st = document.createElement('style');
+            st.textContent = '.poster-card.db-card{position:relative}.poster-card.db-card .db-chip{position:absolute;top:8px;left:8px;z-index:2;background:rgba(31,78,121,.92);color:#fff;font-size:10px;font-weight:600;padding:2px 7px;border-radius:10px}.poster-card.db-card .poster-title{font-size:.9rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}';
+            document.head.appendChild(st);
+            const wire = card => {
+                const img = card.querySelector('.poster-image-wrapper img'); if (!img) return;
+                card.style.cursor = 'pointer'; card.setAttribute('tabindex', '0'); card.setAttribute('role', 'button');
+                const open = () => {
+                    const t = card.querySelector('.poster-title'), dt = card.querySelector('.poster-date');
+                    openModalData({ title: t ? t.textContent.trim() : '', date: dt ? dt.textContent.trim() : '', images: [img.src], desc: card.dataset.desc || '' });
+                };
+                card.addEventListener('click', open);
+                card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+            };
+            fetch('../data/activities_items.json').then(r => r.ok ? r.json() : null).then(d => {
+                if (!d || !d.items) return;
+                const sig = {};
+                document.querySelectorAll('section[id]').forEach(s => {
+                    sig[s.id] = [];
+                    s.querySelectorAll('.poster-card').forEach(c => {
+                        const t = c.querySelector('.poster-title'), dt = c.querySelector('.poster-date');
+                        sig[s.id].push({ hoe: hoeOf(t && t.textContent), t: norm(t && t.textContent), d: dkey(dt && dt.textContent), el: c });
+                    });
+                });
+                // 기존 카드 이미지가 404 등으로 깨지면 업로드 포스터로 자동 대체
+                const heal = (card, poster) => {
+                    const im = card && card.querySelector('.poster-image-wrapper img');
+                    if (!im || !poster) return;
+                    im.addEventListener('error', () => { im.src = poster; }, { once: true });
+                    if (im.complete && im.naturalWidth === 0) im.src = poster;
+                };
+                d.items.forEach(it => {
+                    const sec = document.querySelector('section#' + it.section); if (!sec) return;
+                    const grid = sec.querySelector('[class*="grid"]'); if (!grid) return;
+                    const hh = hoeOf(it.title), tt = norm(it.title), dd = dkey(it.date);
+                    const m = (sig[it.section] || []).find(e =>
+                        (hh && e.hoe === hh) || (dd && e.d && e.d === dd) || (tt && e.t && tt === e.t));
+                    if (m) { heal(m.el, it.poster); return; }  // 이미 있는 카드 → 깨진 이미지만 보정
+                    const card = document.createElement('div');
+                    card.className = 'poster-card db-card';
+                    card.dataset.desc = it.summary ? ('<p>' + esc(it.summary) + '</p>') : '';
+                    const dateLine = fmtDate(it.date) + (it.venue ? (' · ' + it.venue) : '');
+                    card.innerHTML =
+                        '<span class="db-chip">성과</span>' +
+                        '<div class="poster-image-wrapper"><img src="' + esc(it.poster) + '" alt="' + esc(it.title) + '" loading="lazy"></div>' +
+                        '<div class="poster-card-content"><h4 class="poster-title">' + esc(it.title) + '</h4>' +
+                        '<span class="poster-date">' + esc(dateLine) + '</span></div>';
+                    grid.appendChild(card);
+                    (sig[it.section] = sig[it.section] || []).push({ hoe: hh, t: tt, d: dd, el: card });
+                    wire(card);
+                });
+            }).catch(() => { });
+        })();
     </script>
 </body>
 </html>

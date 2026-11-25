@@ -28,8 +28,10 @@
  .tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:2rem 0 1rem}
  .tab{padding:.5rem 1rem;border-radius:20px;border:1px solid #cfd8e3;background:#fff;cursor:pointer;font-size:.9rem}
  .tab.active{background:#1F4E79;color:#fff;border-color:#1F4E79}
- .item{background:#fff;border-radius:10px;padding:1rem 1.2rem;margin-bottom:.7rem;box-shadow:0 1px 5px rgba(0,0,0,.04);cursor:pointer;transition:box-shadow .15s,transform .15s}
+ .item{display:flex;gap:.9rem;align-items:flex-start;background:#fff;border-radius:10px;padding:1rem 1.2rem;margin-bottom:.7rem;box-shadow:0 1px 5px rgba(0,0,0,.04);cursor:pointer;transition:box-shadow .15s,transform .15s}
  .item:hover{box-shadow:0 4px 16px rgba(31,78,121,.15);transform:translateY(-1px)}
+ .item-thumb{width:64px;height:64px;object-fit:cover;border-radius:8px;flex:none;background:#eef2f7}
+ .item-body{flex:1;min-width:0}
  .item .t{font-weight:600}
  .item .meta{color:#7b8a9a;font-size:.85rem;margin-top:.2rem}
  .item .ev{color:#C55A11;font-size:.78rem;margin-left:.3rem}
@@ -125,9 +127,11 @@ function render(){
   if(ex.has_affiliation)tags.push('🏛 연구소');if(ex.has_grant)tags.push('📑 사사');
   const nev=(i.evidence||[]).length;
   const evbadge=nev?'<span class="ev">📎 '+nev+'</span>':'';
-  return '<div class="item" onclick="openPm('+idx+')"><div class="t">'+esc(i.title)+evbadge+'</div><div class="meta">'+
+  const img=(i.evidence||[]).find(e=>e.kind==='image');
+  const thumb=img?'<img class="item-thumb" src="'+esc(img.url)+'" alt="" loading="lazy">':'';
+  return '<div class="item" onclick="openPm('+idx+')">'+thumb+'<div class="item-body"><div class="t">'+esc(i.title)+evbadge+'</div><div class="meta">'+
    '<span class="badge">'+esc(i.group_label)+'</span>'+tags.map(t=>'<span class="badge">'+esc(t)+'</span>').join('')+
-   ' '+(i.date||'')+' · '+(i.performers||[]).map(esc).join(', ')+'</div></div>';
+   ' '+(i.date||'')+' · '+(i.performers||[]).map(esc).join(', ')+'</div></div></div>';
  }).join(''):'<p style="color:#aab">등록된 성과가 없습니다.</p>';
 }
 function openPm(idx){
