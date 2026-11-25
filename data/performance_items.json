@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T16:26:30",
+  "generated_at": "2026-11-25T16:28:41",
   "count": 93,
   "items": [
     {
@@ -41,14 +41,35 @@
       "group_label": "학술활동 성과",
       "category": "워크샵",
       "title": "BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop",
-      "performers": [],
+      "performers": [
+        "남진우"
+      ],
       "date": "2026-11-18",
       "year": 2026,
       "center": "공통/연구소",
       "summary": "학술활동(워크숍): BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop. 일자 2026.11.18. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
       "content_full": "학술활동(워크숍): BIOINFO/GIW ISCB-Asia 2026 — HY-ABC Glocal Workshop. 일자 2026.11.18. 첨단바이오융합연구소(HY-ABC) 주최 학술행사.",
-      "extra": {},
-      "evidence": []
+      "extra": {
+        "host": "한국생명정보학회, ISCB-Asia, 첨단바이오융합연구소",
+        "venue": "연세대학교"
+      },
+      "evidence": [
+        {
+          "kind": "image",
+          "url": "../images/performance/1795591721739_0_169_PPT2x.png",
+          "name": "포스터 169 (PPT첫장)@2x.png"
+        },
+        {
+          "kind": "image",
+          "url": "../images/performance/1795591721739_1_jpg",
+          "name": "세션 엑스배너 사진.jpg"
+        },
+        {
+          "kind": "image",
+          "url": "../images/performance/1795591721742_2_2.jpg",
+          "name": "세션 단체사진 2.jpg"
+        }
+      ]
     },
     {
       "id": 81,
